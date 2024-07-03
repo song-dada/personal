@@ -3,63 +3,56 @@
     padding: 0;
     box-sizing: border-box;
 }
-h1{
-    display: none;
-}
-section{
-    max-width: 600px;
+div{
+    max-width: 400px;
+    height: 500px;
     margin: auto;
-    position: relative;
-    overflow: hidden;
+    /*border: 5px solid #ff0000;--영역 확인용이라 지움*/
+    position: relative; /*자기기준으로 배치(중심)*/
+    overflow: hidden;/*밖의 이미지가 영역 밖에서 보이지 않게 설정함*/
 }
 img{
     width: 100%;
-    display: block;
 }
-img:not(:first-of-type){
-    position: absolute;
-    top: 0;
-    left: 0;
+img:not(:first-of-type){/*이미지가 공통 옵션이라*/
+    position: absolute;/*부모div의 기준으로 배치(relative)를 기준으로 함.*/
+    left: 0; top: 0;
 }
-img:nth-of-type(2){/*해당형식(타입)이 몇번째인가 ()안에 있는게 순서.*/
-    animation: up 1500ms both;
+[src="images/1-1.png"]/*속성을 활용한 선택자 [속성] 형식*/{
+    animation: show 1000ms 500ms both;/*1000m=나타나는 시간, 500ms= 대기시간*/
+    /*손과 식물*/         
 }
-img:nth-of-type(3){
-    animation: toright 1500ms 500ms both;
+[src="images/1-2.png"]{
+    animation: down 2000ms 800ms both;
+    /*손과 솔잎*/
 }
-img:nth-of-type(4){
-    animation: zigzag 5000ms 500ms both infinite alternate;/*infinite 무한반복*/
+[src="images/1-3.png"]{
+    animation: big 1000ms 1200ms both;
+    /*글자*/         
 }
-img:nth-of-type(5){/*시계*/
-    animation: rotate 3000ms 1500ms both infinite alternate;
+[src="images/1-4.png"]{
+    animation: toleft 1000ms 1500ms both;
+    /*차*/
 }
-img:last-of-type{
-    animation: zz 2000ms both infinite alternate;/*alternate 정방향 후 역방향 진행.*/
+[src="images/1-5.png"]{
+    animation: show 1000ms 1800ms both;
+    /*장식*/         
 }
 
-@keyframes up{
-    0% { bottom: -100px; top: initial; opacity: 0; } /*from과 같음*/
-    100% { bottom: 0; top: initial; opacity: 1; } /*to와 같음*/
+/*애니메이션*/
+@keyframes show { /*나타나기*/
+    from{ opacity: 0; }
+    to{ opacity: 1; }
 }
-@keyframes toright{
-    from { left: -200px; opacity: 0; }
-    to { left: 0; opacity: 1; }
-    
+@keyframes down { /*내려오기*/
+    from{ top: -150px; opacity: 0; }
+    to{ top:0; opacity: 1 }
 }
-@keyframes zigzag{
-    0% { top: -100px; left: initial; right: -100px; transform: rotate(-20deg); }
-    30% { top: -50px; left: initial; right: -70px; transform: rotate(10deg); }
-    50% { top: -30px; left: initial; right: -50px; transform: rotate(-30deg); }
-    70% { top: -70px; left: initial; right: -20px; transform: rotate(20deg); }
-    85% { top: 50px; left: initial; right: -10px; transform: rotate(-10deg); }
-    100% { top: 0px; left: initial; right: 0x;  transform: rotate(0); }
-    /*100%{ top: -100px; left: initial; right: -100px; transform: rotate(-20deg); }*/
+@keyframes big { /*커지기*/
+    from{ transform: scaleX(0); }/*X/Y별도로 사용가능.*/
+    to{ transform: scaleX(1); }
 }
-@keyframes rotate{
-    from{ transform: rotate(300deg) scale(0); }
-    to{ transform: rotate(0) scale(1); }
-}
-@keyframes zz{
-    from{ left: 60px; }
-    to{ left: -20px; }
+@keyframes toleft { /*오른쪽에서 왼쪽으로 이동*/
+    from{ left: 200px; opacity: 0; }
+    to{ left: 0; opacity: 1; }
 }
