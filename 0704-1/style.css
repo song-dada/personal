@@ -12,8 +12,9 @@ h1{
 
 section{ border: 3px solid red;
     max-width: 800px;
+    /* max-height: 1000px; */
     margin: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 img{
@@ -29,13 +30,13 @@ img:not(:first-of-type){
     animation: up 1000ms 500ms both;
 }
 [alt="코로나"]{/*속성이면 뭐든 괜찮음.*/
-    animation: toleft 1000ms 1000ms both;
+    animation: toleft 1000ms 800ms both;
 }
 [src*="3-3"]{
-    animation: down 1500ms 1500ms both;
+    animation: down 2000ms 1200ms both;
 }
 [alt*="2주"]{
-    animation: rotate 2000ms 2000ms both infinite; /*강제실행 !important*/
+    animation: rotate 1800ms 500ms both infinite; /*강제실행 !important*/
     width: 45%;
     top: initial !important;
     bottom: 0;
@@ -53,10 +54,11 @@ img:not(:first-of-type){
  [src*="5"]{
     animation: scale 2000ms both infinite;
     width: 40%;
+    /* margin: 55% auto auto 58% ; */
     margin: 55% auto auto 58% ;
 }
 img:last-of-type{
-    animation: flicker 500ms 2000ms both infinite;
+    animation: flicker 500ms 500ms both infinite;
 }
 
 
@@ -81,8 +83,6 @@ img:last-of-type{
     0%{ transform: scale(0); }
     100%{ transform: scale(1); }
 }
-
-
 @keyframes flicker{
     0%{ opacity: 0; }
     100%{ opacity: 1; }
