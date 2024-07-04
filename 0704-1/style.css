@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    display: none;
+}
+
+section{ border: 3px solid red;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+img{
+    width: 100%;
+    display: block;
+}
+img:not(:first-of-type){
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+[src="images/3-1.png"]{/*[]안의 옵션과 속성으로 선택가능*/
+    animation: up 1000ms 500ms both;
+}
+[alt="코로나"]{/*속성이면 뭐든 괜찮음.*/
+    animation: toleft 1000ms 1000ms both;
+}
+[src="images/3-3.png"]{
+    animation: down 1000ms 1500ms both;
+}
+
+
+
+/*반응형*/
+@keyframes up{
+    from{ opacity: 0; top: initial; bottom: -50px;} /*initial*/
+    to{ opacity: 1; top: initial; bottom: 0px; }
+}
+@keyframes toleft{
+    from{ opacity: 0; left:initial; right: -50px;}
+    to{ opacity: 1; left:initial; right: 0; }
+}
+@keyframes down{
+    from{ opacity: 0; top:initial; bottom: 50px;}
+    to{ opacity: 1; top:initial; bottom: 0; }
+}
