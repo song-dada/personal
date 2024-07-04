@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* Ctrl+/ = 주석지정(한줄) */
+/* Ctrl+k+c = 주석지정(영역)
+Ctrl+k+u = 주석해제(영역) */
 h1{
     display: none;
 }
@@ -29,10 +31,33 @@ img:not(:first-of-type){
 [alt="코로나"]{/*속성이면 뭐든 괜찮음.*/
     animation: toleft 1000ms 1000ms both;
 }
-[src="images/3-3.png"]{
-    animation: down 1000ms 1500ms both;
+[src*="3-3"]{
+    animation: down 1500ms 1500ms both;
 }
-
+[alt*="2주"]{
+    animation: rotate 2000ms 2000ms both infinite; /*강제실행 !important*/
+    width: 45%;
+    top: initial !important;
+    bottom: 0;
+    margin: 5%;
+}
+/* [src*="5"]{
+    animation: scale 2000ms both infinite;
+    width: 40%;
+    top: initial !important;
+    left: initial !important;
+    right: 0;
+    bottom: 0;
+    margin: 2%;
+} */
+ [src*="5"]{
+    animation: scale 2000ms both infinite;
+    width: 40%;
+    margin: 55% auto auto 58% ;
+}
+img:last-of-type{
+    animation: flicker 500ms 2000ms both infinite;
+}
 
 
 /*반응형*/
@@ -48,3 +73,34 @@ img:not(:first-of-type){
     from{ opacity: 0; top:initial; bottom: 50px;}
     to{ opacity: 1; top:initial; bottom: 0; }
 }
+@keyframes rotate{
+    0%{ transform: rotate(360deg); }
+    100%{ transform: rotate(0); }
+}
+@keyframes scale{
+    0%{ transform: scale(0); }
+    100%{ transform: scale(1); }
+}
+
+
+@keyframes flicker{
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+
+/* 선택자 우선 순위
+1. !important (응급용)
+2. id
+3. class
+4. tag
+5. *
+6. :not(조건)
+.
+.
+.
+.
+[속성]
+ */
+ /* 휴대폰에서는 픽셀이 아님. (이론적으론 이미지표현의 최소단위.)
+ 휴대폰에서는 줌아웃 개념(레티나 디스플레이 공법.)-픽셀도 줌아웃됨
+ 이런 경우 X/Y의 좌표가 변함  */
