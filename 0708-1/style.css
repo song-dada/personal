@@ -13,8 +13,13 @@ section{
 }
 img{
     display: block;
-    /* position: absolute;
-    top: 0% */
+}
+section img{
+    transition: transform 500ms;
+}
+section:hover img{
+    filter: hue-rotate(70deg) blur(5px);
+    transform: scale(1.1);
 }
 [alt="girl"]{
     top: 0;
