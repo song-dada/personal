@@ -10,7 +10,6 @@ section{
     max-width: 1000px;
     margin: auto;
     margin-top:50px;
-    border: 1px dashed red;
     position: relative;
     overflow: hidden;
 }
