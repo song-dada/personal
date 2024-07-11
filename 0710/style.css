@@ -1,0 +1,321 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+#layout{
+    margin: auto;
+    width: 740px;
+    height: 1100px;
+    background-color: #1ea7ad;
+}
+img{
+    display: block;
+    position: absolute;
+}
+
+/* ㅡㅡㅡㅡㅡheaderㅡㅡㅡㅡㅡ */
+header{
+    /* border: 5px solid #000000; */
+    position: relative;
+    height: 50%;
+}
+[alt="쌤"]{
+    /* border: 5px solid red; */
+    top: 55px;
+    right: 0;
+    width: 55%;
+    z-index: 1;
+}
+[alt="말풍선"]{
+    /* border: 5px solid red; */
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+#im{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    margin: 3% 5% 0 0;
+    font-size: 1.5rem;
+    color: darkolivegreen;
+    font-weight: bold;
+}
+.student{
+    position: absolute;
+    top: 4%;
+    left: 20%;
+    font-size: 2.5rem;
+}
+#gkr{
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+    color: #cdfc54;
+}
+.orbit{
+    font-size: 2.5rem;
+    font-family: "Orbit", sans-serif;
+    /* font-weight: 400;
+    font-style: normal; */
+    font-weight: bold;
+    color: #e0fea4;
+}
+.sele{
+    position: absolute;
+    top: 20%;
+    left: 6%;
+    font-size: 7.3rem;
+    font-family: "Orbit", sans-serif;
+    /* font-weight: 400;
+    font-style: normal; */
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    line-height: 120%;
+}
+.threeblock{
+    position: absolute;
+    top: 70%;
+    left: 8%;
+    height: 30%;
+    width: 70%;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    /* font-size: 6.5rem;
+    font-family: "Orbit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    line-height: 120%; */
+}
+#intowblock{
+    flex: 0.5;
+    position: relative;
+}
+#three{
+    font-size: 2.3rem;
+    font-family: "Orbit", sans-serif;
+    /* font-weight: 400;
+    font-style: normal; */
+    color: #000000;
+    font-weight: bold;
+    height: 15%;
+    text-align: center;
+}
+.three+div{
+    height: auto
+}
+[alt="아래화살표"]{
+    width: 60%;
+    right: 0;
+}
+#price{
+    flex: 1.6;
+    font-size: 7rem;
+    font-family: "Orbit", sans-serif;
+    /* font-weight: 400;
+    font-style: normal; */
+    color: #c6ff50;
+    font-weight: bold;
+    /* padding-left: 2%; */
+    text-align: center;
+    text-shadow: 2px 2px 2px #000000;
+}
+#price>span{
+    font-size: 4rem;
+    color: #000000;
+}
+span:not(price){
+    color: #c6ff50;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+
+/* ㅡㅡㅡㅡㅡmainㅡㅡㅡㅡㅡ */
+main{
+    position: relative;
+    height: 30%;
+}
+.ribon>img{
+    width: 95%;
+    height: 30%;
+    top: 0%;
+    left: 3%;
+    z-index: 1;
+    
+}
+#may{
+    /* display: block; */
+    position: absolute;
+    top: 12%;
+    left: 30%;
+    z-index: 1;
+    margin: auto;
+    font-size: 2rem;
+    color: darkolivegreen;
+    font-weight: bold;
+}
+
+.cover{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 35%;
+    background-color: #0e7890;
+    /* opacity: 0.5; */
+    box-shadow: 2px 2px 2px #000000;
+
+    z-index: 0;
+    padding-top: 10%;
+/* margin: auto; */
+}
+.back{
+    position: absolute;
+    top: 12%;
+    height: 60%;
+    width: 100%;
+    box-shadow: 2px 2px 2px #000000;
+    z-index: 0;
+    display: flex;
+}
+.back>div{
+    z-index: 1;
+    padding-top: 10%;
+    /* margin: auto; */
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    left: 2%;
+    display: flex;
+}
+/* .back>div *{
+    flex: 1;
+} */
+#one1{
+    font-family: "Orbit", sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2rem;
+    flex: 1;
+}
+
+#one2{
+    flex: 0.2;
+    padding-bottom: 3%;
+}
+#one3{
+    font-family: "Orbit", sans-serif;
+    color: #c6ff50;
+    font-weight: bold;
+    /* width: 30%; */
+    font-size: 3.5rem;
+    flex: 1;
+}
+#rnrk{/*왜 안돼 ㅠㅠ*/
+    /* z-index: 1; */
+    padding-top: 80%;
+    left: 15%;
+    font-size: 0.8rem;
+
+}
+#list{
+    position: absolute;
+    top: 75%;
+    left: 15%;
+    font-weight: bold;
+}
+
+/* footer */
+footer{
+    height: 20%;
+    background-color: #313d49;
+    font-family: "Orbit", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+.more{
+    color: #c6ff50;
+    /*font-family: "Orbit", sans-serif;
+    font-weight: bold; */
+    font-size: 2rem;
+    letter-spacing: -2px;
+    margin: 1%;
+}
+.more span{
+    color: #ffffff;
+    text-decoration: underline #c6ff50 solid;
+}
+#Go{
+    display: flex;
+    margin: 2%;
+}
+.go{
+    flex: 1;
+}
+/*.go {
+    font-family: "Orbit", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+} */
+.f_header{
+    background-color: #283442;
+    color: #c6ff50;
+    font-family: "Orbit", sans-serif;
+    font-weight: bold;
+    width: 80%;
+    margin: auto auto 2% auto;
+    padding: 2%;
+}
+
+
+
+/* .block{
+    position: relative;
+    background-color: red;
+
+    display: inline-block;} */
+/* .inline{
+    z-index: 1;
+    padding-top: 17%;
+    margin: auto;
+    width: 100%;
+    position: absolute;
+    top: -40%;
+    left: 10%;
+} */
+/* .inline {
+    text-align: center;
+    align-items: center;
+    d
+} */
+.inline:first-of-type{
+    font-family: "Orbit", sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    /* width: 50%; */
+    font-size: 2rem;
+    flex: 1;
+}
+.inline:nth-of-type(2){
+    /* width: 20%; */
+    flex: 0.2;
+}
+.inline:last-of-type{
+    font-family: "Orbit", sans-serif;
+    color: #c6ff50;
+    font-weight: bold;
+    /* width: 30%; */
+    font-size: 3.5rem;
+    flex: 0.4;
+}
