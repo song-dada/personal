@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+
+            // let n1 = 20;
+            // let n2 = 10;
+            // let s1=n1 + n2;
+            // let s2=n1 - n2;
+            // let s3=n1 * n2;
+            // let s4=n1 / n2;
+
+            // document.write(`${s1}<br> ${s2}<br> ${s3}<br> ${s4}`);
+
+            let eo = 2;
+            let re = eo % 2;
+            let co;
+
+            if(re === 0){ //=== 타입과 값이 같다.
+                co = `${eo}는 짝수 입니다.`;
+            }
+            else{
+                co = `${eo}는 홀수 입니다.`;
+            }
+            // alert(re);
+            console.log(co);
+
+            let inc = 0;
+            let add = 0;
+            ++inc;
+            console.log(inc);
+            inc++;
+            console.log(inc);
+            add=++inc;
+            console.log(`${add}....${inc}`);
+            add=inc++;
+            console.log(`${add}....${inc}`);
+
+        });
+    </script>
+    <title>java script 연습</title>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

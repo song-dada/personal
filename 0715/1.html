@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            //    첫번째 input인식
+            const x = document.querySelector("[placeholder *=' cm ']");
+            //    버튼 찾기
+            const y = document.getElementsByTagName("button")[0];
+            //     결과 값 보이는 곳
+            const z = document.querySelector("[placeholder *=' m로 ']");
+
+            // alert(y);
+            // const yy = [10,20,30,"삼",40,50]; //배열
+            // alert(yy[3]);
+            // alert(x);
+            //     input에서 입력한 값을 저장하여 사용하기
+            y.addEventListener("click", () => {
+                z.value = x.value/100; 
+            });
+            
+            let xxx = 333 + '라인';
+            alert(typeof xxx);
+
+        });
+        // var num = 10; //선언+할당
+        // document.write(num);
+        // num = '라인컴퓨터학원' //재선언+재할당;
+        // document.write(num);
+
+        // let x = 20;
+        // document.write(x);
+        // x ='라인컴퓨터학원'
+        // document.write(x);
+
+        // const y = 30; //엄격모드와 비슷한 의미
+        // document.write(y);
+        // y = '라인컴퓨터학원';
+        // document.write(y);
+
+        // let num = 10, str = 'javascript', temp = true;
+        // document.write(num+'<br>'+str+'<br>'+temp);
+        // 백틱문자(물결문자아래 `)(템플릿 문자열) ${ ` 값 ` };
+        // document.write(`${num}<br>${str}<br>temp`);
+
+
+    </script>
+    <title>java script 연습</title>
+</head>
+<body>
+
+    <input type="number" placeholder=" cm 숫자를 입력하세요"><br>
+    <button type="button">m로 환산하기</button><br>
+    <input type="number" placeholder=" m로 환산한 값">
+    
+    
+</body>
+<script>
+    
+</script>
+</html>

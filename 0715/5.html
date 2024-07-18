@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+
+            let x = 35;
+            let y = ++x;
+            
+            alert(y);
+
+            // 태그로 선택시 $를 붙여서 사용됨
+            const $p=document.getElementsByTagName("p"); //$p = object HTML Collection (배열)
+            $p[0].innerHTML = y;
+
+            const fruits = ['딸기', '사과', '바나나'];
+            $p[1].innerHTML = fruits[0];
+            $p[2].innerHTML = fruits[1];
+            $p[3].innerHTML = fruits[2];
+
+
+        });
+    </script>
+    <title>java script 연습</title>
+</head>
+
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+
+</html>

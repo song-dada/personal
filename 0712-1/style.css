@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    border: 1px solid;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    padding: 10px;
+    background-color: aquamarine;
+    
+}
+h1{
+    padding-bottom: 10px;
+}
+label{
+    margin-right: 15px
+}
+input{
+    margin-top: 15px;
+}
+section div{
+    margin: 10px;
+}
+/*form태그가 선택(checked) 되었을때의 스타일*/
+:checked{
+    transform: scale(1.5);
+}
+input:checked{
+    transform: scale(1.5);
+}
+/*태그에 집중(focus) 되었을때의 스타일*/
+input:focus{
+    background-color: aqua;
+    font-weight: bold;
+}
+[type="text"]{
+    width: 150px;
+    text-align: center;
+    background-color: rgb(109, 194, 194);
+    border: 2px dashed tomato;
+}
+[type="number"]{
+    width: 150px;
+}
+.info_old p{
+    display: none;
+    font-size: 13px;
+    color: red;
+}
+/* 입력범위 이외의 값인경우 (invalid 유효하지 않음) */
+[type="number"]:invalid{
+    background-color: red;
+}
+[type="number"]:invalid ~ p{
+    display: inline;
+}
+/* 입력범위 이외의 값인경우 (valid 유효함) */
+[type="number"]:valid{
+    background-color: rgb(137, 241, 137);
+}
+/*필수 입력 항목(required)*/
+:required{
+    border: 5px solid red;
+}
+/* 필수가 아닌 입력항목(optional) */
+:optional{
+    border: 4px dashed blue;
+}
+/* 입력 범위를 벗어남(out-of-range) */
+[type="number"]:out-of-range{
+    background-color: rgb(7, 53, 7);
+}
+/* 입력 불가능한 요소(readonly) */
+input:read-only{
+    background-color: black;
+    color: #ffffff;
+    border: 2px solid red;
+}
+/* 전체(root/body는 컨텐츠 범위까지임 유사함) */
+:root{
+    background-color: orange;
+}
+/* '첫'번째글자(::first-letter) */
+h1::first-letter{
+    color: red;
+    transform: scale(2);
+    background-color: yellow;
+}
+/* '첫번째줄' <br> 두번째줄 (::first-line) */
+h1::first-line{
+    border-bottom: 8px;
+    background-color: blueviolet;
+}
+/*언어(lang) 종류ko=한글/en=영어/it=이것 등등*/
+:lang(it){
+    background-color: azure;
+}
+
+/* 해당 input이 형제들 중에서 짝수(even)에 해당할떄 */
+input:nth-child(even){
+    background-color: crimson;
+}
+/* 하나인 경우 */
+div :only-child{
+    background-color: rgb(0, 247, 255);
+}
+/* 비어있는(공백/empty) */
+:empty{
+    background-color: #ffffff;
+}

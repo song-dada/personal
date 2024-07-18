@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>shpping mall</title>
+</head>
+<body>
+    <div id="layout">
+        <section class="content">
+            <h2 name="notice" ><a href="#notice">공지사항</a></h2>
+            <h2 name="gallrey" ><a href="#gallrey">갤러리</a></h2>
+            <div id="notice">
+                <ol>
+                    <li>111111</li>
+                    <li>111111</li>
+                    <li>111111</li>
+                    <li>111111</li>
+                </ol>
+            </div>
+            <div id="gallrey">
+                <img src="images/img1.jpg" alt="img1">
+                <img src="images/img2.jpg" alt="img2">
+                <img src="images/img3.jpg" alt="img3">
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+        // var - 고전방식으로 수업중엔 사용안함
+        // let - 재할당 가능한 성질의 변수로 선언됨
+        //      ㄴ 값이 변함 
+        // const - 재할당도 불가능한 성질의 변수로 선언됨
+        //      ㄴ 초기화시 선언필요
+    
+        // function a() {
+        //     alert(
+    
+        //     );
+        // }
+    
+        // notice변수 선언
+        const notice = document.getElementById('notice');
+        const gallrey = document.getElementById('gallrey');
+        let n_fc = document.getElementById('notice').style;
+        let g_fc = document.getElementById('gallrey').style;
+
+        // 변수 선언
+        const x1 = document.querySelector('h2:first-of-type');
+        const x2 = x1.children[0];
+    
+        const y1 = document.querySelector('h2:last-of-type');
+        const y2 = y1.children[0];
+        
+    
+        // 변수 xx + 함수 선언
+        const xx = () =>{
+            // alert("공지사항 버튼이 클릭 됨");
+            gallrey.style.zIndex = 0;
+            notice.style.zIndex = 1;
+            x1.style.backgroundColor= 'gray';
+            y1.style.backgroundColor= 'rgb(255,255,255)';
+            n_fc.style.Color='#ffffff';
+            g_fc.style.Color='#000000';
+    
+        }
+        // 이름있는 함수 = function 'red()'
+        // 익명함수 = [function ()] 이걸 [() =>] 이렇게 줄일수 있음
+        // x.addEventListener( 'click', xx );
+        //.addEventListener('이벤트 이름', 함수(=변수명)) 필요
+        //'클릭'되면 xx이벤트 실행
+    
+        
+        const yy = () =>{
+            notice.style.zIndex = 0;
+            gallrey.style.zIndex = 1;
+            y1.style.backgroundColor= 'gray';
+            x1.style.backgroundColor= 'white';
+        }
+
+        x1.addEventListener( 'click', xx );
+        y1.addEventListener( 'click', yy );
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

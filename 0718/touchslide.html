@@ -1,0 +1,100 @@
+<!DOCTYPE html>        ㅁ 이미지 슬라이드 왼쪽방향
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #layout{
+            max-width: 900px;
+            margin: auto;
+            overflow: hidden;
+        }
+        #slide{
+            display: flex;
+            position: relative;
+            left: 0;
+        }
+        #slide div{
+            width: 100%;
+            
+        }
+        img{
+            width: 100%;
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const area = document.getElementById("slidearea"); // 터치하는 곳
+            
+            const s1 = document.getElementById("slide");
+
+            // const iw = window.innerWidth; //브라우저 넓이
+            // const img = Array.from(document.getElementById("img"));
+            // img.foreach ( i =>{
+            //     i.style.wdith = iw +'px';
+            // }) //이미지 크기를 브라우저의 픽셀에 맞춤 
+            
+            let x1;
+            let x2;
+            let pos;
+            let sliding = false; // 슬라이드 이동을 추적하는 변수
+
+            
+            
+            const toleft = () => {
+                sliding = true;
+                s1.style.transition = 'left 1500ms';
+                // s1.style.left = "-100%";
+                s1.style.left = "-100%";
+
+                
+                setTimeout( () =>  x(), 1500 )
+                
+                const x = () => {
+                    s1.style.left = '0%';
+                    s1.style.transition = 'none';
+                    s1.append(s1.firstElementChild);
+                    sliding = false; // 슬라이드 이동이 종료
+                }
+                
+            };
+            // setInterval( toleft ,  2000 );
+
+            area.addEventListener("touchstart", event => { // 터치이벤트는 이 아래 블럭까지 전부 같이 감.
+                // 슬라이드가 꺼져있다면 아래 구문이 실행됨 (터치 실행됨)
+                if(!sliding){
+                    x1 = event.touches[0].clientX;
+                }
+                
+                
+                area.addEventListener("touchend", e => {
+                    x2 = e.changedTouches[0].clientX
+                    if ( x1 > x2 ) {
+                        toleft();
+                    }
+                });
+            });
+        });
+    </script>
+    <title>이미지 왼쪽방향 슬라이드</title>
+</head>
+<body>
+    <div id="layout">
+        <section id="slidearea">
+            <h1>슬라이드</h1>
+            <div id="slide">
+                <img src="images/magnolia-trees-556718_1280.jpg" alt="봄">
+                <img src="images/beach-4852830_1280.jpg" alt="여름">
+                <img src="images/cap-7278216_1280.jpg" alt="가을">
+            </div>
+        </section>
+    </div>
+</body>
+</html>

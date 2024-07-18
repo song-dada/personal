@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+*{
+    margin: auto;
+    padding: auto;
+}
+
+#layout{
+    max-width: 400px;
+    margin: auto;   
+}
+#layout h2{
+    display: inline;
+}
+#layout h2 a{
+    padding: 3%;
+    margin: 3%;
+    color: #000000;
+    text-decoration: none;
+}
+#notice>ol{
+    list-style-position: inside;
+    padding: 0;
+}
+.content{
+    position: relative;
+    height: 200px;
+    margin-top: 2%;
+}
+#notice{
+    z-index: 1;
+}
+#notice, #gallrey{
+    border: 2px solid;
+    height: 80%;
+    width: 100%;
+    margin-top: 2%;
+    position: absolute;
+    background-color: #ffffff;
+}
+#gallrey img{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+h2:first-of-type{
+    background-color: rgb(128, 128, 128);
+}
+h2:last-of-type{
+    background-color: #ffffff;
+}
+
+/* 선택(target)된것을 맨위로 보이게 만든다 */
+/* div:target{
+    z-index: 1;
+} */

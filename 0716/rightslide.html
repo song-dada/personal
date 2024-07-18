@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오른쪽방향이동 슬라이드</title>
+    <style>
+        * {margin:0;padding:0; box-sizing: border-box;}
+        #layout {width:500px; height:700px; margin:auto; border:5px solid red;}
+        #slide {overflow:hidden; }
+        #slide>div {width:1500px; display:flex; justify-content: center; align-items: center; position:relative; left:-1000px; }
+        #slide div div {width:500px; height:300px; border:2px solid blue; background:aqua; font-size:5rem; text-align: center;}
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <section id="slide">
+            <h1>슬라이드</h1>
+            <div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </section>        
+    </div>
+    <script>
+        const $slideArea = document.querySelector("#slide > div");
+
+        setInterval(  ()=> toRight()  , 2000  );
+
+        toRight = () => {
+            $slideArea.style.transition = 'left 1.5s' ;
+            $slideArea.style.left = '-500px';
+            
+            setTimeout( ()=> po()  ,1500);
+
+            po=()=> {                
+                $slideArea.style.left = '-1000px';
+                $slideArea.style.transition ='none'; 
+                $slideArea.prepend($slideArea.lastElementChild);                          
+            }                
+        }
+    </script>
+</body>
+</html>
