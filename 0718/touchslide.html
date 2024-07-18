@@ -74,11 +74,12 @@
                 }
                 
                 
-                area.addEventListener("touchend", e => {
+                area.addEventListener("touchend", zz= e => {
                     x2 = e.changedTouches[0].clientX
                     if ( x1 > x2 ) {
                         toleft();
                     }
+                    area.removeEventListener("touchend", zz);
                 });
             });
         });
