@@ -50,8 +50,16 @@ table{
 }
 table th{
     text-align: right;
+    margin-top: 100%;
 }
-
+table th[colspan="2"]{
+    text-align: left;
+    padding-left: 3%;
+}
+table td{
+    padding: 1% 0;
+    /* text-align: center; */
+}
 table #sign_r{
     text-align: right;
 }
@@ -59,5 +67,16 @@ table #sign_r{
     display: inline;
 }
 #nspan{
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    text-align: center;
+    /* padding-left: 2%; */
+    /* display: none; */
+}
+[name="p_num"]{
+    width: 20%;
+}
+#signup{
+    margin: 5%;
+    float: right;
+    font-size: 1rem;
 }

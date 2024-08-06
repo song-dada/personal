@@ -132,7 +132,68 @@ header li:hover .submenu, .submenu.show{
 #slidearea>div>div:nth-child(3){
     background-color: red;
 }
-main{
-    border: 1px solid red;
+main {
     height: 200px;
+    display: flex;
+    padding: 30px 0;
+}
+
+#notigall {
+    flex:1;
+    position: relative;
+    margin-right:30px;
+}
+#notigall h2 {
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+}
+#notigall h2.active
+#notigall h2.active button {
+    background: white; /*활성화되면 버튼 배경색이 흰색 된다*/
+    transform: translateY(1px); padding:3px 10px;
+}
+
+#notigall h2 button {
+    /* padding:3px 10px;  */
+    border:1px solid #999;
+    border-bottom:none;
+    background: linear-gradient(#eee, #ccc); 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: translateY(1.6pt);
+    padding: 1px 10px 1px;
+}
+#notigall h2 button:hover {
+    background: linear-gradient(#ccc, #eee);
+}
+#notice
+#notice ol {
+    list-style: none;
+    border:1px solid #999;
+    background: white;
+}
+#notice li {
+    list-style: none;
+}
+
+#gallery {
+    position: absolute;
+    top:0;
+    width:100%;
+}
+#gallery h2 {
+    margin-left:74px;
+}
+#gallery > div {
+    display:flex;
+    justify-content: space-evenly;
+    background: red;
+    padding:10px;
+    display: none;
+}
+#gallery div div {
+    border:3px solid red;
+    width:70px;
+    height:70px;
 }

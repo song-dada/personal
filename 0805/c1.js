@@ -28,4 +28,25 @@ document.addEventListener("DOMContentLoaded",() => {
     };
 
     setInterval(fade, 2500);
+
+    // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+    const btn = document.querySelectorAll('#notigall h2');
+    const ol = document.querySelector('#notigall ol');
+    const gall = document.querySelector('#gallery>div');
+
+    const ng = ( i ) => {
+        // 활성화 -> 비활성화
+        btn.forEach( j => {
+            j.classList.remove('active');
+        });
+        // 콘텐츠 안보이게 함
+        i.classList.add('active');
+
+    };
+    btn.forEach( i => {
+        i.children[0].addEventListener('click',() => { ng(i); });
+    });
+
+
+
 });
