@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+img{
+    max-width: 100%;
+}
+
+#layout{
+    max-width: 1000px;
+    max-height: 650px;
+    border: 2px solid;
+    display: flex;
+    margin: auto;
+}
+/* 왼쪽 로고 + 메뉴바 */
+header{
+    border: 1px solid red;
+    width: 200px;
+}
+header #logo{
+    display: block;
+    min-width: 200px;
+    min-height: 40px;
+    background-color: aquamarine;
+    text-align: center;
+    /* justify-content: center; */
+    /* padding: 30px; */
+}
+header ul{
+    text-align: center;
+    list-style: none;
+    margin-top: 30px
+}
+header ul a{
+    display: block;
+}
+header li{
+    border: 1px solid gray;
+    /* position: relative; 
+    메뉴 옆으로 뺄때 필요함.*/
+
+}
+/* 메인메뉴 */
+.mainmenu{
+    padding: 10px;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+.mainmenu:hover{
+    background-color: cadetblue;
+    color: #ffffff;
+}
+/* [id='s1']:target .submanu {
+    max-height: 250px;
+    padding: 10px 0;
+} */
+header li:hover .submenu, .submenu.show{
+    max-height: 250px;
+    padding: 10px 0;
+    /* position: relative; */
+}
+/* 서브메뉴 */
+.submenu{
+    background-color: #ffffff;
+    box-shadow: 0 0 2px black;
+    
+    /* 아래의 주석은 메뉴가 옆으로 나올때 사용함. */
+    /* position: absolute; */
+    /* width: 100%; */
+    /* left: 100%; */
+    /* top: 0; */
+    /* display: none; */
+
+    /* padding: 5px; 여기 있으면 밑에 보여서 hover쪽으로 옮김 */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1000ms;
+}
+.submenu a{
+    line-height: 200%;
+}
+.submenu a:hover{
+    background-color: aquamarine;
+    color: #ffffff;
+}
+/* 오른쪽 이미지슬라이드 + (공지+갤러리 / 베너/ 바로가기)+푸터 */
+#right{
+    border: 1px solid red;
+    width: 100%;
+}
+/* 페이드 슬라이드 영역 */
+#slidearea{
+    /* border: 1px solid red; */
+    height: 350px;
+    /* position: relative; */
+}
+#slidearea>h2{
+    display: none;
+}
+#slidearea>div{
+    position: relative;
+    /* width: 100%; */
+    height: 100%;
+}
+#slidearea>div>div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* 이 아래의 두개는 flex오 같이 사용되어야함. */
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 800ms;
+}
+#slidearea>div>div:nth-child(1){
+    background-color: blue;
+}
+#slidearea>div>div:nth-child(2){
+    background-color: violet;
+}
+#slidearea>div>div:nth-child(3){
+    background-color: red;
+}
+main{
+    border: 1px solid red;
+    height: 200px;
+}

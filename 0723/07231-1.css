@@ -4,21 +4,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-align: center;
+    text-align: center; /* 모든 텍스트를 가운데 정렬함 */
 }
 #layout{
     max-width: 80vh;
     border: 1px solid;
-    margin: auto;
-    overflow: hidden;
+    margin: auto; /* 위치 가운데 설정 */
+    overflow: hidden; /* 흘러넘치는 이미지를 보이지 않게 설정 */
 
 }
 h1{
     display: none;
 }
-img{
-    display: block;
-    width: 100%;
+img{ /* 모든 이미지에 관하여 */
+    display: block; /* 블록요소로 설정하고 */
+    width: 100%; /* 넓이는 부모 요소에 맞춰서 꽉채움*/
 }
 /* ㅡㅡㅡㅡㅡheaderㅡㅡㅡㅡㅡ */
 header{
@@ -41,9 +41,10 @@ button.material-symbols-outlined{
     display: none;
 }
 
+/* ㅡㅡㅡㅡㅡ */
 #slidearea{
     position: relative;
-    /* width: 100%; */
+    width: 100%;
 }
 h2{
     position: absolute;
@@ -56,22 +57,24 @@ h2{
     z-index: 1;
 }
 #slide{
-    /* width: 100%; */
     display: flex;
-    /* border: 1px solid red; */
     position: relative;
-    left: 0;/*이걸로 슬라이드를 핸들링함*/
+    left: -100%; /* 중간 이미지부터 보이게 설정 */
+    /*이걸로 슬라이드를 핸들링함*/
 
 }
+/* #slide img{
+    flex: 1;
+} */
 
-.circle{
+#circle{
     position: absolute;
     width: 100%;
     bottom: 0;
     display: flex;
     justify-content: center;
 }
-.circle>div{
+#circle>div{
     width: 1.2rem;
     height: 1.2rem;
     background-color: #ffffff;
@@ -79,6 +82,6 @@ h2{
     margin: 0.3rem;
     box-shadow: 0 0 10px #000000;
 }
-.circle>div.red{
+#circle>div.red{
     background-color: red;
 }

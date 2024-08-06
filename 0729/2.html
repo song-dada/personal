@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for()문과 forEach()메소드 비교하기</title>
+</head>
+<body>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <script>
+        const fruits = ["수박","참외","바나나","딸기","망고","키위"];
+        const li = document.querySelectorAll("ol li");//2개이상의 <li>는 ~~All()한다. [object NodeList]
+        /*
+            for(let i = 0; i < 6; i++ ) {
+            li[i].innerText = fruits[i];            
+        }
+        */
+       li.forEach(  ( i, j ) => { //i는 <li> 6개
+            i.innerText = fruits[j]; //j는 i의 index번호이다.
+       });
+    </script>
+</body>
+</html>

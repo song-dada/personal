@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html의 pettern속성과 정규표현식</title>
+    <style>
+        form{
+            line-height: 180%;
+        }
+        /* invalid = 유효하지않다. */
+        input:invalid{ 
+            background-color: red;
+        }
+        input:invalid +span::before{ 
+            color: red;
+            font-size: 0.8rem;
+            margin-left: 15px;
+        }
+        #en:invalid + span::before{ /* 전체엔 : 1개. 일부면 :: 2개*/
+            content: '영문만 가능.';
+        }
+        #ko:invalid + span::before{
+            content: '한글만(자음+모음 같이) 가능';
+        }
+        #ek:invalid + span::before{
+            content: '영문/한글만 가능';
+        }
+        #enu:invalid + span::before{
+            content: '영문출발 숫자가능';
+        }
+        [type="button"]:invalid + span::before{
+            content: '10~19까지만 가능';
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",() => {
+            const en = document.getElementById('en');
+            const ko = document.getElementById('ko');
+            const ek = document.getElementById('ek');
+            const enu = document.getElementById('enu');
+            const num = document.querySelector('[type = "number"]');
+
+            const btn= document.getElementsByTagName('button')[0];
+
+            const p = document.getElementsByTagName('p')[0];
+            let t = '';
+
+            const values = Array.from( document.getElementsByTagName('input') );
+            const val = () =>{
+                // alert(values[0].value)
+                values.forEach( ( i ) => {
+                   t+=`${i.value}<br>`;
+                   i.value='';
+                });
+                p.innerHTML = t;
+
+            };
+            
+
+            btn.addEventListener('click', val);
+
+        });
+    </script>
+</head>
+<body>
+    <!-- pattern 정규식 -->
+    <form>
+        <input type="text" placeholder="영문만 입력" pattern="[A-Za-z]+" id="en"><span></span><br>
+        <input type="text" placeholder="한글만 입력" pattern="[가-힣]+" id="ko"><span></span><br>
+        <input type="text" placeholder="영문/한글입력" pattern="[A-Za-z가-힣]+" id="ek"><span></span><br>
+        <input type="text" placeholder="영문+숫자입력" pattern="[A-Za-z][A-Za-z0-9]*" id="enu" required><span></span><br>
+        <input type="number" placeholder="청소년 나이입력" min="10" max="29"><span></span><br>
+        <button type="button">확인</button>
+    </form>
+    <p>
+        <b>입력된내용.</b><br>
+        <span></span>
+    </p>
+</body>
+</html>

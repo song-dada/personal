@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* 주색 efece5
+보조색 d4cbb7
+글자색 1e3545
+ */
+*{
+    /* background-color: #d4cbb7; */
+    color: 1e3545;
+}
+body{
+    background-color: #ffffff;
+}
+a{
+    text-decoration: none;
+}
+#layout{
+    border: 2px solid;
+    /* max-width: 80%; */
+    /* max-height: 80%; */
+    min-width: 80%;
+    /* min-height: 80%; */
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #d4cbb7;
+    /* padding: 8%; */
+}
+h1{
+    margin: 5%;
+}
+h2{
+    text-align: center;
+}
+h2 label{
+    font-size: 2.5rem;
+}
+.more{
+    margin: 2%;
+    text-align: center;
+}
+#loginbtn{
+    float: right;
+    margin: 5%;
+    font-size: 1.1rem;
+}
+table{
+    margin: auto;
+}
+table th{
+    text-align: right;
+}
+
+table #sign_r{
+    text-align: right;
+}
+[name="s"]{
+    display: inline;
+}
+#nspan{
+    font-size: 0.8rem;
+}

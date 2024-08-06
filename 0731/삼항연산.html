@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+    <style>
+        #popup {
+            position:fixed; width:400px; height:300px;
+            background-color: red; top: 100px; left:40%;   display:none;
+        }
+        #popup button {
+            position:absolute; bottom:50px; right:50px; padding:10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <h1>삼항연산자(이부분을 클릭하면 팝업이 나타난다)</h1>
+    </div>
+    <section id = "popup">
+        <h2>팝업부분</h2>
+        <button type="button">닫기</button>
+    </section>
+    <!-- <script>
+        const h1 = document.getElementsByTagName("h1")[0];
+        const pop = document.getElementById("popup");
+        const btn = document.querySelector("#popup button");
+        const p = document.getElementsByTagName("p");
+
+        const open = () => { 
+            pop.style.display = "block";
+            popup = false;
+        }
+        const close = () => { 
+            pop.style.display = "none";
+            popup = true;
+        }
+
+        let popup = true;
+        const arr = [ h1, btn ];
+        arr.forEach( i => {
+           i.addEventListener("click" , ()=> {
+                popup ? open() : close();
+            });
+        })
+           
+    </script> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+const slide = document.getElementById("slide");
+
+const toDown = () => {
+    slide.style.top = 0;//내려왔다
+    slide.style.transition = "top 0.5s";
+
+    setTimeout( zz , 500);
+}
+const zz = () => {
+    slide.style.top = "-300px";//올라갔다
+    slide.style.transition = "none";//시간개념없음. 즉시실행
+    slide.prepend( slide.children[2]);
+}
+
+setInterval( toDown , 2500 );
+
+/***********************************/
+const notice_li = document.querySelectorAll("#notice li:not(:first-child)");
+const black    =  document.getElementById("black");
+const pop_btn  =  document.querySelector("#popup button");
+
+let x = true;
+
+const popup = () => {
+        if (x) {
+            black.style.display = "block";
+            x = false;
+        } else {
+            black.style.display = "none";
+            x = true;
+        }
+};
+
+// ...연산자는 스프레드연산자로 배열을 열어서 하나씩 나열해주는 기능
+const pp = [...notice_li, pop_btn];
+pp.forEach(element => {
+        element.addEventListener("click", () => popup()  );
+});
+
+});//전체 끝부분....................................
+    </script>
+</body>
+</html>
