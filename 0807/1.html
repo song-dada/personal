@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤바 올릴때 내릴때에따른 이벤트 설정하기</title>
+    <style>
+        #layout{
+            border: 1px solid;
+            overflow: hidden;
+        }
+        p{
+            position: fixed;
+            top: 20px;
+            left:20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px black;
+            padding: 20px;
+            font-size: 2rem;
+        }
+        #layout>div:nth-of-type(1){
+            background-color: blue;
+            height: 1000px;
+            transform: translateX(-100%);
+        }
+        #layout>div:nth-of-type(2){
+            background-color: blueviolet;
+            height: 1000px;
+            transform: translateX(100%);
+        }
+        #layout>div:nth-of-type(3){
+            background-color: red;
+            height: 1000px;
+            transform: translateX(-100%);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            let y = window.scrollY; // 스크롤 초기값
+            const p = document.querySelector('#layout p');
+            const divs = document.querySelectorAll('#layout div');
+
+            const xxx = () => {
+                let x = window.scrollY; // 스크롤 내린값
+                let z = y - x;
+
+                if(x>=300 && z<0) {
+                    divs[0].style.transform='translateX(0)';
+                    divs[0].style.transition='transform 500ms';
+                }
+                if(x>=800 && z<0) {
+                    divs[1].style.transform='translateX(0)';
+                    divs[1].style.transition='transform 500ms';
+                }
+                if(x>=1900 && z<0) {
+                    divs[2].style.transform='translateX(0)';
+                    divs[2].style.transition='transform 500ms';
+                }
+
+
+                if(x<=800 && z>0) {
+                    divs[0].style.transform='translateX(-100%)';
+                    divs[0].style.transition='transform 500ms';
+                }
+                if(x<=1500 && z>0) {
+                    divs[1].style.transform='translateX(-100%)';
+                    divs[1].style.transition='transform 500ms';
+                }
+                if(x<=2000 && z>0) {
+                    divs[2].style.transform='translateX(-100%)';
+                    divs[2].style.transition='transform 500ms';
+                }
+
+                y = x;
+                
+                p.innerHTML = `스크롤을 ${x}만큼 내렸고 <br>이전 Y값과의 차이는 ${z}입니다.`;
+            };
+            document.addEventListener('scroll',xxx);
+        });
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <div>000000000001</div>
+        <div>000000000002</div>
+        <div>000000000003</div>
+        <p>스크롤 높이를 숫자로 표시하는 곳</p>
+    </div>
+</body>
+</html>

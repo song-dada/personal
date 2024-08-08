@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고정된 헤더와 푸터</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        iframe {
+            width: 100%;
+            border: none;
+        }
+        .header-frame {
+            height: 100px; /* 헤더와 메뉴바 높이를 합산 */
+        }
+        .footer-frame {
+            height: 60px; /* 푸터 높이 */
+        }
+        .main-frame {
+            flex: 1; /* 남은 공간을 차지하도록 설정 */
+            height: 0; /* 높이를 0으로 설정하여 flex를 활용 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더를 포함한 iframe -->
+    <iframe src="header.html" class="header-frame"></iframe>
+
+    <!-- 메인 콘텐츠를 포함한 iframe -->
+    <iframe src="main.html" class="main-frame"></iframe>
+
+    <!-- 푸터를 포함한 iframe -->
+    <iframe src="footer.html" class="footer-frame"></iframe>
+
+</body>
+</html>
