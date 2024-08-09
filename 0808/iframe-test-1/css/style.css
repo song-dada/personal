@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+* {margin:0; padding:0; box-sizing: border-box;}
+
+#layout {
+    max-width:600px; margin:auto; border:3px solid black;
+    overflow: hidden; position:relative;
+}
+a {
+    text-decoration: none; color:black;
+}
+
+/*********************/
+
+iframe#header {width:100%; height:100px; position: absolute;}
+
+
+
+/*********************/
+
+main {
+    text-align: center;
+}
+#index main img {
+    display:block; height:80vh; margin-left:-20vw;
+}
+#about main img {
+    display:block; height:80vh; margin-left:-30vw;
+}
+#work main img {
+    display:block; height:80vh; margin-left:-40vw;
+}
+
+/*********************/
+
+footer {
+    background: black; padding:30px; text-align: center;
+    position:fixed; left:0; bottom:0; width:100%;
+}
+footer nav a {
+    color:white; padding:5px; margin:5px;
+}
