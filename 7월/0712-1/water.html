@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+        h1{
+            display: none;
+        }
+        section{
+            max-width: 1000px;
+            margin: auto;
+            border: 5px solid red;
+            position: relative;
+            overflow: hidden;
+        }
+        img{
+            display: block;
+            width: 100%;
+        }
+        [alt*="1"]{
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: down 2000ms both;
+        }
+        @keyframes down{
+            form{   top:-100px; opacity: 0; filter: blur(5px);       }
+            to{     top:0; opacity: 1; filter: blur(0);   }
+        }
+     </style>
+    <title>pop out of water</title>
+</head>
+<body>
+    <section>
+        <h1>pop out of water</h1>
+        <img src="images/phone.jpg" alt="img">
+        <img src="images/mobile_water.jpg" alt="img1">
+    </section>
+</body>
+</html>

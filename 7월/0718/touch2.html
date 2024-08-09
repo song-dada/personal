@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>어느방향으로 터치했는지 알아내기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=> {
+
+            const area = document.getElementsByTagName("p");
+            const h2 = document.getElementsByTagName("h2");
+            let x1;
+            let x2;
+            let pos;
+            
+            
+            //터치를 시작했을 때의 x 좌표 (clientX) 저장
+            area[0].addEventListener("touchstart" , e => {
+                x1 = e.touches[0].clientX;
+            });
+
+            //터치를 떼었을 때의 x좌표 저장
+            area[0].addEventListener("touchend" , e=>{
+                x2 = e.changedTouches[0].clientX;
+
+                if(x1 > x2) {
+                    pos = "왼쪽방향으로 터치함 ";                  
+                }
+                if(x1 < x2) {
+                    pos = "오른쪽방향으로 터치함 ";                  
+                }
+                h2[0].innerText = pos;
+            });
+
+        });///////프로그램 마지막 부분임.
+    </script>
+    <style>
+        p:nth-of-type(1) {
+            padding:50px; background: yellow; border:5px dashed brown;
+        }
+        h2 {font-size:1.8rem; color:brown; text-shadow:0 0 10px red; text-align: center;}
+    </style>
+</head>
+<body>
+
+<h1>어느 방향으로 터치했는지 알아내기</h1>
+
+<p>이곳을 왼쪽 또는 오른쪽 방향으로 터치하시오. <br>
+단, 터치 가능한 디바이스로 실행하시오.</p>
+
+<p><strong>★ 주의사항 ★</strong> 터치기능이 있는 디바이스에서 만 반응함!</p>
+<h2></h2>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+
+            // const $p=document.getElementsByTagName("p"); //$p = object HTML Collection (배열)
+            const $p=document.querySelectorAll("p"); //object Nodelist
+            const $b=document.getElementsByTagName("button"); //$p = object HTML Collection (배열)
+            
+            // querySelectorAll 는 한개 이상 연속되는 요소를 선택할떄
+            // querySelector 한개의 요소를 선택할때
+
+            const fruits = ['딸기', '사과', '바나나', '키위'];
+            // let i=0;
+            // $p.forEach( (x, y, z) => { //value, index, array 순서
+            //     // $p[i].innerHTML = fruits[i];
+            //     // i++;
+            //     alert(x);
+            // });
+
+            // function a(){
+            //     alert(fruits);
+            // };
+
+            // $b[0].addEventListener("click", () => { a() });
+            $b[0].addEventListener("click", () => { 
+                $p.forEach( (x, y, z) => {
+                    // alert(fruits [y]);
+                    x.innerText = fruits[y];
+                });
+             });
+            
+
+
+        });
+    </script>
+    <title>java script 연습</title>
+</head>
+
+<body>
+    <button type="button">실행하기</button>
+    <p>라인1</p>
+    <p>라인2</p>
+    <p>라인3</p>
+    <p>라인4</p>
+</body>
+
+</html>

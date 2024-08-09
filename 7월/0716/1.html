@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #personal {max-width: 400px; margin: auto;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",() => {
+            const $i_1 = document.getElementsByTagName("input")[0];
+            const $i_2 = document.querySelectorAll('[name="gender"]');
+            const $i_3 = document.querySelectorAll('[name="interest"]');
+            const $btn = document.getElementsByTagName('button')[0];
+            const $p   = document.getElementsByTagName('p')[0];
+
+            let info = '';
+
+            const result = () => {
+                info += `${$i_1.value}<br>`;
+                $i_1.value = '';
+                
+                $i_2.forEach( x => {
+                    if(x.checked) {
+                        //info += `${x.getAttribute("id")}`;
+                        info += `${x.nextElementSibling.innerText}<br>`;//input(x)의다음형제 요소의 안의 글자
+                        x.checked = false;
+                    }
+                });
+                $i_3.forEach( x => {
+                    if( x.checked ) {
+                        info += `${x.nextElementSibling.innerText}   `;
+                        x.checked = false;
+
+                    }
+                });
+                $p.innerHTML = info;
+            };
+
+
+            $btn.addEventListener( "click" , result );
+
+        });//////////////// 스크립트 끝
+    </script>
+    <title>개인정보입력</title>
+</head>
+<body>
+    <section id="personal">
+        <h1>개인정보</h1>
+        <form action="#" method="get">
+            <fieldset>
+                <legend>개인정보입력</legend>
+                * 이름 :  
+                <input type="text" placeholder="이름을 입력하세요"><br>
+                * 성별 : 
+                <input type="radio" name="gender" id="man"><label for="man">남자</label>   
+                <input type="radio" name="gender" id="female"><label for="female">여자</label><br>
+                * 관심사 : 
+                <input type="checkbox" name="interest" id="i_1"><label for="i_1">정치</label>
+                <input type="checkbox" name="interest" id="i_2"><label for="i_2">경제</label>
+                <input type="checkbox" name="interest" id="i_3"><label for="i_3">연예</label>
+                <input type="checkbox" name="interest" id="i_4"><label for="i_4">스포츠</label><br>
+                <button type="button">확인</button>
+            </fieldset>
+        </form>
+        <h2>결과창</h2>
+        <p></p>
+    </section>
+    
+</body>
+</html>

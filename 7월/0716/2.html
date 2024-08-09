@@ -1,0 +1,226 @@
+<!-- <!DOCTYPE html>        왼쪽방향 슬라이드
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #layout{
+            max-width: 900px;
+            margin: auto;
+            border: 5px solid red;
+            height: 500px;
+        }
+        #slide{
+            display: flex;
+            width: 300%;
+            position: relative;
+            left: 0;
+        }
+        #slide div{
+            width: 100%;
+            border: 1px solid blue;
+            height: 300px;
+            background-color: aqua;
+            font-size: 5rem;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            //setTimeout( () => { alert('Hi!')}, 1500 );// setTimeout("함수", 지체시간); 지체시간 이후 함수가 실행된다.
+            //setInterval( () =>  { toleft(); }, 1000 );// setInterval() 무한반복
+            // let x = () => { alert('Hi!');}
+
+            const s1 = document.getElementById("slide");
+            
+            
+            const toleft = () => {
+                //지정요소.스타일.css의 속성명 = '값';
+                s1.style.transition = 'left 1500ms';
+                s1.style.left = '-100%'
+                
+                setTimeout( () =>  x(), 1500 )
+                
+                x = () => {
+                    s1.style.left = 0; //이거 지우면 ~느낌이 아니라 -.-.- 같은 느낌
+                    s1.style.transition = 'none'; //이거 지우면 >< >< 이렇게 욌다갔다함.
+                    s1.appendChild(s1.firstElementChild); //자식 ()안에것을 추가함 appendChild(javascript) == append(jQuray) 둘다 먹음
+                    // 선택자.apppend(무엇); 지정 선택자 내부에서 자식들의 맨 끝에 "무엇"이 추가된다.
+                    // 선택자.apppend(선택자.firstElementChild); 지정 선택자 내부에서 자식들중에서 첫번째 자식을 맨끝으로 옮긴다.
+                }
+                
+            };
+            setInterval( toleft,  2000 )//중괄호({}) 생략하는 경우 세미콜론(;) 삭제해야하고 실행문이 하나여야 됨.
+        });
+    </script>
+    <title>왼쪽방향 슬라이드</title>
+</head>
+<body>
+    <div id="layout">
+        <section id="slidearea">
+            <h1>슬라이드</h1>
+            <div id="slide">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>        오른쪽방향 슬라이드
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #layout{
+            max-width: 900px;
+            margin: auto;
+            border: 5px solid red;
+            height: 500px;
+        }
+        #slide{
+            display: flex;
+            width: 300%;
+            position: relative;
+            left: -200%;
+        }
+        #slide div{
+            width: 100%;
+            border: 1px solid blue;
+            height: 300px;
+            background-color: aqua;
+            font-size: 5rem;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const s1 = document.getElementById("slide");
+            
+            
+            const toright = () => {
+                s1.style.transition = 'left 1500ms';
+                s1.style.left = '-100%'
+                
+                setTimeout( () =>  x(), 1500 )
+                
+                x = () => {
+                    s1.style.left = '-200%';
+                    s1.style.transition = 'none';
+                    s1.prepend(s1.lastElementChild); //prepend 맨앞(시작)에 추가.
+                    // 선택자.prepend(무엇); 지정 선택자 내부에서 자식들의 맨 앞에 "무엇"이 추가된다.
+                    // 선택자.prepend(선택자.lastElementChild); 지정 선택자 내부에서 자식들중에서 마지막 자식을 맨처음으로 옮긴다.
+                }
+                
+            };
+            setInterval( toright ,  2000 );
+        });
+    </script>
+    <title>오른쪽방향 슬라이드</title>
+</head>
+<body>
+    <div id="layout">
+        <section id="slidearea">
+            <h1>슬라이드</h1>
+            <div id="slide">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>        ㅁ 이미지 슬라이드 왼쪽방향
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #layout{
+            max-width: 900px;
+            margin: auto;
+            border: 5px solid red;
+            overflow: hidden;
+        }
+        #slide{
+            display: flex;
+            position: relative;
+            left: 0;
+        }
+        #slide div{
+            width: 100%;
+            
+        }
+        img{
+            width: 100%;
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const s1 = document.getElementById("slide");
+
+            // const iw = window.innerWidth; //브라우저 넓이
+            // const img = Array.from(document.getElementById("img"));
+            // img.foreach ( i =>{
+            //     i.style.wdith = iw +'px';
+            // }) //이미지 크기를 브라우저의 픽셀에 맞춤 
+            
+            
+            const toleft = () => {
+                s1.style.transition = 'left 1500ms';
+                // s1.style.left = "-100%";
+                s1.style.left = "-100%";
+
+                
+                setTimeout( () =>  x(), 1500 )
+                
+                x = () => {
+                    s1.style.left = '0%';
+                    s1.style.transition = 'none';
+                    s1.append(s1.firstElementChild);
+                }
+                
+            };
+            setInterval( toleft ,  2000 );
+        });
+    </script>
+    <title>이미지 왼쪽방향 슬라이드</title>
+</head>
+<body>
+    <div id="layout">
+        <section id="slidearea">
+            <h1>슬라이드</h1>
+            <div id="slide">
+                <!-- <div><img src="images/magnolia-trees-556718_1280.jpg" alt="봄"></div>
+                <div><img src="images/beach-4852830_1280.jpg" alt="여름"></div>
+                <div><img src="images/cap-7278216_1280.jpg" alt="가을"></div>
+                <div><img src="images/mountain-6764359_640.jpg" alt="겨울"></div> -->
+                
+                <img src="images/magnolia-trees-556718_1280.jpg" alt="봄">
+                <img src="images/beach-4852830_1280.jpg" alt="여름">
+                <img src="images/cap-7278216_1280.jpg" alt="가을">
+            </div>
+        </section>
+    </div>
+</body>
+</html>

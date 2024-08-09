@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    display: none;
+}
+section{
+    max-width: 1000px;
+    margin: auto;
+    margin-top:50px;
+    position: relative;
+    overflow: hidden;
+}
+img{
+    display: block;
+}
+img:not(:first-of-type){
+    position: absolute;
+}
+[src*="jpg"]{
+    width: 100%;
+}
+
+[alt="마스크"]{
+    width: 60%;
+    top: 13%;
+    left: 1%;
+    animation: small_big_rotate 2000ms 0ms both;
+}
+@keyframes small_big_rotate{
+    from{    transform: rotate(720deg) scale(0);    }
+    to{    transform: rotate(0) scale(1);    }
+}
+
+[alt="전염"]{
+    width: 55%;
+    top: 0;
+    left: -1%;
+    animation: dmdma 2000ms 500ms both;
+}
+@keyframes dmdma{
+    from{   transform: scaleX(0);    }
+    to{  transform: scaleX(1);   }
+}
+
+[alt="소독"]{ 
+    width: 40%;
+    bottom: -1%;
+    left: -1%;
+    animation: up 2000ms 1000ms both;
+}
+[alt="손"]{ 
+    width: 45%;
+    bottom: 0%;
+    right: 0%;
+    animation: up 2000ms 1500ms both;
+}
+[alt="url"]{ 
+    width: 40%;
+    bottom: 0%;
+    left: 25%;
+    animation: up 2000ms 1000ms both;
+}
+@keyframes up{
+    from{   bottom: -50%; opacity: (0);  }
+    to{  bottom: 0; opacity: (1); }
+}
+
+[alt="소독제_마스크"]{
+    width: 30%;
+    right: 0;
+    top: 0;
+    animation: toleft 3500ms 2500ms both;
+}
+@keyframes toleft{
+    from{   right: -50%; opacity: (0);  }
+    to{  right: 0; opacity: (1); }
+}
+
+[alt="뉴"]{
+    width: 20%;
+    right: 0;
+    bottom: 28%;
+    animation: toleft_2 2500ms 3000ms both;
+}
+[alt="팩"]{
+    width: 20%;
+    right: 0;
+    bottom: 19%;
+    animation: toleft_2 2500ms 3800ms both;
+}
+[alt="치"]{
+    width: 20%;
+    right: 0;
+    bottom: 10.5%;
+    animation: toleft_2 2500ms 4600ms both;
+}
+@keyframes toleft_2{
+    from{   right: -20%;  }
+    to{  right: 0%; }
+}
+[alt="boom"]{
+    width: 20%;
+    right: 0;
+    top: 0;
+    animation: flicker 750ms 5500ms both infinite;
+}
+[alt="world"]{
+    width: 27%;
+    right: 20%;
+    top: 20%;
+    animation: flicker 1000ms 5500ms both infinite;
+}
+@keyframes flicker{
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}

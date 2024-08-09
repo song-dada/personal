@@ -1,0 +1,16 @@
+img {display: block; width:100%;}
+div {max-width:800px; margin:auto; border:5px dotted red;}
+header {background-color: aqua; text-align: center; padding:20px;}
+h1,h2 {margin:0;}
+
+main {display: flex;}
+
+section:first-of-type {display: flex; justify-content: center; align-items: center; flex:1; background-color: cornflowerblue;}
+
+section:last-of-type {flex:3; position: relative;}
+section:last-of-type h2 {display: none;}
+img:last-of-type {position:absolute;; animation:down 1.5s both;}
+@keyframes down {
+    from {top:-200px; opacity:0}
+    to   {top:0; opacity:1;}
+}

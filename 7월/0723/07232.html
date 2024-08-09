@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 메뉴와 슬라이드</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            margin-top: 50px;
+        }
+        #layout {
+            max-width: 1000px; margin: auto;
+            position: relative;
+            /* border: 5px solid red; */
+        }
+        h1 {display: none;}
+
+        header {
+            display: flex; /*제일 큰 자식의 높이만큼 나머지가 맞춰짐*/
+            align-items: flex-start; /*높이값이 돌아가고 정렬이 위부터 시작*/
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+        }
+        #logo {
+            flex: 2;
+            margin-right: 5%;
+        }
+        #logo img {display: block; width: 100%;}
+        nav {
+            background-color: gold;
+            flex: 5;
+            display: flex;
+            flex-direction: column;
+            margin-top: 5%;
+            line-height: 250%;
+            text-align: center;
+            height: 0;    /*205px*/
+            overflow: hidden;
+            transition: height 0.5s;
+        }
+        button.material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 600,
+            'GRAD' 0,
+            'opsz' 24 /*인터넷으로 그림 그리는 svg라는 방법을 이용*/;
+            margin-left: 2%;
+        }
+
+        /***********슬라이드 부분************/
+        #slideArea {
+            position: absolute;
+            overflow: hidden;
+            margin-top: 15%;
+        }
+        h2 {
+            position: absolute;
+            padding: 3% 8%;
+            font-size: 0.9rem;
+            background-color: rgba(225, 225, 225, 0.85);
+            border-radius: 10px;
+            box-shadow: 0 0 5px black;
+            z-index: 1;
+            /* top: 50%; left: 50%;
+            transform: translate(-50%, -50%); */
+        }
+        #slide {
+            /* width: 300%; */
+            display: flex;
+            position: relative;
+            left: 0;              /*left 0이 없으면 처음 부분이 transition적용이 안됨*/
+            margin-top: 10%;
+        }
+        #slide img {
+            width: 100%;
+        }
+        /*red dat*/
+        #circle{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+        }
+        #circle div{
+            width: 20px;
+            height: 20px;
+            margin: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px #000000;
+            border-radius: 50%;
+        }
+        #circle div.red{
+            background-color: #ff0000;
+        }
+
+        /***********큰 기계장치에서 적용(최소넓이1024px)************/
+        @media (min-width:1024px) {
+            #logo {
+                flex: 1;
+            }
+            header {align-items: center;}
+            nav {
+                flex-direction: row;
+                margin-top: 0;
+                height: auto;
+            }
+            nav a {
+                flex: 1;
+            }
+            button.material-symbols-outlined {
+                display: none;
+            }
+            h2{
+                padding: 50px 100px;
+                font-size: 1.2rem;
+            }
+            #slideArea {margin-top: 6%;}
+        }
+        </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            
+            const btn = document.getElementsByClassName('material-symbols-outlined')[0];
+            const nav = document.getElementsByTagName('nav')[0];
+            const slide = document.getElementById('slide');
+            
+            let slideArea = document.getElementById('slideArea');
+            
+            /*h2의 위치 설정*/
+            let h2 = document.getElementsByTagName('h2')[0];
+            let sw = slideArea.clientWidth;
+            let sh = slideArea.clientHeight;
+            let h2Width = h2.clientWidth;
+            let h2Height = h2.clientHeight;
+            
+            let sww = (sw-h2Width) / 2;
+            h2.style.left = sww + 'px';
+            let shh = Math.trunc (sh-h2Height) / 2;
+            h2.style.top = shh + 'px';
+            /*여기까지*/
+            
+            const menu = () => {
+                if(nav.clientHeight == 0) nav.style.height = '205px';
+                //실행문이 하나면 중괄호 없애도 됨
+                else nav.style.height = 0;
+            }
+            
+            const ss = () => {
+                if(window.innerWidth >= 1024) nav.style.height = 'auto';
+                else nav.style.height = 0;
+                pos = sw * (-1) + 'px';
+                //새로고침 안 해도 화면 크기가 바뀌면 자동 맞춤
+                
+                slideArea = document.getElementById('slideArea');
+                
+                /*h2의 위치 설정*/
+                h2 = document.getElementsByTagName('h2')[0];
+                sw = slideArea.clientWidth;
+                sh = slideArea.clientHeight;
+                h2Width = h2.clientWidth;
+                h2Height = h2.clientHeight;
+                
+                sww = (sw-h2Width) / 2;
+                h2.style.left = sww + 'px';
+                shh = Math.trunc (sh-h2Height) / 2;
+                h2.style.top = shh + 'px';
+                /*여기까지*/
+            }
+            
+            let pos = sw * (-1) + 'px';
+            
+            // 빨간동그라미
+            const circlrarea = document.getElementById('circle'); // 동그라미 세개의 부모영역
+            let i = 0;
+            // 슬라이드 이동
+            const move = () => {
+                slide.style.transition = 'left 1.5s' //setInterval보다 빨리 가야됨
+                slide.style.left = pos
+                
+                setTimeout( po, 1500 );
+                // 빨간 동그라미 제거
+                document.getElementsByClassName('red')[0].classList.remove("red");
+                i = (i + 1) % 3;
+                circlrarea.children[i].classList.add("red");
+
+            }
+
+            const po = () => {
+                slide.append(slide.firstElementChild);
+                slide.style.left = 0;
+                slide.style.transition = 'none';
+            }
+
+            btn.addEventListener('click', menu); //btn에 클릭이라는 일이 생기면 menu라는 변수(함수로 쭉 써도 되긴 함)를 실행하겠다는 의미
+            window.addEventListener('resize', ss );
+
+            setInterval(move, 2500); 
+
+
+        });//end
+    </script>
+</head>
+<body>
+    <section id="layout">
+        <h1>상단 메뉴와 슬라이드</h1>
+        <header>
+            <a href="#" id="logo"><img src="images/monogram-2670684_640.png" alt="로고"></a>
+            <nav>
+                <a href="#">메뉴</a>
+                <a href="#">메뉴</a>
+                <a href="#">메뉴</a>
+                <a href="#">메뉴</a>
+                <a href="#">메뉴</a>
+            </nav>
+            <button type="button" class="material-symbols-outlined">menu</button>
+        </header>
+        <section id="slideArea">
+            <h2>라인컴퓨터아트학원에<br>오신것을 환영합니다.</h2>
+            <div id="slide">
+                <img src="images/moon-8855057_1280.jpg" alt="슬라이드">
+                <img src="images/lemon-7074240_1280.png" alt="슬라이드">
+                <img src="images/dandelion-8708275_1280.jpg" alt="슬라이드">
+            </div>
+            <div id="circle">
+                <div class="red"></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 유효성 검증에따른 리턴</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=> {
+
+            const en = document.getElementById("en");
+            const ko = document.getElementById("ko");
+            const ek = document.getElementById("ek");
+            const enu = document.getElementById("enu") ;
+            const num = document.querySelector('[type="number"');                 
+            const btn = document.getElementsByTagName("button")[0];
+            const p = document.getElementsByTagName("p")[0];
+            // const values = Array.from(  document.getElementsByClassName('val')  );
+            const inputs = Array.from( document.getElementsByTagName("input") );
+           
+            const result = () => {
+                // alert('click');
+                let ok = '변수';
+                inputs.forEach( ( i ) => {
+                    // 유효성이 일치하지 않음.
+                    if ( ! i.checkValidity() ) {
+                        ok = '변경됨';
+                        if (i.value == '') {
+                            alert('필수항목을 입력해주세요');
+                        } else {
+                            alert('유효성이 일치하지 않습니다.');
+                        }
+                        i.focus();
+                    }
+                    if (ok = '변수') {
+                        const t = `
+                            *영문 : ${en.value} <br>
+                            *한글 : ${ko.value} <br>
+                            *영문/한글 : ${ek.value} <br>
+                            *영문(+숫자가능) : ${enu.value} <br>
+                            *나이 : ${num.value} <br>
+                        `;
+                    }
+                });
+                p.children[2].innerHTML = t;
+                inputs.forEach( i  => {
+                    i.value = '';
+                });
+            };
+
+            btn.addEventListener('click', result);
+
+        });///////////////////////////end
+    </script>
+    <style>
+        form {line-height: 160%;;}
+        .val:focus:invalid {background: red; }
+        .val:invalid + span::before {color:red; font-weight:bold; font-size:0.8rem; margin-left:10px; }
+        #en:focus:invalid+ span::before {content:"영문만 입력가능!";}        
+        #ko:focus:invalid+ span::before {content:"한글(자음+모음)만 입력가능!";}
+        #ek:focus:invalid+ span::before {content:"영문/한글(자음+모음)만 입력가능!";}
+        #enu:focus:invalid+ span::before {content:"영문먼저+숫자포함가능 입력!";}
+        [type="number"]:invalid + span:before {content:"10에서 29사이의 숫자만 입력가능!"}        
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" pattern="[A-Za-z]+" placeholder="영문만 입력" id="en" class="val"><span></span><br>
+        <input type="text" pattern="[가-힣]+" placeholder="한글만 입력" id="ko" class="val"><span></span><br>
+        <input type="text" pattern="[A-Za-z가-힣]+" placeholder="영문/한글 입력" id="ek" class="val"><span></span><br>
+        <input type="text" pattern="[A-Za-z][A-Za-z0-9]*" placeholder="영문먼저+숫자가능 입력" id="enu" class="val" required><span></span><br>
+        <input type="number" placeholder="청소년 나이입력" min="10" max="29" class="val"><span></span><br>
+        <button type="button">확인</button>           
+    </form>
+    <p><b>입력된 내용: </b><br><span></span></p>
+  
+</body>
+</html>

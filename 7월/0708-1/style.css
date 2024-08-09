@@ -1,0 +1,44 @@
+
+h1{
+    display: none;
+}
+
+section{
+    max-width: 80%;
+    /* max-height: 50vh; */
+    margin: auto;
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
+}
+img{
+    display: block;
+}
+section img{
+    transition: transform 500ms;
+}
+section:hover img{
+    filter: hue-rotate(70deg) blur(5px);
+    transform: scale(1.1);
+}
+[alt="girl"]{
+    top: 0;
+    position: relative;
+    margin: 0 0 0 auto;
+    animation: toleft 1500ms both;
+    width: 40%;
+}
+[alt="splash"]{
+    top: 0;
+    width: 88%;
+    position: absolute;
+    animation: toleft2 2000ms 1500ms both;
+}
+@keyframes toleft{
+    from{    margin-right: -100px; opacity: 0;   }
+    to{     margin-right: 0; opacity: 1;  }
+}
+@keyframes toleft2{
+    from{    left: 100px; opacity: 0;   }
+    to{     left: -1%; opacity: 1;  }
+}
