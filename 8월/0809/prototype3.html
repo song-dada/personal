@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 프로토타입 체인</title>
+</head>
+<body>
+    <p id="p1"></p>
+
+    <script>
+        //Friend라는 생성자 함수를 정의함.
+        function Friend(a, b){
+            this.name = a;
+            this.age = b;
+        }
+        
+        //Friend 생성자 함수에 프로토타입(속성)에 insa()라는 메서드를 추가함.
+        Friend.prototype.insa = function(){
+            alert(`하이~ 내 이름은 ${this.name}이고, ${this.age}살이야. 너는?`);
+        }
+
+        //객체(Object) 생성
+        const p1 = new Friend('앨리스', 30);
+        const p2 = new Friend('찰리', 25);
+
+        p2.insa();
+    </script>
+</body>
+</html>

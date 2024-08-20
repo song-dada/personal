@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/* 주색 efece5 = 배경을 비롯한 모든색.
+보조색1 e5d2b0 = 활성화 색. 주색보다 조금 진함
+보조색2 d4cbb7
+글자색 1e3545
+글자색보다 조금 연한 색 8aa1a6
+ */
+/* ㅡㅡㅡㅡㅡ 디폴트 홈 화면. data1 ㅡㅡㅡㅡㅡ*/
+#data1{
+    display: flex;
+    flex-direction: column;
+}
+/* ㅡㅡㅡㅡㅡ 슬라이드(slidearea) ㅡㅡㅡㅡㅡ */
+#slidearea{
+    margin: 0 1.5% 3%;
+    overflow: hidden;
+    max-width: 100%;
+}
+#slide{
+    display: flex;
+    position: relative;
+    left: -100%;
+}
+#slide .img{
+    max-width: 100%;
+    position: relative;
+}
+#slide .img> img{
+    transform: translateY(-20%);
+}
+#slide .img> h2{
+    height: 100%;
+    position: absolute;
+    left:10%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    padding: 10%;
+    font-size: 4em;
+}
+
+/* ㅡㅡㅡㅡㅡ 공지사항 + 이벤트 ㅡㅡㅡㅡㅡ*/
+#novent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1.5%;
+}
+#novent> ol{
+    list-style: inside;
+}
+#novent a{
+    line-height: 180%;
+}
+.date{
+    font-size: 0.8em;
+}
+.right{
+    float: right;
+}
+.dash{
+    width: 30%;
+    position: relative;
+    border:  2px dashed #1e3545;
+    padding: 2% 3%;
+}
+#notice, #event{
+    width: 100%;
+}
+.um{
+    position: absolute;
+    top: -7%;
+    background-color: #efece5;
+    padding: 0 5%;
+}

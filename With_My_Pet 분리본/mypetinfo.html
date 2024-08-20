@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+     <link rel="stylesheet" href="css/페이지 공용.css">
+     <link rel="stylesheet" href="css/mypetinfo.css">
+    <link rel="shortcut icon" type="'image/x-icon" href="images/아이콘.svg">
+    <title>With My Pet</title>
+</head>
+<body>
+    <div id="layout">
+        <embed src="header.html" id="fixed_header">
+
+        <div id="main">
+            <embed src="side.html" id="side">
+
+            <div id="content">
+                <div id="data3" class="mwh_100">
+                    <h2>우리아이 등록 정보</h2>
+                    <div id="pet_info">
+                        <!-- <img src="images/dog-7956828_1280.jpg" alt="반려동물 사진"> -->
+                        <div id="img_up">
+                            <input type="file" name="pet_image" id="pet_image">
+                        </div>
+                        <div>
+                            <table id="pt">
+                                <!-- <tr>
+                                    <th colspan="2">반려동물 정보</th>
+                                </tr> -->
+                                <tr>
+                                    <th>이름 :</th>
+                                    <td><input type="text" name="p_name" id="p_name" placeholder="이름을 적어주세요."></td>
+                                </tr>
+                                <tr>
+                                    <th>나이 :</th>
+                                    <td><input type="number" name="p_num" id="p_num"> 세</td>
+                                </tr>
+                                <tr>
+                                    <th>성별 :</th>
+                                    <td colspan="2">
+                                        <label for="m"> 남</label><input type="radio" name="s" id="m">
+                                        <label for="w">여</label><input type="radio" name="s" id="w">
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                    <th colspan="2">특이사항 </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <textarea name="note" id="note" cols="40" rows="10" placeholder="반려동물의 특징을 이곳에 적어주세요."></textarea>
+                                    </td>
+                                </tr> -->
+                            </table>
+                        </div>
+                        <a href="mypetinfo_f.html"><button type="button">수정하기</button></a>
+                    </div>
+                    <h3>특이사항</h3>
+                    <textarea name="text" id="s_text"></textarea>
+                    
+                </div>
+            </div>
+
+        <embed src="footer.html" id="footer">
+
+    </div>
+</body>
+</html>

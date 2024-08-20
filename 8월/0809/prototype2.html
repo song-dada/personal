@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체object에서 프로토타입 체인</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function Px(a,b,c,d){
+            this.x=a;
+            this.y=b;
+            
+            this.z=d;
+        }
+        const myfather = new Px("김","제훈","","파란색");
+        const mymother = new Px("한","혜진","","초록색");
+
+        Px.prototype.home = "영국";
+
+        document.getElementById("demo").innerHTML =
+        `우리 부모님은 ${myfather.home}에 살고계시며<br>
+        나의 친구들도 ${mymother.home}에 살고 있다.<br>
+        우리 아빠는 ${myfather.z}를 좋아하시고<br>
+        우리 엄마는 ${mymother.z}를 좋아하신다.`
+    </script>
+</body>
+</html>

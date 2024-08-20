@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="shortcut icon" type="'image/x-icon" href="images/아이콘.svg">
+    <title>With My Pat</title>
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <div id="layout">
+        <embed src="header.html" id="fixed_header">
+        <!-- <header id="fixed_header">
+            <a href="#" id="logo" class="center">
+                <img src="images/발바닥.png" alt="logo">
+                <h1 id="logo_h1" class="margin">With My Pat</h1>
+            </a>
+            <a href="#">apsb</a>
+            <ul id="mainmenu">
+                <li>
+                    <a href="#" class="menu active">홈</a>
+                </li>
+                <li>
+                    <a href="#" class="menu">마이페이지</a>
+                </li>
+                <li>
+                    <a href="#" class="menu">우리 아이 정보</a>
+                </li>
+                <li>
+                    <a href="#" class="menu">앨범</a>
+                </li>
+                <li>
+                    <a href="#" class="menu">근처 플레이스</a>
+                </li>
+                <li>
+                    <a href="#" class="menu">비하인드 스토리</a>
+                </li>
+            </ul>
+        </header> -->
+        <div id="main">
+            <!-- <div id="side">
+                <span id="logotext">
+                    With My pet
+                </span>
+                    <span id="lologin">
+                        <a href="#">로그인 </a> /
+                        <a href="#"> 회원가입</a>
+                </span>
+               
+            </div> -->
+        <embed src="side.html" id="side">
+
+            <div id="content">
+            <!-- 홈 화면 -->
+                <div id="data1" class="mwh_100">
+                    <div id="slidearea">
+                        <div id="slide">
+                            <div class="img">
+                                <h2>새 플레이스<br>등록 이벤트</h2>
+                                <img src="images/새.png" alt="새">
+                            </div>
+                            <div class="img">
+                                <h2>이달의<br>플레이스</h2>
+                                <img src="images/이달.png" alt="이달">
+                            </div>
+                            <div class="img">
+                                <h2>베스트<br>플레이스 100</h2>
+                                <img src="images/베스트.png" alt="베스트">
+                            </div>
+
+                        </div>
+                    </div>
+                    <section id="novent">
+                        <div class="dash">
+                            <div id="notice">
+                                <h2 class="um">공지사항</h2>
+                                <ol>
+                                    <li class="date"><a href="#">Whit My Pet 사용안내 (고정)</a></li>
+                                    <li class="date"><a href="#">공지사항 업데이트 정보 (고정)</a></li>
+                                    <li class="date"><a href="#">오류 정보 수정안내<span class="right">2024-08-03</span></a></li>
+                                    <li class="date"><a href="#">휴면계정 정리 안내<span class="right">2024-08-02</span></a></li>
+                                    <li class="date"><a href="#">개인정보 처리방침 안내<span class="right">2024-08-01</span></a></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="dash">
+                            <div id="event">
+                                <h2 class="um">이벤트</h2>
+                                <ol>
+                                    <li class="date"><a href="#">새 플레이스 등록 이벤트 (상시)</a></li>
+                                    <li class="date"><a href="#">위마펫 공유이벤트 안내<span class="right">2024-08-04</span></a></li>
+                                    <li class="date"><a href="#">플레이스 추천 이벤트<span class="right">2024-08-03</span></a></li>
+                                    <li class="date"><a href="#">누적 리뷰 이벤트 결과발표<span class="right">2024-08-02</span></a></li>
+                                    <li class="date"><a href="#">지난달 이벤트 결과발표<span class="right">2024-08-01</span></a></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            <!-- 마이페이지 화면 -->
+                <div id="data2" class="mwh_100">
+                    <h2>마이페이지</h2>
+                    <ul>
+                        <li>
+                            <h3>내정보 </h3>
+                            <nav class="my_sub">
+                                <p>
+                                    닉네임 : 관리자 <button type="button" id="modi">수정하기</button>
+                                </p>
+                                <p>
+                                    <!-- ID : <input type="text" name="login" id="id" placeholder="아이디를 입력해 주세요."> -->
+                                    ID : 관리자 계정
+                                    &nbsp;
+                                    PW : <input type="password" name="login" id="pw" placeholder="비밀번호를 입력해 주세요.">
+                                </p>
+                                <!-- <p><a href="#">수정하기</a></p> -->
+                            </nav>
+                        </li>
+                        <li>
+                            <h3>즐겨찾기</h3>
+                            <nav class="my_sub">
+                                <div id="f">
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/이달.png" alt="장소">
+                                            <h3>즐겨찾기-1</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/이달.png" alt="장소">
+                                            <h3>즐겨찾기-2</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/이달.png" alt="장소">
+                                            <h3>즐겨찾기-3</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/이달.png" alt="장소">
+                                            <h3>즐겨찾기-4</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/이달.png" alt="장소">
+                                            <h3>즐겨찾기-5</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/이달.png" alt="장소">
+                                            <h3>즐겨찾기-6</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </li>
+                        <li>
+                            <h3>나의 방문기록</h3>
+                            <nav class="my_sub">
+                                <div id="v">
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-1</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-2</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-3</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-4</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-5</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-6</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-6</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-6</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-6</h3>
+                                        </a>
+                                    </div>
+                                    <div class="favorite">
+                                        <a href="#">
+                                            <img src="images/베스트.png" alt="장소">
+                                            <h3>방문장소-6</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </nav>
+
+                        </li>
+                        <li>
+                            <h3>
+                                <a href="#" id="qqna">나의 문의기록 바로가기 >></a>
+                            </h3>
+                        </li>
+                    </ul>
+                </div>
+            <!-- 우리 아이 정보 -->
+                <div id="data3" class="mwh_100">
+                    <h2>우리아이 등록 정보</h2>
+                    <div id="pet_info">
+                        <!-- <img src="images/dog-7956828_1280.jpg" alt="반려동물 사진"> -->
+                        <div id="img_up">
+                            <input type="file" name="pet_image" id="pet_image">
+                        </div>
+                        <div>
+                            <table id="pt">
+                                <!-- <tr>
+                                    <th colspan="2">반려동물 정보</th>
+                                </tr> -->
+                                <tr>
+                                    <th>이름 :</th>
+                                    <td><input type="text" name="p_name" id="p_name" placeholder="이름을 적어주세요."></td>
+                                </tr>
+                                <tr>
+                                    <th>나이 :</th>
+                                    <td><input type="number" name="p_num" id="p_num"> 세</td>
+                                </tr>
+                                <tr>
+                                    <th>성별 :</th>
+                                    <td colspan="2">
+                                        <label for="m"> 남</label><input type="radio" name="s" id="m">
+                                        <label for="w">여</label><input type="radio" name="s" id="w">
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                    <th colspan="2">특이사항 </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <textarea name="note" id="note" cols="40" rows="10" placeholder="반려동물의 특징을 이곳에 적어주세요."></textarea>
+                                    </td>
+                                </tr> -->
+                            </table>
+                        </div>
+                        <button type="button" class="right">수정하기</button>
+                    </div>
+                    <h3>특이사항</h3>
+                    <textarea name="text" id="s_text"></textarea>
+                    
+                </div>
+            <!-- 앨범 -->
+                <div id="data4" class="mwh_100">
+                    <div id="d4c">
+                        <h2>앨범</h2>
+                        <p>구현되지 않은 화면입니다.<br>
+                            데이터베이스 이용시 추가가 될 예정입니다.</p>
+                    </div>
+                </div>
+            <!-- 근처 플레이스 -->
+                <div id="data5" class="mwh_100">
+                    <div id="d5c">
+                        <h2>근처 플레이스</h2>
+                        <p>구현되지 않은 화면입니다.<br>
+                            API 이용시 추가가 될 예정입니다.</p>
+                    </div>
+                </div>
+            <!-- 비하인드 스토리 -->
+                <div id="data6" class="mwh_100">
+                    <div id="d5c">
+                        <h2>비하인드 스토리</h2>
+                        <p>정식 배포시 추가될 내용입니다.<br>
+                            수많은 우여곡절이 담긴 이야기를 기대해 주세요. 
+                        </p>
+                    </div>
+                </div>
+            <!-- 로그인 / 회원가입 -->
+                <div id="data7" class="mwh_100">
+                    <h2>로그인 / 회원가입</h2>
+                    <div id="mainlogin">
+                        <div id="in_login">
+                            <table>
+                                <tr>
+                                    <td colspan="3"><h3>로그인</h3></td>
+                                </tr>
+                                <tr>
+                                    <th>ID :</th>
+                                    <td><input type="text" name="id" id="id" placeholder="아이디를 입력해 주세요."></td>
+                                </tr>
+                                <tr>
+                                    <th>PW :</th>
+                                    <td><input type="password" name="pw" id="pw" placeholder="비밀번호를 입력해 주세요."></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <br>
+                                        <button type="button">로그인</button>
+
+                                        <button type="button">비밀번호 찾기</button>
+                                    </td>
+                                    <td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="in_signin">
+                            <table>
+                                <tr>
+                                    <td colspan="3"><h3>회원가입</h3></td>
+                                </tr>
+                                <tr>
+                                    <th>ID :</th>
+                                    <td><input type="text" name="id" id="id" placeholder="아이디를 입력해 주세요."></td>
+                                </tr>
+                                <tr>
+                                    <th>PW :</th>
+                                    <td><input type="password" name="pw_1" id="pw_1" placeholder="비밀번호를 입력해 주세요."></td>
+                                </tr>
+                                <tr>
+                                    <th>PW 확인 :</th>
+                                    <td><input type="password" name="pw_2" id="pw_2" placeholder="비밀번호를 입력해 주세요."></td>
+                                </tr>
+                                <!-- <tr>
+                                    <th colspan="2">보호자 정보</th>
+                                </tr> -->
+                                <tr>
+                                    <th>닉네임 :</th>
+                                    <td><input type="text" name="n_name" id="n_name" placeholder="닉네임을 설정해주세요."><br>
+                                    <!-- <span id="nspan" >*닉네임은 변경할수 있으며 이 모든 정보는 본인 확인을 위해 필요합니다.</span></td> -->
+                                </tr>
+                                <!-- <tr>
+                                    <td colspan="3">
+                                        <span id="nspan">
+                                            *닉네임은 변경할수 있으며 이 모든 정보는 본인 확인을 위해 필요합니다.
+                                        </span>
+                                    </td>
+                                </tr> -->
+                                <!-- <tr>
+                                    <th colspan="2">반려동물 정보</th>
+                                </tr>
+                                <tr>
+                                    <th>이름 :</th>
+                                    <td><input type="text" name="p_name" id="p_name" placeholder="이름을 적어주세요."></td>
+                                </tr>
+                                <tr>
+                                    <th>나이 :</th>
+                                    <td><input type="number" name="p_num" id="p_num"> 세</td>
+                                </tr>
+                                <tr>
+                                    <th>성별 :</th>
+                                    <td colspan="2">
+                                        <label for="m"> 남</label><input type="radio" name="s" id="m">
+                                        <label for="w">여</label><input type="radio" name="s" id="w">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">특이사항 </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <textarea name="note" id="note" cols="40" rows="10" placeholder="반려동물의 특징을 이곳에 적어주세요."></textarea>
+                                    </td>
+                                </tr> -->
+                                <tr>
+                                    <td colspan="2">
+                                        <button type="button">회원가입</button>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <footer id>
+            <span id="copyright">
+                &#9400; 2024. 송다검 All Rights Reserved.
+             </span>
+        </footer> -->
+        <embed src="footer.html" id="footer">
+
+    </div>
+</body>
+</html>

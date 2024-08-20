@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/* ㅡㅡㅡㅡㅡ 우리아이정보 화면. data3 ㅡㅡㅡㅡㅡ */
+#data3>h2{
+    font-size: 2.5em;
+    padding: 2%;
+}
+/* ㅡㅡㅡㅡㅡ 펫 정보 ㅡㅡㅡㅡㅡ */
+#pet_info{
+    display: flex;
+    align-items: center;
+}
+#img_up{
+    max-width: 20%;
+    height: 30%;
+    border: 2px dashed #1e3545;
+    padding: 10% 2%;
+    border-radius: 10%;
+}
+#pet_info> div{
+   flex: 1;
+   margin-left: 2%;
+}
+#pet_info> a{
+    flex: 1;
+
+}
+#pet_info> a> button{
+    padding: 1%;
+    font-size: 1em;
+}
+#pt td{
+    line-height: 250%;
+}
+#data3> div+h3{
+    margin:2%;
+    font-size: 1.5em;
+}
+#s_text{
+    margin: 0 2%;
+    width: 90%;
+    padding: 5% 2%;
+}

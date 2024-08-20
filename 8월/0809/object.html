@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <p id="mytour"></p>
+    <script>
+        const sappro = {
+            season: "겨울",
+            park: "오도리 공원",
+            food: "게 요리",
+            fastival: "눈 조각상 일루미네이션 축제"
+        }
+        const mytour=document.getElementById("mytour");
+        mytour.innerHTML = 
+        `나는 삿포로 여행을 ${sappro.season}에 했다.<br>
+        그때 ${sappro.park}에서 좋은 추억이 생겼다.<br>
+        그리고 우리는 맛있는${sappro.food}를 먹었고,<br>
+        저녁에는 황홀한 ${sappro.fastival}를 구경했다.`
+    </script>
+</body>
+</html>

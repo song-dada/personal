@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root{
+            --dd:dodgerblue;
+            --ww:white;
+            --yy:yellow;
+        }
+        #layout{
+            max-width: 800px;
+            background-color: var(--dd);
+            padding: 20px;
+            margin: auto;
+        }
+        li::first-letter{
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--yy);
+        }
+        section{
+            background-color: var(--ww);
+            color: var(--dd);
+            padding: 15px;
+        }
+        section h2{
+            color: var(--dd);
+            border-bottom: 1px solid var(--dd);
+        }
+        section button{
+            background-color: var(--ww);
+            border: 1px solid var(--dd);
+            color: var(--dd);
+            padding: 6px 10px;
+        }
+    </style>
+    <title>css변수와 var()함수</title>
+</head>
+<body>
+    <div id="layout">
+        <h1>css변수와 var()함수</h1>
+        <ul>
+            <li>var()함수는css변수의 값을 삽입하는데 사용한다.</li>
+            <li>css변수는 로컬/글로벌 dom에 접근할수 있다.</li>
+            <li>자바스크립트나 미디어 쿼리로도 변수 값을 변경할수 있다.</li>
+            <li>css변수는 중복되는 색상을 단순화 할 수 있다.</li>
+            <li>중복된 같은 색상을 하나의 변수에 넣는다.</li>
+        </ul>
+        <section>
+            <h2>Lorem ipsum</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa quidem natus quasi quae quam, eos pariatur magni? Perspiciatis fuga tenetur a tempore dicta laboriosam officia laudantium voluptatibus cupiditate itaque!
+            </p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit veritatis harum soluta! In maxime dolorum laborum adipisci, rerum, repellat doloribus iure explicabo quod assumenda consequatur similique quam sit ea incidunt!</p>
+            <button>yes</button>
+            <button>no</button>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1, #div2 {
+          float: left;
+          width: 100px;
+          height: 35px;
+          margin: 10px;
+          padding: 10px;
+          border: 1px solid black;
+        }
+        </style>
+        <script>
+        document.addEventListener("DOMContentLoaded", ()=> {
+
+            const drag1 = document.getElementById("drag1");//이동할 이미지
+            const div1  = document.getElementById("div1"); //이미지가 들어있던 영역
+            const div2  = document.getElementById("div2"); //이미지가 이동하여 도착할 영역
+            let data;
+
+            const drop = e =>  {
+                e.preventDefault(); //클릭이동방지
+                data = e.dataTransfer.getData("zzz");
+                e.target.appendChild(document.getElementById(data));
+            }
+
+            const dragover = e =>  e.preventDefault(); //이미지를 드래그할때
+
+            drag1.addEventListener("dragstart" ,  e => {
+                e.dataTransfer.setData("zzz", e.target.id);
+            });
+
+            div1.addEventListener("dragover" , dragover ); 
+            div2.addEventListener("dragover" , dragover );
+
+            div1.addEventListener("drop" , drop );
+            div2.addEventListener("drop" , drop );
+
+
+        }); //END....................
+    </script>
+        </head>
+        <body>
+        <div id="div1">
+          <img src="https://cdn.pixabay.com/photo/2024/08/03/02/32/drink-8941028_1280.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+        </div>
+        
+        <div id="div2"></div>
+        
+</body>
+</html>

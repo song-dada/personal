@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/* 주색 efece5 = 배경을 비롯한 모든색.
+보조색1 e5d2b0 = 활성화 색. 주색보다 조금 진함
+보조색2 c2acㅇㅎ86 = 메뉴바 활성화 컬러.
+글자색 1e3545
+글자색보다 조금 연한 색 8aa1a6
+ */
+*{
+    color: #1e3545;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #efece5;
+}
+a{
+    text-decoration: none;
+    display: block;
+    font-size: 1.4em;
+}
+
+/* 공용클래스 영역 */
+.center{
+    text-align: center;
+}
+.margin{
+    margin: 5%;
+}
+.none{
+    display: none;
+}
+
+#layout{
+    display: flex;
+}
+/* ㅡㅡㅡㅡㅡ 헤더(header)ㅡㅡㅡㅡㅡ */
+#fixed_header{
+    /* flex: 1; */
+    width:20%;
+    /* height: 100vh;
+    background-color: #e5d2b0;
+    position: relative; */
+}
+/* ㅡㅡㅡㅡㅡ 로고(logo)ㅡㅡㅡㅡㅡ */
+/* #logo{
+    padding-top: 10%;
+}
+#logo>h1{
+    font-size: 1.5em;
+}
+
+#fixed_header ul{
+    list-style: none;
+    text-align: center;
+    margin-top: 5%;
+}
+#fixed_header ul li{
+    padding-top: 5%;
+}
+#fixed_header ul li a{
+    padding: 5%;
+}
+.menu.active{
+    background-color: #c2ac86;
+    color:#ffffff;
+}*/
+#main{
+    height: 100vh;
+}
+
+/* ㅡㅡㅡㅡㅡ 사이드 (상단) ㅡㅡㅡㅡㅡ */
+#side{
+    max-height: 5%;
+    margin-left: 50vw;
+}
+/* ㅡㅡㅡㅡㅡ 메인(main) ㅡㅡㅡㅡㅡ */
+#content{
+    max-width: 80vw;
+    height: 90%;
+}
+.mwh_100{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 2%;
+}
+
+
+
+#footer{
+    position: fixed;
+    max-height: 10%;
+    bottom: -5%;
+    left: 1%;
+ 
+ }

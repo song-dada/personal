@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼을 클릭하면, 해당 정보가 표시된다.</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        //Friend 생성자함수 정의
+        function Friend(n, a){
+            this.name = n;
+            this.age = a;
+        }
+
+        //Friend생성자함수 prototype에 insa()라는 메서드 추가.
+        Friend.prototype.insa = function() {
+            return `하이, 내이름은 ${this.name}이고 ${this.age}살이야. 너는?`;
+        }
+
+        //객체생성
+        const p1 = new Friend("앨리스", 30);
+        const p2 = new Friend("찰리", 25);
+
+        const output  = document.getElementById("output");
+
+        //정보를 출력하는 함수
+        function x( i ) {
+            //새로운 정보를 추가
+            const info = i.insa();
+            const p = document.createElement('p');
+            p.textContent = info;
+            output.appendChild(p);
+        }
+
+        //p1(앨리스) 정보를 출력하는 버튼
+        const btn1 = document.createElement("button");
+        btn1.textContent = "앨리스 정보 보기";
+        btn1.addEventListener("click" , function(){  x(p1);   });
+        output.appendChild(btn1);
+
+        //p2(찰리) 정보를 출력하는 버튼
+        const btn2 = document.createElement("button");
+        btn2.textContent = "찰리 정보 보기";
+        btn2.addEventListener("click" , function(){  x(p2);   });
+        output.appendChild(btn2);
+    </script>
+</body>
+</html>

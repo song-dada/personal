@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+* {margin:0; padding:0; box-sizing:border-box;}
+img {display:block; max-width:100%;}
+
+#layout {max-width:1200px; margin:auto;}
+
+/* iframe에서 상단영역: 공통사용*/
+#header {width:100%; /* height:152px;*/  display:block; border:none; position:relative; z-index:1; background:#e8521d; padding-bottom:3px;}
+
+/* 첫화면의 메인 */
+#index main {position:relative;}
+#index main img:not(:first-child) {position:absolute; top:0;}
+
+
+
+/*메뉴안내*/
+#menus main>div {display:flex; justify-content:space-around; flex-wrap:wrap;}
+#menus section {position:relative; height:333px; cursor:pointer; margin-bottom:20px;}
+
+#menus section div {position:absolute; background:#e8521d; width:100%; bottom:-160px; padding:15px; color:white;  border:5px solid blue;}
+
+
+#menus section p {text-align:justify;}
+
+/*오시는 길*/
+#map main iframe {width:100%; height:600px; border:none; padding:0; margin:0;}
+
+/* iframe에서 하단영역: 공통사용*/
+#footer {width:100%; height:130px; display:block; border:none;}

@@ -1,0 +1,505 @@
+@charset "utf-8";
+
+/* 주색 efece5 = 배경을 비롯한 모든색.
+보조색1 e5d2b0 = 활성화 색. 주색보다 조금 진함
+보조색2 c2ac86
+글자색 1e3545
+글자색보다 조금 연한 색 8aa1a6
+ */
+*{
+    color: #1e3545;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #efece5;
+}
+a{
+    text-decoration: none;
+    display: block;
+    font-size: 1.4em;
+}
+
+/* 공용클래스 영역 */
+.center{
+    text-align: center;
+}
+.margin{
+    margin: 5%;
+}
+.none{
+    display: none;
+}
+
+#layout{
+    display: flex;
+}
+/* ㅡㅡㅡㅡㅡ 헤더(header)ㅡㅡㅡㅡㅡ */
+#fixed_header{
+    flex: 1;
+    width:20%;
+    height: 100vh;
+    background-color: #e5d2b0;
+    position: relative;
+}
+/* ㅡㅡㅡㅡㅡ 로고(logo)ㅡㅡㅡㅡㅡ */
+#logo{
+    padding-top: 10%;
+}
+#logo>h1{
+    font-size: 1.5em;
+}
+
+#fixed_header ul{
+    list-style: none;
+    text-align: center;
+    margin-top: 5%;
+}
+#fixed_header ul li{
+    padding-top: 5%;
+}
+#fixed_header ul li a{
+    padding: 5%;
+}
+.menu.active{
+    background-color: #c2ac86;
+    color:#ffffff;
+}
+#main{
+    flex: 5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ㅡㅡㅡㅡㅡ 사이드 (상단) ㅡㅡㅡㅡㅡ */
+#side{
+    flex: 0.2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 5%;
+}
+#lologin> a{
+    display: inline;
+}
+#logotext{
+    display: none;
+}
+/* ㅡㅡㅡㅡㅡ 메인(main) ㅡㅡㅡㅡㅡ */
+#content{
+    flex: 2.8;
+    position: relative;
+}
+.mwh_100{
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 80%;
+    min-height: 80%;
+
+}
+/* ㅡㅡㅡㅡㅡ 디폴트 홈 화면. data1 ㅡㅡㅡㅡㅡ*/
+#data1{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* ㅡㅡㅡㅡㅡ 슬라이드(slidearea) ㅡㅡㅡㅡㅡ */
+#slidearea{
+    margin: 1.5% 5% 3%;
+    overflow: hidden;
+    max-width: 100%;
+}
+#slide{
+    display: flex;
+    position: relative;
+    left: -100%;
+}
+#slide .img{
+    max-width: 100%;
+    position: relative;
+}
+#slide .img> img{
+    transform: translateY(-20%);
+}
+#slide .img> h2{
+    height: 100%;
+    position: absolute;
+    left:10%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    padding: 10%;
+    font-size: 4em;
+}
+
+/* ㅡㅡㅡㅡㅡ 공지사항 + 이벤트 ㅡㅡㅡㅡㅡ*/
+#novent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1.5%;
+}
+#novent> ol{
+    list-style: inside;
+}
+#novent a{
+    line-height: 180%;
+}
+.date{
+    font-size: 0.8em;
+}
+.right{
+    float: right;
+}
+.dash{
+    width: 30%;
+    position: relative;
+    border:  2px dashed #1e3545;
+    padding: 2% 3%;
+}
+#notice, #event{
+    width: 100%;
+}
+.um{
+    position: absolute;
+    top: -7%;
+    background-color: #efece5;
+    padding: 0 5%;
+}
+
+
+/* ㅡㅡㅡㅡㅡ 마이페이지 화면. data2 ㅡㅡㅡㅡㅡ*/
+#data2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 5%;
+    display: none;
+}
+#data2 h2{
+    font-size: 3em;
+    margin-bottom: 1%;
+}
+#data2 ul{
+    list-style: none;
+}
+#data2 ul li{
+    font-size: 1.5em;
+    width: 100%;
+}
+#data2 ul li h3{
+    padding-top: 1%;
+}
+/* ㅡㅡㅡㅡㅡ 내정보 ㅡㅡㅡㅡㅡ */
+#modi{
+    margin-left: 2%;
+    font-size: 0.65em;
+}
+#data2 ul li h3>a{
+    font-size: 1em;
+
+}
+.my_sub{
+    padding: 1% 5%;
+    background-color: #e5d2b0;
+}
+/* ㅡㅡㅡㅡㅡ 즐겨찾기 + 방문기록 ㅡㅡㅡㅡㅡ */
+#f,#v{
+    display: flex;
+    max-width: 1200%;
+    margin: auto;
+    /* overflow: hidden; */
+    overflow-x: scroll;
+    /* overflow-x: auto; */
+
+}
+.favorite{
+    max-width: 100%;
+    max-height: 30%;
+    margin-right: 2%;
+    border: 1px solid;
+    position: relative;
+    flex: 1;
+}
+.favorite:last-of-type{
+    margin-right: 0;
+}
+.favorite h3{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: #1e3545;
+    color: #ffffff;
+}
+.favorite>a{
+    font-size: 1rem;
+}
+
+.favorite a>img{
+    max-width: 100%;
+    display: block;
+}
+#qqna{
+    margin-top: 2%;
+    text-decoration: underline;
+}
+
+/* ㅡㅡㅡㅡㅡ 우리아이정보 화면. data3 ㅡㅡㅡㅡㅡ */
+#data3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 5%;
+    display: none;
+}
+#data3>h2{
+    font-size: 2.5em;
+    padding: 2%;
+}
+/* ㅡㅡㅡㅡㅡ 펫 정보 ㅡㅡㅡㅡㅡ */
+#pet_info{
+    display: flex;
+    align-items: center;
+}
+#img_up{
+    max-width: 20%;
+    height: 30%;
+    border: 2px dashed #1e3545;
+    padding: 10% 2%;
+    border-radius: 10%;
+}
+#pet_info> div{
+   flex: 1;
+   margin-left: 2%;
+}
+#pet_info> div+button{
+    padding: 1%;
+    font-size: 1.5em;
+}
+#pt td{
+    line-height: 250%;
+}
+#data3> div+h3{
+    margin:2%;
+    font-size: 1.5em;
+}
+#s_text{
+    margin: 0 2%;
+    width: 90%;
+    padding: 5% 2%;
+}
+
+/* ㅡㅡㅡㅡㅡ 앨범 화면. data4 ㅡㅡㅡㅡㅡ*/
+/* ㅡㅡㅡㅡㅡ 근처 플레이스 화면. data5 ㅡㅡㅡㅡㅡ*/
+/* ㅡㅡㅡㅡㅡ 비하인드 스토리 화면. data6 ㅡㅡㅡㅡㅡ*/
+#data4, #data5, #data6{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: none;
+}
+#d4c,#d5c,#d6c{
+    margin: 10% 5%;
+    font-size: 1.5em;
+}
+/* ㅡㅡㅡㅡㅡ 로그인 화면. data7 ㅡㅡㅡㅡㅡ*/
+
+#data7{
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    min-height: 60%;
+    justify-content: center;
+    position: relative;
+    padding: 10%;
+    display: none;
+}
+
+#data7>h2{
+    font-size: 2.5em;
+}
+#mainlogin{
+    display: flex;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+}
+#in_login, #in_signin{
+    flex: 1;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#in_signin{
+    border-left: 2px dashed #1e3545 ;
+}
+
+#data7 table{
+    margin: auto;
+    padding: 10%;
+    height: 100%;
+}
+#data7 table th{
+    text-align: right;
+}
+#data7 table td{
+    padding: 3%;
+}
+#data7 table td>h3{
+    font-size: 2em;
+}
+#data7 table tr:last-of-type{
+    text-align: right;
+}
+
+/* ㅡㅡㅡㅡㅡ 푸터 (foooter) ㅡㅡㅡㅡㅡ */
+/* 카피라이트 */
+#copyright{
+    position: fixed;
+    bottom: 2%;
+    left: 1%;
+    z-index: 2;
+}
+
+
+
+@media all and (min-width:360px) and (max-width:420px) {
+    body{
+        min-height: 677px;
+        max-height: 915px;
+
+    }
+    #fixed_header{
+        height: 0%;
+        /* width: 80%; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        /* display: none; */
+    }
+    #logo{
+        /* background-color: #e5d2b0; */
+        padding: 2%;
+        margin: 3%;
+    }
+    #logo_h1{
+        display: none;
+    }
+    #mainmenu{
+        /* width: 100%; */
+      display: none;  
+    }
+    #data1{
+        display: block;
+    }
+
+
+    #slidearea{
+        margin: 1.5% 5% 3%;
+        overflow: hidden;
+        max-width: 100%;
+        margin-top: 7%;
+    }
+    #slide{
+        display: flex;
+        position: relative;
+        left: -100%;
+    }
+    #slide .img{
+        /* max-width: 100%; */
+        max-height: 250px;
+        position: relative;
+    }
+    #slide .img> img{
+        transform: translateY(-20%);
+    }
+    #slide .img> h2{
+        height: 100%;
+        position: absolute;
+        left: 10%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 1;
+        padding: 10% 5%;
+        font-size: 2em;
+        /* vertical-align: middle; */
+        /* margin:10% */
+    }
+    #novent{
+        display: flex;
+        margin-bottom: 1.5%;
+        flex-direction: column;
+        width: 100%;
+    }
+    #novent{
+        display: block;
+    }
+    /* #notice> ol,#event> ol{
+        width: 90%;
+    } */
+    .dash{
+        width: 80%;
+        position: relative;
+        border:  2px dashed #1e3545;
+        padding: 5%;
+        margin: 10% 5%;
+        font-size: 0.8em;
+    }
+
+    #logotext{
+        display: inline;
+        margin-right: 5%;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    #lologin{
+        font-size: 0.6em;
+    }
+
+
+    #data2>h2{
+        font-size: 1.5em;
+        margin: 10% 5% 3% 5%;
+    }
+    #data2>h2> *{
+        font-size: 1.3em;
+        /* margin: 10% 5% 3% 5%; */
+    }
+
+    /* #slidearea{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    #slide{
+        max-width: 100%;
+        max-height: 30%;
+        object-fit: cover;
+    }
+    #slide .img{ 
+        height: 30%;
+    }
+    #slide .img img{ 
+        max-height: 30%;
+    }
+    #novent{
+        display: flex;
+        margin-bottom: 1.5%;
+        flex-direction: column;
+        width: 100%;
+    }
+    #novent{
+    }
+    #notice,#event{
+        flex: 1;
+    } */
+}

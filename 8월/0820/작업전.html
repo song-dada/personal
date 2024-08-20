@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>건강한 지역 먹거리 이벤트</title>
+    <script>
+        document.addEventListener("DOMContentLoaded" , ()=> {
+            
+            const sec21Click = document.getElementById("sec21Click");
+            const sec22Click = document.getElementById("sec22Click");
+            const sec23Click = document.getElementById("sec23Click");
+
+            const arrRight = Array.from( document.getElementsByClassName("arrRight"));
+            const arrLeft =  Array.from( document.getElementsByClassName("arrLeft"));
+
+            const ok_bean = document.getElementById("ok_bean");
+            const slideArea = document.getElementById("slideArea");
+
+            const black = document.getElementById("black");
+            const blackInput = document.querySelector("#black> input");
+
+            //섹션2: 시작
+
+            
+            
+        }); //end.......................
+    </script>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {font: 12pt/180% "나눔고딕";}
+        h1 {width: 0; height: 0; overflow: hidden; position: fixed;}
+
+
+        /*섹션1*/
+        #sec1 {background: url("images/sec1_bg.jpg") no-repeat center top / cover; border:3px solid gold;}
+        #sec1> h2 {text-align: center;}
+        #sec1 img {max-width: 90%; margin: 30px 0;}
+
+
+        /*섹션2*/
+        #sec2 {background: #fff7af;  text-align: center; padding-bottom: 20px; border:3px solid red;}
+        #sec2> h2 {max-width: 90%; margin:auto;  padding: 40px 0;}
+        #sec2> h2> img {width: 100%;}
+
+        #slideView {overflow: hidden; width: 100%;}
+        #slideArea {position: relative; width: 300vw; display: flex; flex-wrap: wrap;  left:0;}
+        #slideArea> div {width: 100vw; background: white; position: relative;}
+        .sec2Right {padding-top: 30px;}
+        .sec2Right input {display: block; margin-left:20px; margin-bottom:20px;}
+
+        #sec21Click {width: 80%;}
+        #sec22Click + img {display:block; margin-left:20px;}
+        .progress {margin-top: 30px;  display: flex; justify-content: center;}
+        .progress> input {margin:0;}
+
+        #sec23Click + img {display:block; margin-left:20px;}
+
+        #ok_bean {margin-top: 20px; max-width: 70%;}
+
+        /*검정팝업모달 */
+        #black {background: rgba(0,0,0, 0.8); position: fixed; width:100%; height: 100vh; left:0; top: 0; display: none; z-index:5;}
+        #black> input {max-width: 90%; display: block; margin: auto; margin-top: 10vh; cursor: pointer;}
+
+
+        /***************************/
+        /*아이패드이상의 크기*/
+        @media (min-width: 768px){
+            
+                /*섹션1*/
+                #sec1> h2 {max-width: 935px; margin:auto;}
+                
+                /*섹션2*/
+                #sec21Click {width: 50%;}
+                #sec21Click + img {width: 90%;}
+                .progress {max-width: 400px; margin: auto; }
+
+        }
+
+        /***************************/
+        /*아이패드PRO이상의 크기*/
+        @media (min-width: 1024px){ 
+                body> section {max-width: 1349px; margin: auto;}
+                
+                /*섹션1*/
+                #sec1> h2 {text-align: left;}
+                #sec1 img {margin: 90px 0 130px 0;} 
+                
+                /*섹션2*/
+                #sec2 * {line-height: 0;}
+                #slideView {width: 880px; margin: auto;}
+                #slideArea> div {width: 880px; display: flex;}
+                #slideArea> div> div {flex: 1;}
+                
+                .sec2Right {position: relative;}
+                .progress {position: absolute; left: 20px; width:100%; bottom: 20px;}
+        }
+    </style>
+</head>
+<body>
+    <h1>네이버 해피빈 이벤트 - 건강한 지역 먹거리</h1>
+    <!-- 섹션1: start -->
+    <section id="sec1">
+        <h2 title="건강한 지역 먹거리">
+            <img src="images/sec1_title.png" alt="건강한 지역 먹거리">
+        </h2>
+    </section>
+    <!-- 섹션1: end -->
+    <!--////////////////////////////-->
+    <!-- 섹션2: start -->
+    <section id="sec2">
+        <h2 title="푸르플랜">
+            <img src="images/sec2_title.png" alt="지역먹거리 종합계획 푸르플랜">
+        </h2>
+        <!-- 슬라이드영역: start -->
+        <div id="slideView">
+            <div id="slideArea">
+                    <!--첫번째 슬라이드-->
+                    <div id="slide1">
+                        <div class="sec2Left">
+                            <img src="images/sec21_img.jpg" alt="플랜1이미지">
+                        </div>
+                        <div class="sec2Right">
+                            <div>
+                                <input type="image" src="images/sec21_txt_black1.gif" alt="클릭! 효율성" id="sec21Click">
+                                <img src="images/sec21_txt.gif" alt="기존 농산물 유통구조는 가격격차, 안전사고 발생, 이산화탄소 배출 등의 문제점을 야기">
+                            </div>
+                            <div class="progress">
+                                <img src="images/sec21_progress.gif" alt="진행표시">
+                                <input type="image" src="images/sec21_arrRight_gray.gif" alt="화살표" class="arrRight" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <!--두번째 슬라이드-->
+                    <div id="slide2">
+                        <div class="sec2Left">
+                            <img src="images/sec22_img.jpg" alt="플랜2이미지">
+                        </div>
+                        <div class="sec2Right">
+                            <div>
+                                <input type="image" src="images/sec22_txt_black1.gif" alt="클릭! 소비처가 제한" id="sec22Click">
+                                <img src="images/sec22_txt.gif" alt="생산자들은 먼 거리의 도매시장에 물건을 출하하게 되어 헐값에, 누가, 어떻게 생산됐는지 모르게되어 소비자는 불안감을 느낀다.">
+                            </div>
+                            <div class="progress">
+                                <input type="image" src="images/sec22_arrLeft_orange.gif" alt="화살표" class="arrLeft">
+                                <img src="images/sec22_progress.gif" alt="진행표시">
+                                <input type="image" src="images/sec22_arrRight_gray.gif" alt="화살표" class="arrRight" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <!--세번째 슬라이드-->
+                    <div id="slide3">
+                        <div class="sec2Left">
+                            <img src="images/sec23_img.jpg" alt="플랜3이미지">
+                        </div>
+                        <div class="sec2Right">
+                            <div>
+                                <input type="image" src="images/sec23_txt_black1.gif" alt="클릭! 선순환" id="sec23Click">
+                                <img src="images/sec23_txt.gif" alt="통합 관리화는 지자체별 먹거리 선순환 종합 전력">
+                            </div>
+                            <div class="progress">
+                                <input type="image" src="images/sec23_arrLeft_orange.gif" alt="화살표" class="arrLeft">
+                                <img src="images/sec23_progress.gif" alt="진행표시">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- 슬라이드영역: end -->
+        <input type="image" src="images/btn_ok_gray.png" alt="확인했어요 콩받기" id="ok_bean"  disabled>
+    </section>
+    <!-- 섹션2: end -->
+    <!-- 전체 투명한 검정바탕 -->
+    <div id="black">
+        <input type="image" src="images/pop.png" alt="콩지급">
+    </div>
+</body>
+</html>

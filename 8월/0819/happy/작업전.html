@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>해피빈 사랑의 좀도리 운동</title>
+	<script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+
+            const area = Array.from( document.getElementsByClassName('area') );
+            const rice = document.getElementById("rice");
+
+            const pop = document.getElementById("pop");
+            const arr = Array.from( document.getElementsByClassName('arr') );
+
+            const dragover = e =>  e.preventDefault(); //기본설정을 해제 (이미지가 이동된다)
+
+            const drop = e =>  {
+                e.preventDefault(); //클릭이동방지
+                data = e.dataTransfer.getData("zzz");
+                e.target.appendChild(document.getElementById(data));
+                pop.style.display = "block";
+                arr.forEach( i =>  i.style.opacity =1  );
+            }
+
+            area.forEach( i => {
+                i.addEventListener("dragover", dragover );
+            });
+
+            area.forEach( i => {
+                i.addEventListener("drop" , drop);
+            });
+
+            rice.addEventListener("dragstart" ,  e => {
+                e.dataTransfer.setData("zzz" , e.target.id);
+            });
+
+            //오른쪽 화살표 클릭
+            let i = 1; //팝업이미지명  src="images/pop1.png"에서 1을 2,3,4 로 변경해야 함.
+            let popSrc; //팝업이미지 주소
+
+            arr[1].addEventListener("click", ()=>{
+                if(i <= 3 ){
+                    i++;
+                    //"images/pop1.png"
+                    popSrc = `images/pop${i}.png`;
+                    pop.setAttribute("src" , popSrc );
+                } else   alert("마지막입니다.");
+            });
+
+            //왼쪽 화살표 클릭
+            arr[0].addEventListener("click", ()=>{
+                if(i >= 2 ){
+                    i--;
+                    //"images/pop1.png"
+                    popSrc = `images/pop${i}.png`;
+                    pop.setAttribute("src" , popSrc );
+                } else   alert("처음입니다.");
+            });
+
+        });//end....................
+    </script>
+	<style>
+		* {margin: 0; padding: 0; box-sizing: border-box;}
+		body, html {font: 12pt/180% "나눔고딕";}
+		h1, h2 {width: 0; height: 0; overflow: hidden;}
+
+		/*밥그릇이동*/
+		#jom2 {background: #2b8bb3;}
+		#imgMove {width: 1333px; height: 765px; margin: auto; background: url("images/bg2.jpg") no-repeat center top / cover;}
+		#imgMove> div {width: 825px; margin: auto; display: flex; padding-top: 320px; align-items: center;}
+		#area {width: 667px; height: 388px; position: relative; background: url("images/bg3.gif") no-repeat; display: flex; justify-content: space-between; padding-top: 140px;}
+		.area { width: 220px; margin-top: -20px;}
+		#rice {display:block; padding-top: 30px; text-align: center;}
+		#pop {display: none; position: absolute; top: 0;}
+		.arr {opacity: 0;}
+	</style>
+</head>
+<body>
+	<h1>해피빈 사랑의 좀도리 운동</h1>
+	<section id="jom2">
+		<h2>사랑의 좀도리 운동 희망 나누기</h2>
+		<div id="imgMove">
+			<div>
+				<div class="arr">
+					<input type="image" src="images/arr_left.png" alt="왼쪽화살표" id="arrLeft">
+				</div>
+				<div id="area">
+					<div class="area">
+						<img src="images/rice.png" alt="밤공기" id="rice">
+					</div>
+					<div class="area"></div>					
+					<img src="images/pop1.png" alt="pop1" id="pop">
+				</div>				
+				<div class="arr">
+					<input type="image" src="images/arr_right.png" alt="오른쪽화살표" id="arrRight">
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

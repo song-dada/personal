@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root{
+            --dd:dodgerblue;
+            --ww:white;
+            --yy:yellow;
+        }
+        #layout{
+            max-width: 600px;
+            text-align: center;
+            margin: auto;
+        }
+        div> img{
+            max-width: 100%;
+            /* clip-path: circle(40%); */
+            clip-path: ellipse( 15% 40% at 50% 50%);
+            /* 가로,세로 at x좌표 위치 , y좌표위치 */
+        }
+    </style>
+    <title>clip-path() 속성</title>
+</head>
+<body>
+    <div id="layout">
+        <h1>clip-path() 속성</h1>
+        <p>
+            클립패스 속성을 이용한면 요소를 기본모양에 맞춰 잘라낼수 있다.
+        </p>
+        <div>
+            <img src="https://cdn.pixabay.com/photo/2014/06/21/22/07/lime-374216_1280.jpg" alt="라임">
+        </div>
+</body>
+</html>

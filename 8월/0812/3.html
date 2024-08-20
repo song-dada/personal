@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object-fit 속성</title>
+    <style>
+        #layout {max-width:1200px; margin:auto; text-align: center;}
+        #layout div {width:1000px; border:5px solid blue; margin:auto;}
+
+        #layout div:first-of-type img {object-fit: cover; width:200px; height:400px;}
+        video {object-fit: cover; width:500px; height:150px;}
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <h1>object-fit 속성</h1>
+        <ul>
+            <li>오브젝트핏 속성은 img태그 또는 video 태그의 크기를 컨테이너(영역)에 맞게 조절하는 방법을 지정하는데 사용한다.</li>
+            <li>
+                오브젝트 핏 속성은 다양한 방법으로 컨테이너를 채울 수 있다.<br>
+                예를들어, "해당 가로/세로 비율을 유지!" 하거나 "늘려서 더 많은 공간을 차지해라"로 지시할 수 있다.
+            </li>            
+        </ul>
+        <video controls width="600">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        </video>
+        <div><img src="images/logo.png" alt="logo"><br><img src="images/paris.jpg" alt="paris"></div>
+        <div><img src="images/logo.png" alt="logo"><br><img src="images/paris.jpg" alt="paris"></div>  
+    </div>
+</body>
+</html>

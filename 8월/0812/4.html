@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progress</title>
+    <style>
+        body{
+            text-align: center;
+            border: 2px solid ;
+        }
+        p{
+            margin: auto;
+            width: 1000px;
+            height: 500px;
+        }
+        #progress{
+            border: 1px solid salmon;
+            width: 1000px;
+            padding: 20px;
+            margin: auto;
+            text-align: left;
+            line-height: 200%;
+            height: 3000px;
+            background-color: aquamarine;
+        }
+        progress{
+            height: 30px;
+            margin-left: 15px;
+        }
+    </style>
+    <script>
+        history.scrollRestoration = "manual";
+        document.addEventListener("DOMContentLoaded",()=>{
+            // 1개짜리
+            // const progress = document.getElementById('skill');
+            // let data = 0;
+            // let i=0;
+
+            // const p_data = () =>{
+            //     if(data<70){
+            //         data++;
+            //         progress.value = data;
+            //         setTimeout(p_data,100);
+            //     }
+            //     else{
+            //         clearTimeout(p_data);
+            //         console.log('end')
+            //     }
+            // };
+
+            // setTimeout(p_data,1000);
+
+            // 내코드ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+            let x = [];
+
+            const progress = document.querySelectorAll('#progress progress');
+            progress.forEach(( i, j )=>{
+                x[j]=i.value; 
+                progress[j].value = 0;
+            });
+
+            
+            let p_var=0;
+            let index=0;
+            
+            const pp = (i) => {
+                if (p_var<x[index]) {
+                    p_var++;
+                    progress[index].value = p_var;
+                    console.log( progress[index].value );
+
+                    setTimeout(pp, 50, index); 
+                }
+                else {
+                    if(x.length<index){
+                        clearTimeout(pp);
+                    }
+                    else{
+                        console.log('end');
+                        p_var=0;
+                        index++;
+                        setTimeout(pp, 100,index); 
+                    }
+                }
+
+            }
+            const wy1 = window.scrollY;
+            const yyyyy = ()=>{
+                let y2 = window.scrollY
+                if (y2>300) {
+                    document.addEventListener("scroll", ()=>{ setTimeout ( pp(index), 500) } )
+                }
+            };
+            // alert(wy1);
+            
+            document.addEventListener("scroll", yyyyy)
+        });
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <h1>progress 태그</h1>
+        <p>
+            progress태그는 작업 진행상황을 bar로 표시할수 있다.<br>
+            label 태그와 함께 사용하여 웹접근성을 향상시킨다.
+        </p>
+        <div id="progress">
+            <label for="skill"> 자바스크립트1 </label>
+            <progress id="skill" max="100" value="50">50%</progress><br>
+            <label for="skill"> 자바스크립트2 </label>
+            <progress id="skill" max="100" value="60">60%</progress><br>
+            <label for="skill"> 자바스크립트3 </label>
+            <progress id="skill" max="100" value="70">70%</progress><br>
+            <label for="skill"> 자바스크립트4 </label>
+            <progress id="skill" max="100" value="80">80%</progress><br>
+            <label for="skill"> 자바스크립트5 </label>
+            <progress id="skill" max="100" value="90">90%</progress><br>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+#data2 h2{
+    font-size: 3em;
+    margin-bottom: 1%;
+}
+#data2 ul{
+    list-style: none;
+}
+#data2 ul li{
+    font-size: 1.5em;
+    width: 100%;
+}
+#data2 ul li h3{
+    padding-top: 1%;
+}
+
+#modi{
+    margin-left: 2%;
+    font-size: 0.65em;
+}
+#data2 ul li h3>a{
+    font-size: 1em;
+
+}
+.my_sub{
+    padding: 1% 5%;
+    background-color: #e5d2b0;
+}
+/* ㅡㅡㅡㅡㅡ 즐겨찾기 + 방문기록 ㅡㅡㅡㅡㅡ */
+#f,#v{
+    display: flex;
+    margin: auto;
+    overflow-x: scroll;
+}
+.favorite, .visited{
+    margin-right: 2%;
+    border: 1px solid;
+    position: relative;
+    flex: 1;
+    padding: 7%;
+    overflow: hidden;
+}
+.favorite h3, .visited h3{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: #1e3545;
+    color: #ffffff;
+}
+.favorite>a, .visited>a{
+    font-size: 0.8em;
+}
+.favorite>a:last-of-type, .visited>a:last-of-type{
+   margin-right: 0;
+}
+
+.favorite a>img, .visited a>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+}
+#qqna{
+    margin-top: 2%;
+    text-decoration: underline;
+}
+.favorite .red{
+  position: absolute;
+  top: 0;
+  right: 1%;
+  /* margin: 1%; */
+  z-index: 1;
+  color: #EA3323;
+  font-weight: bold;
+  font-size: 1.5em;
+}

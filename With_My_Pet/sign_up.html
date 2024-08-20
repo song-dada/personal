@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>sign_up</title>
+</head>
+<body>
+    <div id="layout">
+        <form action="login.html" method="get"> <!--main.html-->
+            <h1 id="logo">With My Pat</h1>
+            
+            <table>
+                <tr>
+                    <td colspan="3"><h2 id="sign_r">회원가입</h2></td>
+                </tr>
+                <tr>
+                    <th>ID :</th>
+                    <td><input type="text" name="id" id="id" placeholder="아이디를 입력해 주세요."></td>
+                </tr>
+                <tr>
+                    <th>PW :</th>
+                    <td><input type="password" name="pw_1" id="pw_1" placeholder="비밀번호를 입력해 주세요."></td>
+                </tr>
+                <tr>
+                    <th>PW 확인 :</th>
+                    <td><input type="password" name="pw_2" id="pw_2" placeholder="비밀번호를 입력해 주세요."></td>
+                </tr>
+                <tr>
+                    <th colspan="2">보호자 정보</th>
+                </tr>
+                <tr>
+                    <th>닉네임 :</th>
+                    <td><input type="text" name="n_name" id="n_name" placeholder="닉네임을 설정해주세요."><br>
+                    <!-- <span id="nspan" >*닉네임은 변경할수 있으며 이 모든 정보는 본인 확인을 위해 필요합니다.</span></td> -->
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <span id="nspan">
+                            *닉네임은 변경할수 있으며 이 모든 정보는 본인 확인을 위해 필요합니다.
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">반려동물 정보</th>
+                </tr>
+                <tr>
+                    <th>이름 :</th>
+                    <td><input type="text" name="p_name" id="p_name" placeholder="이름을 적어주세요."></td>
+                </tr>
+                <tr>
+                    <th>나이 :</th>
+                    <td><input type="number" name="p_num" id="p_num"> 세</td>
+                </tr>
+                <tr>
+                    <th>성별 :</th>
+                    <td colspan="2">
+                        <label for="m"> 남</label><input type="radio" name="s" id="m">
+                        <label for="w">여</label><input type="radio" name="s" id="w">
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">특이사항 </th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <textarea name="note" id="note" cols="40" rows="10" placeholder="반려동물의 특징을 이곳에 적어주세요."></textarea>
+                    </td>
+                </tr>
+                
+            </table>
+            
+            <!-- <textarea name="opinion" cols="30" rows="5" placeholder="자신의 의견을 간단히 적어주세요."></textarea><br> -->
+            <button type="submit" id="signup">회원가입</button>
+            
+        </form>
+    </div>
+</body>
+</html>
