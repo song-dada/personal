@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+img {max-width: 100%;}
+a {text-decoration: none; color: black;}
+
+#layout {
+    height: calc(100vh - 120px); /* calc는 부호 앞과 뒤에 최소 1칸을 띄워야 먹음 */
+    display: flex;
+}
+
+/****************************/
+
+header {
+    width: 200px;
+}
+
+#logo img {width: 100%;}
+
+header ul {margin-top: 50px;}
+header ul a {
+    display: block;
+    text-align: center;
+}
+header li {position: relative;}
+header li:hover .subMenu {
+    display: block;
+    z-index: 1;
+}
+
+/**/
+.mainMenu {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    border: 2px solid salmon;
+    background-color: antiquewhite;
+}
+.mainMenu:hover {
+    background-color: salmon;
+    color: white;
+    text-shadow: 0 0 2px saddlebrown;
+}
+
+/**/
+.subMenu {
+    position: absolute;
+    width: 100%;  /*부모영역만큼 늘어남 참고로 부모가 li*/
+    border: 2px solid salmon;
+    top: 0; left: 100%;
+    background-color: snow;
+    box-shadow: 0 0 5px antiquewhite;
+    padding: 7px 0;
+    display: none;
+}
+.subMenu a {
+    padding: 8px;
+}
+.subMenu a:hover {
+    background-color: #ddd;
+}
+/****************************/
+
+main {
+    width: 400px;
+    background-color: aquamarine;
+}
+#lorem {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+#lorem img {
+    width: 70px;
+    padding: 10px;
+}
+#lorem div {
+    flex: 5;
+    padding-left: 10px;
+}
+#lorem h3 {padding-bottom: 5px;}
+
+#arr_1.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 24;
+    font-size: 2rem;
+    transition: all 0.3s;
+}
+#arr_1:hover {
+    transform: translateX(8px); /* translate(x,y) */
+    color: white;
+}
+
+/****************************/
+#notice {
+    margin: 5px;
+    margin-top: 30px;
+}
+main h2 {  /*notice가 아니라 main이라고 해서 밑에도 같은 디자인으로*/
+    width: 120px;
+    border-bottom: 30px solid black;
+    border-top: 10px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    text-align: center;
+    color: white;
+}
+main h2 span { /*notice가 아니라 main이라고 해서 밑에도 같은 디자인으로*/
+    display: inline-block;
+    transform: translateY(30px);
+    font-size: 1.2rem;
+}
+
+#notice ol {
+    list-style: none;
+    border-top: 3px solid black;
+    line-height: 200%;
+    padding: 10px 5px;
+}
+#notice ol span {
+    float: right;
+    color: #666;
+}
+#notice ol a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/**/
+#gallery {
+    margin: 5px;
+    margin-top: 30px;
+}
+#gallery div {
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    border-top: 3px solid black;
+    margin: auto;
+}
+#gallery img {
+    padding: 10px;
+}
+#gallery h3 a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/**/
+#link {
+    display: flex;
+    margin: 5px;
+    border-top: 3px solid #666;
+    padding-top: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+#link div {transition: all 0.5s;}
+#link div:hover {
+    background-color: #ddd;
+    padding: 7px;
+    border-radius: 30px;
+}
+#link img {
+    padding: 10px;
+    transition: transform;
+}
+#link img:hover {
+    filter:hue-rotate(90deg);
+    /* transform: translateY(-5px); */
+}
+#link a:hover {
+    color: blue;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+/****************************/
+
+#slideArea {
+    flex: 1;
+    overflow: hidden;
+}
+#slideArea h2{
+    display: none;
+}
+#slide {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    position: relative;
+    left: 0;
+}
+#slide div, #slide img {
+    width: 100%;
+    height: 100%;
+}
+
+/****************************/
+
+footer {
+    height: 120px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: fixed; /*하단 고정, 컨텐츠보다 위로 올리기*/
+}
+footer> a {
+    width: 200px;
+}
+footer img {
+    width: 100%;
+}
+footer div {
+    flex: 1;
+    padding-left: 50px;
+    padding-right: 10px;
+}
+
+footer nav {
+    /* background-color: #666; */
+    padding-bottom: 10px;
+}
+footer nav a {
+    color: white;
+}
+footer nav a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+footer nav a::after {
+    content: "|"; padding: 0 10px;
+}
+
+footer select {
+    margin: 40px;
+    width: 200px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+
+/****************************/
+#popup {
+    width: 600px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) ;
+    position: fixed;
+    left:calc((100% - 600px) / 2);
+    top: 100px;
+    padding: 40px;
+    border-radius: 20px;
+    line-height: 180%;
+    text-align: justify;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+#popup.show {
+    visibility: visible; opacity: 1;
+}
+#popup h3 {padding-bottom: 30px;}
+#popup button {
+    float: right;
+    padding: 5px 10px;
+    margin-top: 50px;
+}
