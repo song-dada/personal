@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family: 'Noto Sans KR', sans-serif; line-height:180%;}
+h1 {font-family: 'Black Han Sans', sans-serif;}
+img {display:block; width:100%;}
+a   {color:black; text-decoration:none;}
+
+header  {background:orange; text-align:center; padding:30pt;}
+
+#layout {max-width:1000px; margin:auto;}
+
+embed, object, #menu  {display:block; width:100%; border:none;}
+nav   {display:flex; padding:20px 0;}
+
+/*메뉴항목공통*/
+nav a {border:1px solid tomato; flex:1; text-align:center; font-weight:600; font-size:1.15rem; padding:5pt;}
+nav a:hover, nav a.act {color:white; text-shadow:0 0 10px black;}
+
+/*메뉴호버/활성화유지*/
+nav a:nth-child(1):hover,  
+nav a:nth-child(1).act {background:pink; }
+nav a:nth-child(2):hover,   
+nav a:nth-child(2).act {background:skyblue; }
+nav a:nth-child(3):hover,  
+nav a:nth-child(3).act {background:#a36f40; }
+nav a:nth-child(4):hover,   
+nav a:nth-child(4).act {background:#e1f2fa; }
+
+h2 {padding:10px; padding-left:0;}
+p {text-align:justify;}
+main img {border-radius:20px; margin-top:20px;}
