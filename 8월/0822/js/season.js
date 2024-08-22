@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded",() => {
 
     const menu = document.getElementById('menu'); // iframe id = menu
-    const nav = menu.contentDocument.document.querySelectorAll('nav a'); // 각 메뉴
+    const nav = menu.contentDocument.querySelectorAll('nav a'); // 각 메뉴
     // alert(nav); // object nodelist
 
     // 페이지가 로드 된 후 실행
