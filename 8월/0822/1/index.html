@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Index Page</h1>
+    <iframe src="nav.html" id="navIframe"></iframe>
+
+    <script>
+        // Listen for messages from the iframe
+        window.addEventListener('message', (event) => {
+            if (event.data.action === 'setActive') {
+                localStorage.setItem('activeNavItem', event.data.itemId);
+                const iframe = document.getElementById('navIframe');
+                iframe.contentWindow.postMessage({ action: 'highlight', itemId: event.data.itemId }, '*');
+            }
+        });
+    </script>
+</body>
+</html>

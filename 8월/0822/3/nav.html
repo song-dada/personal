@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <style>
+        .nav-bar {
+            background-color: lightgray;
+            padding: 10px;
+        }
+        .nav-bar a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: black;
+        }
+        .nav-bar a.highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="home.html" data-page="home.html">Home</a>
+        <a href="about.html" data-page="about.html">About</a>
+        <a href="contact.html" data-page="contact.html">Contact</a>
+    </div>
+
+    <script>
+        // Listen for messages from the parent
+        window.addEventListener('message', (event) => {
+            if (event.data.action === 'highlight') {
+                const pageUrl = event.data.pageUrl;
+                const navLinks = document.querySelectorAll('.nav-bar a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('data-page') === pageUrl) {
+                        link.classList.add('highlight');
+                    } else {
+                        link.classList.remove('highlight');
+                    }
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-bar a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const pageUrl = link.getAttribute('data-page');
+                    window.parent.postMessage({ action: 'loadPage', pageUrl }, '*');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

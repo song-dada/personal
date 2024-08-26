@@ -36,35 +36,8 @@ a{
 }
 /* ㅡㅡㅡㅡㅡ 헤더(header)ㅡㅡㅡㅡㅡ */
 #fixed_header{
-    /* flex: 1; */
     width:20%;
-    /* height: 100vh;
-    background-color: #e5d2b0;
-    position: relative; */
 }
-/* ㅡㅡㅡㅡㅡ 로고(logo)ㅡㅡㅡㅡㅡ */
-/* #logo{
-    padding-top: 10%;
-}
-#logo>h1{
-    font-size: 1.5em;
-}
-
-#fixed_header ul{
-    list-style: none;
-    text-align: center;
-    margin-top: 5%;
-}
-#fixed_header ul li{
-    padding-top: 5%;
-}
-#fixed_header ul li a{
-    padding: 5%;
-}
-.menu.active{
-    background-color: #c2ac86;
-    color:#ffffff;
-}*/
 #main{
     height: 100vh;
 }
@@ -72,7 +45,7 @@ a{
 /* ㅡㅡㅡㅡㅡ 사이드 (상단) ㅡㅡㅡㅡㅡ */
 #side{
     max-height: 5%;
-    margin-left: 50vw;
+    margin-left: calc(20vw + 10px)
 }
 /* ㅡㅡㅡㅡㅡ 메인(main) ㅡㅡㅡㅡㅡ */
 #content{
@@ -85,8 +58,6 @@ a{
     margin: 2%;
 }
 
-
-
 #footer{
     position: fixed;
     max-height: 10%;
@@ -94,3 +65,45 @@ a{
     left: 1%;
  
  }
+
+
+
+
+
+
+@media all and (min-width:360px) and (max-width:420px) {
+    #fixed_header{
+        width:0;
+    }
+    #main{
+        height: 100vh;
+        /* display: block; */
+    }
+    
+    /* ㅡㅡㅡㅡㅡ 사이드 (상단) ㅡㅡㅡㅡㅡ */
+    #side{
+        max-width: 60vw;
+        max-height: 5vh;
+        /* max-height: 5%; */
+        /* margin-left: calc(50vw + 10px) */
+    }
+    /* ㅡㅡㅡㅡㅡ 메인(main) ㅡㅡㅡㅡㅡ */
+    #content{
+        max-width: 100vw;
+        max-height: 95vh;
+    }
+    /* .mwh_100{
+        max-width: 100%;
+        max-height: 100%;
+        margin: 2%;
+    } */
+    
+    #footer{
+        position: fixed;
+        max-height: 10%;
+        bottom: -5%;
+        left: 1%;
+     
+     }
+
+}

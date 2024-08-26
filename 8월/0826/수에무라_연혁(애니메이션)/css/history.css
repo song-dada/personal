@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+#history {width:980px; margin:auto; border:1px solid red;}
+#history>h2 {text-align:center;}
+#history>div {height:1000px; position:relative; }
+
+/*중앙 세로바*/
+#bar {width:6px; /*height:550px;*/  background:black; margin:auto;}
+
+/*중앙 빨간점 (아이디값에서_ 'p' 텍스트가 포함된 값) */
+[id *= "po"] {display:block; position:absolute; /*top:0px;*/ left:470px;}
+
+/* 2번째~4번째까지에 해당하는 빨간점 */
+#point01 	{top:0px;   }
+#point02 	{top:140px; }
+#point03 	{top:290px; }
+#point04 	{top:356px; }
+
+.left, .right {display:block; position:absolute; top:0px;}
+.left   {left:0;}
+.right 	{right:0; left:auto;}
+
+/* 빨간점 옆 텍스트 */
+.txt1 	{          opacity:1; }
+.txt2 	{top:140px;opacity:1; }
+.txt3 	{top:290px;opacity:1; }
+.txt4 	{top:355px;opacity:1; }
+
+
+
+/***** 애니메이션 *****/
+
+/* 검정세로라인 */
+.ani #bar { 
+	animation: long 1000ms 500ms 1 both;
+}
+@keyframes long {
+	from	{height:0;}
+	to		{height:500px;}	
+}
+
+/* 빨간점 */
+@keyframes circle {
+	from	{display:none; opacity:0;}
+	to		{display:block; opacity:1;}	
+}
+
+/*오른쪽 텍스트 */
+@keyframes right {
+	from	{opacity:0; transform:translateX(20px);}
+	to		{opacity:1; transform:translateX(0px);}	
+}
+
+/*왼쪽 텍스트 */
+@keyframes left {
+	from	{opacity:0; transform:translateX(-20px);}
+	to		{opacity:1; transform:translateX(0px);}	
+}

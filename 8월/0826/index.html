@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adobe</title>
+    <script>
+        document.addEventListener("DOMContentLoaded" , ()=> {
+
+            const mainMenu = [ ...document.getElementsByClassName('mainMenu')];//HTML Collection
+            const subNav   = document.querySelectorAll('li nav');//Node List
+            const sml      = document.getElementById("sml");//마지막 서브메뉴 항목
+
+            mainMenu.forEach( ( i, j )=>{
+                i.addEventListener( "focus" , ()=>{
+                    subNav.forEach( z => {
+                        z.style.height = "150px";
+                    });
+                });
+            });
+            sml.addEventListener("blur" , ()=>{
+                subNav.forEach( z => {
+                    z.style.height = 0 ;
+                });
+            });
+
+        });//end..............
+    </script>
+    <style>
+        * {
+            margin:0; padding:0; box-sizing: border-box;
+        }
+        #layout {
+            max-width:800px; margin:auto; border:3px solid pink;
+            padding:20px;
+        }
+        header {display: flex;}
+        ul {
+            list-style: none; border:2px solid red; flex:1;
+            margin-left:100px; display: flex;
+        }
+
+        ul:hover li nav {height:150px;}
+
+        li   {flex:1; text-align: center; position: relative;}
+        li nav {background: gold; position: absolute; width:100%; height:0; overflow: hidden; transition: height 0.5s;}
+        li a {display: block; border:1px solid rgb(255, 208, 0); padding:10px;}
+        section {height: 70vh; background: yellowgreen;}
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <header>
+            <a href="#"><img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA4MjZfMjY1/MDAxNzI0NjMyODc2MTE1.5IO7swKUDCBjNetGRXceh5JBZjHncrrpLjKCbN5BMrkg.zHepl5hWSznhpkJeEi3UTsaEEY78siq3dgH5Bz_cTjIg.JPEG/logo.jpg?type=w1600" alt="로고"></a>
+            <ul>
+                <li>
+                    <a href="#" class="mainMenu">홈으로</a>
+                    <nav>
+                        <a href="#" class="subMenu">sub1-1</a>
+                        <a href="#" class="subMenu">sub1-2</a>
+                        <a href="#" class="subMenu">sub1-3</a>
+                    </nav>
+                </li>
+                <li>
+                    <a href="#" class="mainMenu">갤러리</a>
+                    <nav>
+                        <a href="#" class="subMenu">sub2-1</a>
+                        <a href="#" class="subMenu">sub2-2</a>
+                        <a href="#" class="subMenu">sub2-3</a>
+                    </nav>
+                </li>
+                <li>
+                    <a href="#" class="mainMenu">제품특징</a>
+                    <nav>
+                        <a href="#" class="subMenu">sub3-1</a>
+                        <a href="#" class="subMenu">sub3-2</a>
+                        <a href="#" class="subMenu">sub3-3</a>
+                    </nav>
+                </li>
+                <li>
+                    <a href="#" class="mainMenu">고객센타</a>
+                    <nav>
+                        <a href="#" class="subMenu">sub4-1</a>
+                        <a href="#" class="subMenu">sub4-2</a>
+                        <a href="#" class="subMenu" id="sml">sub4-3</a>
+                    </nav>
+                </li>
+            </ul>
+        </header>
+        <section>
+            <h2>정보부분</h2>
+        </section>
+    </div>
+</body>
+</html>

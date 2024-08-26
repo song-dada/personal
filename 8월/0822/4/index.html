@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        iframe#navIframe {
+            width: 200px;
+            border: none;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <iframe src="nav.html" id="navIframe"></iframe>
+        <div class="content" id="content">
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // Listen for messages from the nav iframe
+        window.addEventListener('message', (event) => {
+            if (event.data.action === 'loadPage') {
+                loadContent(event.data.pageUrl);
+                updateNavHighlight(event.data.pageUrl);
+            }
+        });
+
+        function loadContent(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('content').innerHTML = html;
+                })
+                .catch(error => console.error('Error loading content:', error));
+        }
+
+        function updateNavHighlight(pageUrl) {
+            const iframe = document.getElementById('navIframe');
+            iframe.contentWindow.postMessage({ action: 'highlight', pageUrl }, '*');
+        }
+
+        // Load initial content
+        loadContent('home.html');
+    </script>
+</body>
+</html>
