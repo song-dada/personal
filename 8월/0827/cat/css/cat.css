@@ -1,0 +1,22 @@
+body {background:#626262;}
+
+.catArea {
+	border:3px solid yellow; width:209px; 
+	position:fixed; left:0; top:200px;
+	animation: toright 150000ms infinite both linear;
+}
+@keyframes toright{
+	from { left: 0 }
+	to { left: 100vw }
+}
+
+.cat {
+	background-image: url( "../images/cat.jpg" );
+	width:209px;  height:436px;
+	border:3px dashed red;	
+	animation: cat 1000ms infinite steps(8) ;
+}
+
+@keyframes cat{
+	100% { background-position: 1672px 0; }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 블로그 메인화면 이미지 호버기능 연습</title>
+    <style>
+        * {margin:0; padding:0; box-sizing: border-box;}
+        img {display: block; max-width: 100%;}
+        #layout {max-width:960px; margin:auto; border:3px solid pink;}
+        h2,h3 {font-weight: 400; text-align: center;}
+        h3 {padding:15px 0 20px; display: none;}
+        p {padding-top:20px;}
+        h2 + div {display: flex;}
+        .thumb  {
+            width:300px; height:300px; border:3px solid red; margin:10px;
+            background-position: left center;
+            background-size: cover; position: relative; overflow: hidden;
+        }
+
+        .thumb:hover div {top:0;}
+        .thumb:hover img {display: block;}
+        .thumb:hover h3 {display: block;}
+        .thumb:hover h2 {display: none;}
+
+
+        .thumb:nth-child(1) {background-image: url("1.jpg");}
+        .thumb:nth-child(2) {background-image: url("3.jpg");}
+        .thumb:nth-child(3) {background-image: url("5.jpg");}
+        
+        .thumb div {
+            background-color: rgba(0, 72, 100, 0.9); height: 100%;
+            color:white; padding:30px; text-align: justify; line-height: 160%;
+            position: absolute; top: 65%; transition: top 0.5s;
+        }
+        .thumb img {
+            border-radius: 50%; margin:auto; width:60px; display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <section>
+            <h2>등산</h2>
+            <div>
+                <div class="thumb">
+                    <div>
+                        <img src="2.jpg" alt="와니모드">
+                        <h3>와니모드</h3>
+                        <h2>감사원의 조직·직무범위 법률</h2>
+                        <p>모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다. 감사원의 조직·직무범위·감사위원의 자격·감사대상공무원의</p>
+                    </div>
+                </div>
+                <div class="thumb">
+                    <div>
+                        <img src="4.jpg" alt="와니모드">
+                        <h3>와니모드</h3>
+                        <h2>감사원의 조직·직무범위 법률</h2>
+                        <p>모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다. 감사원의 조직·직무범위·감사위원의 자격·감사대상공무</p>
+                    </div>
+                </div>
+                <div class="thumb">
+                    <div>
+                        <img src="6.jpg" alt="와니모드">
+                        <h3>와니모드</h3>
+                        <h2>감사원의 조직·직무범위 법률</h2>
+                        <p>모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다. 감사원의 조직·직무범위·감사위원의 자격·감사대상공무</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

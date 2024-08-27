@@ -7,33 +7,31 @@
 /*중앙 세로바*/
 #bar {width:6px; /*height:550px;*/  background:black; margin:auto;}
 
-/*중앙 빨간점 (아이디값에서_ 'p' 텍스트가 포함된 값) */
-[id *= "po"] {display:block; position:absolute; /*top:0px;*/ left:470px;}
+/*중앙 빨간점 (아이디값에서_ 'po' 텍스트가 포함된 값) */
+[id *= "po"] {display:block; position:absolute; /*top:0px;*/ left:470px; animation:circle 0.5s both;}
 
-/* 2번째~4번째까지에 해당하는 빨간점 */
-#point01 	{top:0px;   }
-#point02 	{top:140px; }
-#point03 	{top:290px; }
-#point04 	{top:356px; }
+/* 빨간점 */
+#point01 	{top:0px;   animation-delay: 1s;}
+#point02 	{top:140px; animation-delay: 2s;}
+#point03 	{top:290px; animation-delay: 3.5s;}
+#point04 	{top:356px; animation-delay: 4.5s;}
 
 .left, .right {display:block; position:absolute; top:0px;}
 .left   {left:0;}
 .right 	{right:0; left:auto;}
 
-/* 빨간점 옆 텍스트 */
-.txt1 	{          opacity:1; }
-.txt2 	{top:140px;opacity:1; }
-.txt3 	{top:290px;opacity:1; }
-.txt4 	{top:355px;opacity:1; }
+/* 텍스트 */
+.txt1 	{          opacity:1; animation: right 0.5s 1.5s both;}
+.txt2 	{top:140px;opacity:1; animation: right 0.5s 2.5s both;}
+.txt3 	{top:290px;opacity:1; animation: right 0.5s 4s both;}
+.txt4 	{top:355px;opacity:1; animation: right 0.5s 5s both;}
 
 
 
 /***** 애니메이션 *****/
 
 /* 검정세로라인 */
-.ani #bar { 
-	animation: long 1000ms 500ms 1 both;
-}
+.ani #bar {animation: long 1s 0.5s 1 both;}
 @keyframes long {
 	from	{height:0;}
 	to		{height:500px;}	

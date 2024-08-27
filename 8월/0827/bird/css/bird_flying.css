@@ -1,0 +1,22 @@
+.bird-container {
+	border:5px solid blue; width:90px;
+	position:fixed; left:0; top:100px;
+	animation: rightMove 15s infinite;
+}
+
+@keyframes rightMove {
+	0% 		{left:0;}
+	100% 	{left:100vw;}
+}
+
+
+.bird {
+	background-image: url( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg' ) ;
+	background-size: auto 100%;
+	width: 90px;
+	height: 125px;	
+	animation:fly 1s infinite steps(10);
+}
+@keyframes fly {
+	100% {background-position:900px 0 ;}
+}
