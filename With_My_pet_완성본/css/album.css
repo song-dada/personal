@@ -10,18 +10,17 @@
     margin-bottom: 1%;
 }
 #t_b{
-    /* display: flex;
-    align-items: center; */
-    position: relative;
+    display: flex;
+    align-items: center;
+    /* position: relative; */
 }
-#t_b> button{
-    /* float: right; */
-    font-size: calc(10px + 1vw);
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    border: NONE;
-    background-color: #efece5;
+#t_b> .material-symbols-outlined{
+    font-size: calc(1px + 3vw);
+}
+#t_b> .material-symbols-outlined:first-of-type{
+    margin-left: 80%;
+    margin-right: 5%;
+    transform: scale(1.2);
 }
 img{
     display: block;
@@ -30,7 +29,7 @@ img{
 }
 #albumarea{
     max-width: 100vw;
-    max-height: 82vh;
+    max-height: 78 vh;
     overflow-y: scroll;
     display: flex;
     flex-wrap: wrap;
