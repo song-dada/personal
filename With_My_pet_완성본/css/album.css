@@ -15,7 +15,7 @@
     /* position: relative; */
 }
 #t_b> .material-symbols-outlined{
-    font-size: calc(1px + 3vw);
+    font-size: calc(1px + 2.5vw);
 }
 #t_b> .material-symbols-outlined:first-of-type{
     margin-left: 80%;

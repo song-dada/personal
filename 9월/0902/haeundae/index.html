@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>해운대빛축제</title>
+<script src="js/festival.js"></script>
+<link rel="stylesheet" href="css/festival.css">
+</head>
+<body>
+<!--레이아웃:시작-->
+<div id="layout">
+	<!--왼쪽(로고+메뉴):시작-->
+	<nav id="left">
+		<!--로고:시작-->
+		<a href="#" id="logo"><img src="images/logo.jpg" alt="로고"></a>
+		<!--로고:끝-->
+		<!--메뉴:시작-->
+		<ul>
+			<!--(1)(메인메뉴+서브메뉴):시작-->
+			<li>
+				<!--주메뉴:시작-->
+				<a href="#" class="mainMenu">이용안내</a>
+				<!--주메뉴:끝-->
+				<!--서브메뉴:시작-->
+				<nav class="subMenu">
+					<a href="#">이용방법</a>
+					<a href="#">이용시간</a>
+					<a href="#">이용요금</a>
+				</nav>
+				<!--서브메뉴:끝-->
+			</li>
+			<!--(1)(메인메뉴+서브메뉴):끝-->
+			<!--(2)(메인메뉴+서브메뉴):시작-->
+			<li>
+				<!--주메뉴:시작-->
+				<a href="#" class="mainMenu">이벤트정보</a>
+				<!--주메뉴:끝-->
+				<!--서브메뉴:시작-->
+				<nav class="subMenu">
+					<a href="#">현장이벤트</a>
+					<a href="#">온라인이벤트</a>
+					<a href="#">이벤트예약</a>
+				</nav>
+				<!--서브메뉴:끝-->
+			</li>
+			<!--(2)(메인메뉴+서브메뉴):끝-->
+			<!--(3)(메인메뉴+서브메뉴):시작-->
+			<li>
+				<!--주메뉴:시작-->
+				<a href="#" class="mainMenu">프로그램</a>
+				<!--주메뉴:끝-->
+				<!--서브메뉴:시작-->
+				<nav class="subMenu">
+					<a href="#">프로그램안내</a>
+					<a href="#">온라인예약</a>
+					<a href="#">단체예약</a>
+				</nav>
+				<!--서브메뉴:끝-->
+			</li>
+			<!--(3)(메인메뉴+서브메뉴):끝-->
+			<!--(4)(메인메뉴+서브메뉴):시작-->
+			<li>
+				<!--주메뉴:시작-->
+				<a href="#" class="mainMenu">고객센터</a>
+				<!--주메뉴:끝-->
+				<!--서브메뉴:시작-->
+				<nav class="subMenu">
+					<a href="#">공지사항</a>
+					<a href="#">자주묻는질문</a>
+					<a href="#" id="last">자료실</a>
+				</nav>
+				<!--서브메뉴:끝-->
+			</li>
+			<!--(4)(메인메뉴+서브메뉴):끝-->
+		</ul>
+		<!--메뉴:끝-->		
+	</nav>
+	<!--왼쪽(로고+메뉴):끝-->
+	<div id="right">
+		<!--슬라이드:시작-->
+		<div id="slide">
+			<a href="#"><img src="images/slide3.jpg" alt="불꽃놀이 행사 안내"></a>
+			<a href="#"><img src="images/slide2.jpg" alt="바다 야경과 빛축제"></a>
+			<a href="#"><img src="images/slide1.jpg" alt="해변에서 즐기는 빛축제"></a>
+		</div>
+		<!--슬라이드:끝-->
+		<!--메인:시작-->
+		<main>
+			<!--(공지사항+갤러리):시작-->
+			<div id="noti_gel">
+				<!--공지사항:시작-->
+				<section id="notice">
+					<h2 class="active"><button type="button" id="b1">공지사항</button></h2>
+					<hr>
+					<ul>
+						<li>
+							<a href="#">해변에서 펼쳐지는 노래공연</a>
+							<span>2020.03.01</span>
+						</li>
+						<!--팝업:시작-->
+						<li id="popup">
+							<section>
+								<h3>빛축제 공연 정보</h3>
+								<p>
+									빛축제의 모든 공연과 전시정보를 한눈에 볼 수 있습니다. 
+									빛축제 관련 공연과 캘린더 배포, 자전거 투어 행사, 바다 야경 명소, 빛나는 해변의 다리 등 
+									자연환경을 살린 아름다운 해변에서의 빛축제 정보를 안내해드립니다.
+								</p>
+								<button type="button">닫기</button>
+							</section>						
+						</li>
+						<!--팝업:끝-->
+						<li>
+							<a href="#">바다의 야경과 빛공연 관람하기</a>
+							<span>2020.03.01</span>
+						</li>
+						<li>
+							<a href="#">불꽃놀이 이벤트를 신청하세요</a>
+							<span>2020.03.01</span>
+						</li>
+						<li>
+							<a href="#">빛축제 단체관람 안내</a>
+							<span>2020.03.01</span>
+						</li>
+					</ul>
+				</section>
+				<!--공지사항:끝-->				
+				<!--갤러리:시작-->
+				<section id="gallery">
+					<h2><button type="button" id="b2">갤러리</button></h2>
+					<hr style="display: none;">
+					<div>
+						<div>
+							<a href="#"><img src="images/icon1.jpg" alt="갤러리"></a>
+							<a href="#"><img src="images/icon2.jpg" alt="갤러리"></a>
+							<a href="#"><img src="images/icon3.jpg" alt="갤러리"></a>
+						</div>
+					</div>
+				</section>
+				<!--갤러리:끝-->
+			</div>
+			<!--(공지사항+갤러리):끝-->
+			<!--배너:시작-->
+			<section id="banner">
+				<h2>배너</h2>
+				<a href="#"><img src="images/banner.jpg" alt="배너"></a>
+			</section>
+			<!--배너:끝-->
+			<!--바로가기:시작-->
+			<section id="quick">
+				<h2>바로가기</h2>
+				<a href="#"><img src="images/quick.jpg" alt="바로가기"></a>
+			</section>
+			<!--바로가기:끝-->
+		</main>
+		<!--메인:끝-->
+		<!--하단:시작-->
+		<footer>
+			<!--하단로고:시작-->
+			<a href="#"><img src="images/logo_footer.jpg" alt="하단로고"></a>
+			<!--하단로고:끝-->
+			<!--(하단메뉴+카피라이트):시작-->
+			<div>
+				<!--하단메뉴:시작-->
+				<nav>
+					<a href="#">하단메뉴1</a>
+					<a href="#">하단메뉴2</a>
+					<a href="#">하단메뉴3</a>
+				</nav>
+				<!--하단메뉴:끝-->
+				<!--카피라이트:시작-->
+				<p>COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED</p>
+				<!--카피라이트:끝-->
+			</div>
+			<!--(하단메뉴+카피라이트):끝-->
+		</footer>
+		<!--하단:끝-->
+	</div>
+</div>
+<!--레이아웃:끝-->
+</body>
+</html>

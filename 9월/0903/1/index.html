@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>홍길동의 포트폴리오</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Favicons
+    ================================================== -->
+<!--<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">-->
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css"> -->
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+<script src="js/jquery.1.11.1.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const hoverbg = document.querySelectorAll('.hover-bg>a:not(.noBlack)');
+    const black = document.getElementById('black');
+
+    hoverbg.forEach( ( element ) => {
+      element.addEventListener('click', ()=> {
+        const x1 = element.querySelector('img');
+        const x11 = x1.getAttribute('src');
+        const x2 = x11.replace("small","large");
+        const y = element.querySelector('h4').textContent;
+        // console.log(y1);
+        black.style.opacity = 1;
+        black.style.zIndex = 2;
+        black.style.transition = 'all 0.5s';
+        black.querySelector('h1').textContent = y;
+        black.querySelector('img').setAttribute('src', x2);
+        black.querySelector('img').setAttribute('alt', y);
+        black.querySelector('img').setAttribute('style', 'max-width:1000px');
+
+
+      });
+    });
+
+    // 닫기
+    black.addEventListener('click', () => {
+      black.style.opacity = 0;
+      black.style.zIndex = -1;
+      black.style.transition = 'all 0.5s';
+    });
+
+  }); // ---------------------- end ---------------------------
+// $(document).ready(function(){
+// 	$(".hover-bg>a:not(.noBlack)").click(function(){
+// 		var x1 = $(this).find("img").attr("src");
+// 		var x2 = x1.replace("small","large");
+// 		var y = $(this).find("h4").text();
+// 		//alert(x + y);		
+		
+// 		$("#black").fadeIn();
+// 		$("#black>h1").text(y);
+// 		$("#black img").attr({"src": x2, "alt":y , "max-width" : "1000px"});
+		
+// 		$("body").removeClass().css("overflow","hidden");
+// 		$("body>div").last().remove();
+// 	});
+// 	$("#black>button").click(function(){
+// 		$("#black").fadeOut();
+// 		$("body").css("overflow","auto");
+// 	});
+// 	$(document).keydown(function(e){
+// 		if(e.keyCode==27){
+// 			$("#black").fadeOut();	
+// 			$("body").css("overflow","auto");
+// 		}	
+// 	});
+// });
+</script>
+
+<style>
+::-webkit-scrollbar { width: 0px; } 
+#black {position:fixed; width:100%; height:100vh; background:rgba(0,0,0,0.8); top:0; left:0; z-index:-1; opacity: 0; overflow:auto; padding-top:10px; text-align:center; }
+#black>h1 {color:white; font-size:1.5rem;}
+#black>button {background:transparent; border:none;}
+#black img {display:block; margin:auto; max-width:95%;}
+@media (max-width:500px){
+	.categories ol.type {display:block; width:90vw;}
+	.categories ol.type li { margin:15px 10px; }
+}
+</style>
+
+</head>
+<body>
+<!-- Header -->
+
+<!-- Portfolio Section -->
+<div id="portfolio">
+  <div class="container">
+    <div class="section-title">
+      <h2>홍길동의 포트폴리오</h2>
+    </div>
+    <div class="categories">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a href="#" data-filter="*" class="active">모두보기</a></li>
+            <li><a href="#" data-filter=".eventDesign">이벤트/배너</a></li>
+            <li><a href="#" data-filter=".pptDesign">보고서PPT</a></li>
+            <li><a href="#" data-filter=".webDesign">웹/앱사이트</a></li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+	  <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/chania-2/" target="_blank" title="Air Jordan 모바일 앱 프로토타입"  onclick="window.open('https://pjh445.github.io/chania-2/','win1','width=375,height=667,left=300,top=50');return false;" onkeypress="this.onclick()" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>Air Jordan 모바일 앱 프로토타입</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/28-small.jpg" class="img-responsive" alt="Air Jordan 모바일 앱 프로토타입"></a></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"><a href="img/portfolio/01-large.jpg" title="CU+삼성증권 이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>CU+삼성증권 이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="PETIKETCU+삼성증권 이벤트"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="레모나-s 포스팅 이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>레모나-s 포스팅 이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="레모나-s 포스팅 이벤트"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 pptDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/04-large.jpg"  title="모바일 '반동라앱' 제안서">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>모바일 '반동라앱' 제안서</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="모바일 '반동라앱' 제안서"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/chania/" target="_blank" title="하니아" onclick="window.open('https://pjh445.github.io/chania/','win1','width=414,height=736');return false;" onkeypress="this.onclick()" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>하니아</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="하니아"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 pptDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/24-large.jpg"  title="서울 장학재단 홈페이지 제안서">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>조말론 리뉴얼 제안서</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/24-small.jpg" class="img-responsive" alt="서조말론 리뉴얼 제안서"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/chania-2/" target="_blank" title="누들 모바일앱" onclick="window.open('https://pjh445.github.io/chania-2/','win1','width=414,height=736');return false;" onkeypress="this.onclick()" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>누들 모바일앱</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/22-small.jpg" class="img-responsive" alt="누들 모바일앱"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 pptDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/23-large.jpg" title="한국타이어 리뉴얼 제안서">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>한국타이어 리뉴얼 제안서</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/23-small.jpg" class="img-responsive" alt="한국타이어 리뉴얼 제안서"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/daehan/"  target="_blank" title="대한천문대" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>"대한천문대안</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/25-small.jpg" class="img-responsive" alt=""대한천문대"></a></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/chania-2/" target="_blank" title="EZ 전통잣집 앱" onclick="window.open('https://pjh445.github.io/chania-2/','win1','width=414,height=736');return false;" onkeypress="this.onclick()" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>EZ 전통잣집 앱</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/19-small.jpg" class="img-responsive" alt="EZ 전통잣집 앱"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/swatch/" target="_blank" title="Swatch 웹사이트" class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>Swatch 웹사이트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/20-small.jpg" class="img-responsive" alt="Swatch 웹사이트"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/haeundae/"  target="_blank" title="해운대빛축제"  class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>해운대빛축제</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="해운대빛축제"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"><a href="fashion/index.html" target="_blank" title="패션정보 모바일 앱" onclick="window.open('fashion/index.html','win1','width=414,height=736');return false;" onkeypress="this.onclick()" class="noBlack"> 
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>패션정보 모바일 앱</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="패션정보 모바일 앱"> </a> </div>
+          </div>
+        </div>
+		<div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/duck/"  title="오리고기전문점 적성사랑채" target="_blank"  class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>오리고기전문점 적성사랑채</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/26-small.jpg" class="img-responsive" alt="오리고기전문점 적성사랑채"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/chocolate/" title="초콜렛 콜렉션" target="_blank"  class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>초콜렛 콜렉션</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/27-small.jpg" class="img-responsive" alt="초콜렛 콜렉션"></a></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 appDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/14-large.jpg" title="빵빵한 충전타임 이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>빵빵한 충전타임 이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/14-small.jpg" class="img-responsive" alt="빵빵한 충전타임 이벤트"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/season-1/" title="한국의 사계절" target="_blank"  class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>한국의 사계절</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/21-small.jpg" class="img-responsive" alt="한국의 사계절"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/15-large.jpg" title="sns 전파 이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>sns 전파 이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/15-small.jpg" class="img-responsive" alt="sns 전파 이벤트"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/happybean/3/" title="해피빈이벤트 건강한 지역 먹거리"  target="_blank"  class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>해피빈이벤트 건강한 지역 먹거리</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="해피빈이벤트 건강한 지역 먹거리"> </a> </div>
+          </div>
+        </div>
+		    <div class="col-sm-6 col-md-4 webDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/pension/" title="펜션 라이프" target="_blank"  class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>펜션 라이프</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/17-small.jpg" class="img-responsive" alt="펜션 라이프"></a></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/18-large.jpg" title="학생할인이벤트">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>학생할인이벤트</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/18-small.jpg" class="img-responsive" alt="학생할인이벤트"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 eventDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="https://pjh445.github.io/happybean/1/" title="해피빈이벤트 사랑의 좀도리 운동" target="_blank"  class="noBlack">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>해피빈이벤트 사랑의 좀도리 운동</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="해피빈이벤트 사랑의 좀도리 운동"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 pptDesign">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/16-large.jpg" title="오셜록 UI 설계서">
+              <div class="hover-text">
+                <div class="overlay-caption">
+                  <div class="overlay-content">
+                    <h4>오셜록 UI 설계서</h4>
+                  </div>
+                </div>
+              </div>
+              <img src="img/portfolio/16-small.jpg" class="img-responsive" alt="오셜록 UI 설계서"> </a> </div>
+          </div>
+        </div>        
+        <!--############### end ##############-->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact Section -->
+
+
+
+<section id="black">
+	<h1>PETIKET앱 다운로드 이벤트</h1>
+	<button type="button"><img src="#" alt="PETIKET앱 다운로드 이벤트"></button>
+</section>
+<!-- plug-in -->
+<!-- <script src="js/nivo-lightbox.js"></script>  -->
+<script src="js/jquery.isotope.js"></script>  
+<script src="js/main.js"></script>
+</body>
+</html>

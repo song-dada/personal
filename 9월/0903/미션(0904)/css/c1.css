@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+* {
+    margin:0; padding:0; box-sizing: border-box;
+}
+a {
+    text-decoration: none; color:black;
+}
+img {
+    max-width: 100%;
+}
+
+#layout {
+    max-width:1000px; border:3px solid tomato; display: flex;
+}
+
+/* 왼쪽: (로고)+(메뉴) */
+header {
+    width:200px;
+}
+#logo {
+    padding:20px; background: dodgerblue; text-align: center; display: block;
+}
+header ul {
+    text-align: center; margin-top: 30px;
+}
+header li {
+    border:1px solid gray; position: relative;
+}
+header ul a {
+    display: block;
+}
+/*메인메뉴*/
+.mainMenu {
+    padding:10px; font-weight: bold; font-size:1.05rem;
+}
+.mainMenu:hover, header li:hover{
+    background-color: rgb(0, 164, 167);
+    color:white;
+}
+header li:hover> .subMenu{
+    height: 150px;
+}
+
+
+/* 서브메뉴 */
+.subMenu {
+    background: white; box-shadow:0 0 2px black;
+    width:100%;  height:0; overflow: hidden;    transition:height 0.5s;
+}
+.subMenu a {
+    line-height: 200%;
+}
+.subMenu a:hover {
+    background: rgb(26, 168, 104); color:white;
+}
+
+/*오른쪽: ((슬라이드)+(공지사항/갤러리/배너/바로가기)) + 하단 */
+#right {
+    flex:1;
+}
+
+/* 페이드 슬라이드 영역*/
+#slideArea { height:350px;}
+#slideArea h2 {display: none;}
+#slideArea> div {position: relative; height:100%;}
+#slideArea> div > div {
+    position:absolute; width:100%; height:100%; top:0; left:0;
+    display: flex; justify-content: center; align-items: center;
+    transition:opacity 0.8s;
+}
+#slideArea> div> div:nth-child(1) {background:skyblue;}
+#slideArea> div> div:nth-child(2) {background:orange;}
+#slideArea> div> div:nth-child(3) {background: yellowgreen;}
+
+
+/************************/
+main {
+    height:200px; display: flex; padding:30px 0;
+}
+
+#notigall {
+    flex:1;  position: relative; margin-right:30px;
+}
+#notigall h2 {
+    display: inline-block;  z-index: 1; position: relative;
+}
+/* #notigall h2.active {
+
+} */
+#notigall h2.active button {
+    background: white; /*활성화되면 버튼 배경색이 흰색 된다*/
+    transform: translateY(1px); padding:3px 10px;
+}
+
+#notigall h2 button {
+    /* padding:3px 10px;  */border:1px solid #999; border-bottom:none;
+    background: linear-gradient(#eee, #ccc); 
+    border-top-left-radius: 5px; border-top-right-radius: 5px;
+    transform: translateY(1.6pt); padding: 1px 10px 1px;
+}
+#notigall h2 button:hover {
+    background: linear-gradient(#ccc, #eee);
+}
+#notice li a:hover{
+    color:aquamarine; text-decoration: underline;
+}
+#notice ol {
+    list-style: none;
+    border:1px solid #999; background: white;
+}
+
+#gallery {
+    position: absolute; top:0; width:100%;
+}
+#gallery h2 {margin-left:74px;}
+#gallery > div {
+    background: white; padding:15px 0; text-align: center;
+    border:1px solid #999; display:none;
+
+}
+#gallery div div {
+    border:3px solid red; width:50px; height:50px; display: inline-block; margin:2px;
+}
+
+/********************/
+#banner {
+    flex:1;background: rgb(255, 177, 229); 
+}
+
+#quick {
+    flex:1;background: yellow; 
+}
+
+
+/***********************/
+footer {
+    height:100px; background-color: gray;
+}
+
+/***********************/
+
+#black {
+    position: fixed; background:rgba(0,0,0, 0.85); top:0; width:100%; height:100vh; z-index: 1;
+    display: none;
+}
+#black section {
+    width:500px; background:white; margin:auto; padding:20px; border-radius: 20px;
+    margin-top:50px; padding-bottom: 50px;
+}
+#black section button {
+    float: right;
+}

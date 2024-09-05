@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>펜션 라이프</title>
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+html, body {font:10pt "나눔고딕"; color:#333;}
+body {background-image:url("images/sea.jpg"); background-size:cover;}
+img {max-width:100%; display:block;}
+a {text-decoration:none;}
+
+header {position:fixed; top:-110px; left:0; width:100vw; padding:10px 0 0 20px; transition:0.5s; }
+header img {height:100px;}
+
+#layout {max-width:1300px; margin:auto; margin-top:100px; background:rgba(255,255,255, 0.8); height:2000px;}
+#layout ul {list-style:none;}
+/* 탭 메뉴 */
+#choice {display:flex; border-top:1px solid #ddd; border-bottom:1px solid #ddd; margin-bottom:30px;}
+#choice li {flex:1; padding:15px; text-align:center;}
+#choice li:not(:last-child) {border-right:1px solid #ddd;}
+#choice button {border:none; background:transparent; padding:5px 10px;}
+#choice button.active {font-weight:bold; color:darkred;}
+
+.list h2 {display:none;}
+.list ul {display:flex; flex-wrap:wrap; justify-content:center;}
+.list li {padding-bottom:30px; text-align:center;}
+
+.list a  {display:block; border:1px solid white; margin-bottom:15px; width:320px; height:240px; overflow:hidden; position:relative;}
+
+.list a:hover img{
+	filter: brightness(30%);
+}
+.list a:hover div{
+	opacity: 1;
+}
+
+.list div {position:absolute; top:80px; width:100%; text-align:center;}
+.list div h5 {color: white !important; font-size:2rem; margin-bottom:10px;}
+.list div  b {color: yellow !important; font-size:1.5rem;}
+
+
+.list a img {transition:0.5s;}
+
+.list a  div {transition:0.5s; opacity:0;}
+
+
+.list h4 span {font-weight:normal;}
+.list p  {margin-top:5px;}
+.list del , #hot p span {font-weight:bold;}
+.list b {color:black; margin-right:3px;}
+.list .red {color:darkred;}
+.list:not(#hot) {display:none;}
+
+#popup {position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0, 0.7);  display: none;}
+#popup section {width:600px; margin:auto; background:white; margin-top:100px; padding:50px 0 10px 30px;}
+#popup h3  {display:none;}
+#popup button {background:#333; color:white; border:none; padding:10px 40px 13px 40px; font-weight:bold; display:block; transform:translateY(-45px);}
+</style>
+<script>
+	document.addEventListener("DOMContentLoaded" , ()=> {
+
+		const list_a = document.querySelectorAll(".list a");
+		const multi_event = ["mouseenter" , "focus"]; 
+
+		list_a.forEach( i => {
+			multi_event.forEach( j => {
+				i.addEventListener( j , ()=>{
+					let alt = i.querySelector("img").getAttribute("alt");
+					const h5 = i.querySelector("h5");					
+					h5  ?  h5.textContent = alt   :   null ;
+
+					const b = i.querySelector('b');
+					const b1 = i.parentElement.querySelectorAll("b")[1];
+					b ? b.textContent = b1.textContent : null;
+				});
+			});
+			i.addEventListener("click" , ()=>{
+				const popup = document.getElementById('popup');
+				popup.style.display = "block";
+				const img = i.querySelector("img");
+				const src =   img.getAttribute("src");
+				const alt_1 = img.getAttribute("alt");
+				popup.querySelector("img").setAttribute("src"  , src );
+				popup.querySelector("img").setAttribute( "alt" , alt_1  );
+				const h3 = popup.querySelector("h3");
+				h3.textContent = alt_1;
+			});
+		});
+
+		document.querySelector("#popup button").addEventListener("click" , (e)=>{
+				e.target.parentElement.parentElement.style.display = "none";
+		});
+
+	}); //end..............
+</script>
+</head>
+<body>
+
+	<header><a href="#"><img src="images/logo.png" alt="로고"></a></header>
+	<div id="layout">
+	
+		<ul id="choice">
+			<li><button type="button" class="active">HOT&#38;BEST</button></li>
+			<li><button type="button">인기펜션</button></li>
+			<li><button type="button">신규입점</button></li>
+			<li><button type="button">제주펜션</button></li>
+		</ul>
+		
+		<div>	
+			<section id="hot" class="list">
+				<h2>HOT&#38;BEST</h2>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="images/hot01.jpg" alt="평창 숲속의 요정">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[강원 평창] <span>텍스트텍스트</span></h4>
+						<p>
+							<!-- del 가로선(delete) &rarr;(우측화살표) -->
+							<del class="red">56,900</del> &rarr; 
+							<b>47,200</b> <span class="red">(17%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/hot02.jpg" alt="플라워 카라반 펜션">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[경기 양평] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>90,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/hot03.jpg" alt="데일리 펜션">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[인천 강화] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">90,000</del> &rarr; 
+							<b>50,000</b> <span class="red">(44%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/hot04.jpg" alt="도도 펜션">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>60,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/hot01.jpg" alt="평창 숲속의 요정">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[강원 평창] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">56,900</del> &rarr; 
+							<b>47,200</b> <span class="red">(17%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/hot02.jpg" alt="플라워 카라반 펜션"></a>
+						<h4>[경기 양평] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>90,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/hot03.jpg" alt="데일리 펜션"></a>
+						<h4>[인천 강화] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">90,000</del> &rarr; 
+							<b>50,000</b> <span class="red">(44%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/hot04.jpg" alt="도도 펜션"></a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>60,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/hot01.jpg" alt="평창 숲속의 요정"></a>
+						<h4>[강원 평창] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">56,900</del> &rarr; 
+							<b>47,200</b> <span class="red">(17%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/hot02.jpg" alt="플라워 카라반 펜션"></a>
+						<h4>[경기 양평] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>90,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/hot03.jpg" alt="데일리 펜션"></a>
+						<h4>[인천 강화] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">90,000</del> &rarr; 
+							<b>50,000</b> <span class="red">(44%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/hot04.jpg" alt="도도 펜션"></a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>60,000</b>
+						</p>
+					</li>
+				</ul>
+			</section>
+			<section id="popular" class="list">
+				<h2>인기펜션</h2>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="images/popular01.jpg" alt="테라피 펜션">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[경기 가평] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>90,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/popular02.jpg" alt="더뷰 풀빌라">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+							</a>
+						<h4>[경남 거제] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">139,000</del> &rarr; 
+							<b>109,000</b> <span class="red">(22%)</span>
+						</p>
+					</li>
+					
+					<li>
+						<a href="#">
+							<img src="images/popular04.jpg" alt="지미안 펜션">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[제주 제주시] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>55,000</b>
+						</p>
+					</li>					
+					<li>
+						<a href="#"><img src="images/popular02.jpg" alt="더뷰 풀빌라"></a>
+						<h4>[경남 거제] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">139,000</del> &rarr; 
+							<b>109,000</b> <span class="red">(22%)</span>
+						</p>
+					</li>					
+					<li>
+						<a href="#"><img src="images/popular04.jpg" alt="지미안 펜션"></a>
+						<h4>[제주 제주시] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>55,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/popular01.jpg" alt="테라피 펜션"></a>
+						<h4>[경기 가평] <span>텍스트텍스트</span></h4>
+						<p>							
+							<b>90,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/popular02.jpg" alt="더뷰 풀빌라"></a>
+						<h4>[경남 거제] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">139,000</del> &rarr; 
+							<b>109,000</b> <span class="red">(22%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/popular03.jpg" alt="별장 오션 스카이"></a>
+						<h4>[제주 제주시] <span>텍스트텍스트</span></h4>
+						<p>
+							<b>130,000</b>
+						</p>
+					</li>					
+				</ul>
+			</section>
+			<section id="new" class="list">
+				<h2>신규입점</h2>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="images/new01.jpg" alt="어온 풀빌라">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[경남 거제] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">179,000</del> &rarr; 
+							<b>79,000</b> <span class="red">(56%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/new02.jpg" alt="글램핑클럽 레스피아 가평">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[경기 가평] <span>텍스트텍스트</span></h4>
+						<p>
+							<b>48,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/new03.jpg" alt="아일랜드 리솜">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">250,000</del> &rarr; 
+							<b>179,400</b> <span class="red">(28%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#">
+						<img src="images/new04.jpg" alt="경주 블루원 리조트">
+						<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">210,000</del> &rarr; 
+							<b>160,000</b> <span class="red">(24%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/new01.jpg" alt="어온 풀빌라"></a>
+						<h4>[경남 거제] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">179,000</del> &rarr; 
+							<b>79,000</b> <span class="red">(56%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/new02.jpg" alt="글램핑클럽 레스피아 가평"></a>
+						<h4>[경기 가평] <span>텍스트텍스트</span></h4>
+						<p>
+							<b>48,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/new03.jpg" alt="아일랜드 리솜"></a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">250,000</del> &rarr; 
+							<b>179,400</b> <span class="red">(28%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/new04.jpg" alt="경주 블루원 리조트"></a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">210,000</del> &rarr; 
+							<b>160,000</b> <span class="red">(24%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/new01.jpg" alt="어온 풀빌라"></a>
+						<h4>[경남 거제] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">179,000</del> &rarr; 
+							<b>79,000</b> <span class="red">(56%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/new02.jpg" alt="글램핑클럽 레스피아 가평"></a>
+						<h4>[경기 가평] <span>텍스트텍스트</span></h4>
+						<p>
+							<b>48,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/new03.jpg" alt="아일랜드 리솜"></a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">250,000</del> &rarr; 
+							<b>179,400</b> <span class="red">(28%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/new04.jpg" alt="경주 블루원 리조트"></a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">210,000</del> &rarr; 
+							<b>160,000</b> <span class="red">(24%)</span>
+						</p>
+					</li>
+				</ul>
+			</section>
+			<section id="jeju" class="list">
+				<h2>제주펜션</h2>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="images/jeju01.jpg" alt="한라 앤 탐 펜션">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[제주 서귀포시] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">31,500</del> &rarr; 
+							<b>28,000</b> <span class="red">(11%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/jeju02.jpg" alt="레드클레이">
+							<div>
+								<h5>펜션이름</h5>
+								<b>가격</b>
+							</div>
+						</a>
+						<h4>[제주 제주시] <span>텍스트텍스트</span></h4>
+						<p>
+							<b>49,000</b>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/jeju03.jpg" alt="수모루 펜션"></a>
+						<h4>[충남 태안] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">180,000</del> &rarr; 
+							<b>61,200</b> <span class="red">(66%)</span>
+						</p>
+					</li>
+					<li>
+						<a href="#"><img src="images/jeju04.jpg" alt="더 제이드 호텔"></a>
+						<h4>[제주 제주시] <span>텍스트텍스트</span></h4>
+						<p>
+							<del class="red">50,000</del> &rarr; 
+							<b>37,600</b> <span class="red">(25%)</span>
+						</p>
+					</li>
+				</ul>
+			</section>
+		</div>		
+	</div>
+	<!--***********팝업부분 ***********-->
+	<div id="popup">
+		<section>
+			<h3>공지사항</h3>
+			<img src="images/popup.jpg" alt="평일 무료숙박 상품 안내: 평일 20인이상 통삼겹바베큐 주문시 숙박 무료입니다. 010-2345-6789">
+			<button type="button">창 닫기</button>
+		</section>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

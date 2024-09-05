@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우측슬라이드</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #layout{
+            max-width: 900px;
+            height: 60vh;
+            /* border: 1px solid; */
+            margin: auto;
+        }
+        #slidearea{
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+        }
+        #slide{
+            display: flex;
+            width: 300%;
+            position: absolute;
+            right: 0%;
+        }
+        /* div로 묶어서 사용할때용
+        #slide .img{
+            width: 100%;
+        } */
+        img{
+            display: block;
+            width: 100%;
+        }
+        #dat{
+            position: absolute;
+            bottom: 15%;
+            width: 100%;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            
+        }
+        .r{
+            background-color: white;
+            border: 1px solid;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            margin: 15px;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div id="slidearea">
+            <div id="slide">
+                <!-- div로 묶어서 사용할때용 -->
+                <!-- <div class="img"><img src="slide1.jpg" alt="1"></div>
+                <div class="img"><img src="slide2.jpg" alt="2"></div>
+                <div class="img"><img src="slide3.jpg" alt="3"></div> -->
+                <img src="slide1.jpg" alt="1">
+                <img src="slide2.jpg" alt="2">
+                <img src="slide3.jpg" alt="3">
+            </div>
+            <div id="dat">
+                <div class="r"></div>
+                <div class="r"></div>
+                <div class="r red"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        const slide = document.getElementById('slide');
+        const r = [... document.getElementsByClassName('r')];
+
+        // console.log(slidearea);
+        // console.log(slide);
+        let index = 1;
+        const toright = () => {
+            slide.style.transition = 'right 1000ms';
+            slide.style.right = '-100%'
+            // r[i-1/3].classList.remove('red');
+            r.forEach( (i,j) => {
+                i.classList.remove('red');
+                if( index == j){
+                    i.classList.add('red');
+                }
+            });
+            // i--;
+            // index=0 ? index=2 : index--;
+            index <= 0 ? index = 2 : index--
+
+
+            setTimeout(pre_img, 1001);
+        };
+
+        const pre_img = () => {
+            
+            slide.style.transition = 'none';
+            slide.style.right = '0';
+
+            slide.prepend(slide.lastElementChild);
+
+        }
+        
+        setInterval( toright , 2500 );
+
+    </script>
+</body>
+</html>

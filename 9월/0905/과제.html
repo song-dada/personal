@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0906 과제</title>
+</head>
+<body>
+    <div id="layout">
+        <ul>
+            <!--(1)(메인메뉴 서브메뉴): 시작-->
+            <li>
+            <!-- 주메뉴 : 시작 -->
+                <a href="#" class="mainMenu">0</a>
+                <!--(주)메뉴: -->
+                <!--서브메뉴시작 -->
+                <nav class="subMenu">
+                <a href="#">0</a> <a href="#">018A17</a>
+                <a href="#">1</a> </nav>
+                <!--서브메뉴: 끝-->
+            </li>
+            <!-- (1) (메인메뉴+서브메뉴)-->
+            <!--(2) (메인메뉴 서브메뉴):시작-->
+            <li>
+                <!--주메뉴 : 시작-->
+                <a href="#" class="mainMenu">0</a> <!--주메뉴:꿀-->
+                <!--서브메뉴: 시작-->
+                <nav class="subMenu">
+                <a href="#"></a> <a href="#">1</a> <a href="#">0</a> </nav>
+                <!--서브메뉴: 꿀-->
+            </li>
+            <!--(2) (메인메뉴 서브메뉴): 끝-->
+            <!--(3)(메인메뉴+서브메뉴):시작-->
+            <li>
+                <!--주메뉴 : 시작-->
+                <a href="#" class="mainMenu"></a>
+                <!--주메뉴:꿀-->
+                <!--서브메뉴: 시작-->
+                <nav class="subMenu">
+                <a href="#">4</a> <a href="#">24</a> <a href="#"></a> </nav>
+                <!--서브메뉴:꿀-->
+            </li>
+            <!--(3) (메인메뉴 서브메뉴)-->
+            <!-- (4) (메인메뉴+서브메뉴): 시작-->
+            <li>
+                <!--주메뉴 : 시작-->
+                <a href="#" class="mainMenu"></a> <!--주메뉴:끝-->
+                <!--서브메뉴: 시작-->
+                <nav class="subMenu">
+                <a href="#"></a>
+                <a href="#">2</a>
+                <a href="#" id="last"></a>
+                </nav>
+                <!--서브메뉴 -->
+            </li>
+            <!--(4) (메인메뉴+서브메뉴):끝-->
+        </ul>
+    </div>
+    <script>
+        const m_menu = document.getElementsByClassName('mainMenu');
+        // console.log(m_menu);
+        const here = m_menu[1].parentElement.previousElementSibling
+        const red = () => {
+            here.style.backgroundColor = '#ff0000';
+            // background-color
+        };
+
+        red();
+    </script>
+</body>
+</html>

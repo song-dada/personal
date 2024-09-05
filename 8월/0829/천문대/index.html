@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>대한천문대</title>
+	<!-- <script src="js/jquery-1.12.3.js"></script>
+	<script src="js/index.js"></script>
+	<link rel="stylesheet" href="css/index.css"> -->
+	<script>
+        document.addEventListener("DOMContentLoaded" , ()=> {
+
+const mainMenu =[...document.getElementsByClassName('mainMenu')];
+const nav      =[...document.getElementsByTagName('nav')];
+const last =        document.getElementById('last');
+
+mainMenu.forEach( i => {
+	i.addEventListener("focus" , () => {
+		nav.forEach( j => j.style.height = 0 );
+		i.nextElementSibling.style.height= "150px";
+	});
+});
+
+last.addEventListener('blur', ()=> nav[3].style.height = 0 );
+
+/*************************/
+const slideImg = document.querySelectorAll('#slide img');
+
+let t = 2;
+const fadeSlide = ()=> {    
+
+	const x =()=> {
+		slideImg.forEach( z => z.style.opacity = 1);
+		t= 2;
+	}
+	const y = ()=> {
+		slideImg[t].style.opacity = 0;
+		t--;
+	}
+	//삼항연산자
+	( t == 0 ) ?  x() : y();        
+   
+}
+
+setInterval( fadeSlide , 2000);
+
+/*****************************/
+const btn = document.querySelectorAll("#btn button");
+const h2  = document.querySelectorAll('#btn h2');
+const ul  = document.querySelector("#notice ul");
+const ul_a = document.querySelectorAll("#notice ul a");
+const gallery = document.getElementById("gallery");
+const popup = document.getElementById("popup");
+
+btn.forEach( i => {
+
+	i.addEventListener("click" , ()=>{
+		const active = document.getElementsByClassName('active')[0];
+		active.classList.remove('active');
+		i.parentElement.classList.add('active');
+
+		const x = () => {
+			ul.style.display = "block";
+			gallery.style.display = "none";
+		}
+
+		const y = () => {
+			ul.style.display = "none";
+			gallery.style.display = "flex";
+		}
+		
+		( i.textContent==="공지사항" )  ? x() : y();
+	});
+
+});
+
+/**** 공지사항 리스트 항목 클릭 *****/
+ul_a.forEach( i => {
+	i.addEventListener("click" , ()=> {
+		popup.style.display = "block";
+	});
+});
+
+popup.querySelector("button").addEventListener("click" , ()=> {
+	popup.style.display = "none";
+});
+
+});//end.............
+</script>
+
+    <style>
+
+	/*공통*/
+	* {
+		margin:0; padding:0; box-sizing: border-box;
+	}
+	html,body {
+		font:10pt/180% "나눔고딕", '맑은 고딕', '돋움'; color:#333;
+	}
+	img {
+		display: block; max-width: 100%;
+	}
+	a {color:#333; text-decoration: none;}
+
+	#layout {
+		max-width:1200px; height:700px; margin:auto; border:3px solid red;
+	}
+
+	/*상단*/
+	header {
+		height:100px; /* background: #30a3f3; */ /*보조색상*/ display: flex; /* align-items: center; */
+	}
+
+	/*로고*/
+	header h1 {
+		flex:1; padding-top:30px;
+	}
+	header ul {
+		flex:1.3;list-style: none; display: flex; margin-top:40px;
+		position: relative; z-index: 1;
+	}
+	header li {flex:1;}
+	header ul a {padding:10px; text-align: center;}
+
+	/*메인메뉴*/
+	.mainMenu {display: block; font-weight: 800; font-size:1.15rem; padding:10px 10px 13px;}
+	.mainMenu:hover ,
+	li:hover .mainMenu{background: #0066ad; /*주조색*/ color:white;}
+	li:hover nav {height:150px;}
+
+
+	/*서브메뉴*/
+	nav { background: white; height:0; overflow: hidden; transition:height 0.5s; }
+	nav a {display:block;}
+	nav a:hover {background: #30a3f3; color:white;}
+
+	/******슬라이드*******/
+#slide {position: relative;}
+#slide img {transition: opacity 1s;}
+#slide img:not(:first-child) {position:absolute; top:0;}
+
+
+/******메인************/
+main {display: flex; padding-top:30px;}
+
+#notice {flex:1.2;}
+#notice h2 {
+    background: white; display: inline-block;  border:2px solid #0066ad; border-bottom: none;
+    border-top-left-radius: 6px; border-top-right-radius: 6px;
+}
+#notice h2.active {
+    background: #0066ad; 
+}
+#notice h2.active button {color:white;}
+
+#notice h2 button {
+    background: none; border:none; padding:0 6px 3px;
+}
+
+/*클릭하는 부분*/
+#btn {border-bottom:2px solid #0066ad;}
+
+/*공지사항*/
+#notice ul {list-style-position: inside; padding:5px 0 0 5px;}
+
+/*갤러리*/
+#notice div:last-of-type  {display: flex; justify-content: center; padding-top:15px; display: none;}
+#notice div:last-of-type a {margin:5px;}
+
+
+#banner {flex:1; margin-left:80px;}
+#banner h2 {display: none;}
+
+#quick {flex:1; margin-left:80px;}
+#quick h2 {display: none;}
+
+
+/************하단 **************/
+footer {display: flex; margin-top:30px; background: #ddd; padding:20px; align-items: center;}
+footer>a {margin-right:60px;}
+footer div {flex:1; }
+footer div p:first-child {font-weight: bold; padding-bottom: 10px;}
+footer div p:first-child a {margin:5px;}
+
+
+
+/************공지사항 **************/
+#popup {
+    position: fixed; top:0; left:0; background: rgba(0,0,0, 0.85);
+    width:100%; height:100vh; display: none;
+}
+#popup section {
+    background:white; width:600px; border-radius:10px; padding:20px;
+    margin:20vh auto; min-height:40vh;
+    position: relative;
+}
+#popup section button {position: absolute; right:20px; bottom:20px;}
+</style>
+</head>
+<body>
+	<div id="layout">
+		<header>
+			<h1>
+				<a href="#" tabindex="1"><img src="images/logo.png" alt="로고"></a>
+			</h1>
+			<ul>
+				<li>
+					<a href="#" tabindex="2">천문대소개</a>
+					<nav>
+						<a href="#" tabindex="3">인사말</a>
+						<a href="#" tabindex="4">천문대소식</a>
+						<a href="#" tabindex="5">오시는길</a>
+					</nav>
+				</li>
+				<li>
+					<a href="#" tabindex="6">이용안내</a>
+					<nav>
+						<a href="#" tabindex="7">프로그램</a>
+						<a href="#" tabindex="8">관람시간표</a>
+						<a href="#" tabindex="9">이달의별자리</a>
+					</nav>
+				</li>
+				<li>
+					<a href="#" tabindex="10">천문대예약</a>
+					<nav>
+						<a href="#" tabindex="11">관람예약</a>
+						<a href="#" tabindex="12">예약확인</a>
+						<a href="#" tabindex="13">예약취소</a>
+					</nav>
+				</li>
+				<li>
+					<a href="#" tabindex="14">커뮤니티</a>
+					<nav>
+						<a href="#" tabindex="15">공지사항</a>
+						<a href="#" tabindex="16">방문후기</a>
+						<a href="#" tabindex="17">자유게시판</a>
+					</nav>
+				</li>
+			</ul>
+		</header>
+		<div id="slide">
+			<img src="images/img3.jpg" alt="천문대전경">
+			<img src="images/img2.jpg" alt="천문대전경">
+			<img src="images/img1.jpg" alt="천문대전경">
+		</div>
+		<main>
+			<section id="notice">
+				<div id="btn">
+					<h2 class="active"><button type="button" tabindex="18">공지사항</button></h2>
+					<h2><button type="button" tabindex="24">갤러리</button></h2>
+				</div>					
+				<ul>
+					<li>
+						<a href="#" tabindex="19">제1회 별사진 공모전 개회됩니다.</a><span>2020.03.01</span>
+					</li>
+					<li>
+						<a href="#" tabindex="21">하계기간 야간 연장운영합니다.</a><span>2020.03.01</span>
+					</li>
+					<li>
+						<a href="#" tabindex="22">청소년 대상 천문교실 안내 </a><span>2020.03.01</span>
+					</li>
+					<li>
+						<a href="#" tabindex="23">하늘과 바람과 별과 詩 사생대회</a><span>2020.03.01</span>
+					</li>
+				</ul>
+				<div id="gallery">					
+					<a href="#"><img src="images/icon1.jpg" alt="천문대"></a>
+					<a href="#"><img src="images/icon2.jpg" alt="천문대"></a>
+					<a href="#"><img src="images/icon3.jpg" alt="천문대"></a>
+				</div>
+			</section>	
+			<section id="banner">
+				<h2>배너</h2>
+				<a href="#"><img src="images/banner.jpg" alt="배너"></a>
+			</section>
+			<section id="quick">
+				<h2>바로가기</h2>
+				<a href="#"><img src="images/shortcut.jpg" alt="바로가기"></a>
+			</section>
+		</main>
+		<footer>
+			<a href="#"><img src="images/logo_bottom.png" alt="하단로고"></a>
+			<div>
+				<nav>
+					<a href="#">하단메뉴1</a>
+					<a href="#">하단메뉴2</a>
+					<a href="#">하단메뉴3</a>
+				</nav>
+				<p>COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED</p>
+			</div>
+		</footer>
+	</div>
+	<div id="popup">
+		<section>
+			<h3>하늘과 바람과 별과 詩 사생대회</h3>
+			<p>윤동주 시인의 시집 &lt; 하늘과 바람과 별과 詩 &lt; 출간<br>
+			72주년을 맞이하여 천문대에서 개최하는 사생대회가 열립니다.<br>
+			별 하나에 추억과 사랑과 쓸쓸함과 동경과 시와, 어머니를 그렸던<br>
+			시인처럼 별과 같은 마음을 가진 분들은 참여해주세요.</p>
+			<button type="button" tabindex="20">닫기</button>
+		</section>
+	</div>
+</body>
+</html>
+
+
+
+
