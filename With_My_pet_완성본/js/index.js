@@ -1,4 +1,3 @@
-document.getElementById('contentFrame').src = '/home.html';
 
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
@@ -24,3 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
 });
+
+document.getElementById('contentFrame').src = '/home.html';

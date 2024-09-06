@@ -28,13 +28,27 @@ document.addEventListener("DOMContentLoaded",() => {
     const event_list = document.querySelectorAll('#event li a');
     const notice_pop = document.getElementById('notice_pop');
     const event_pop = document.getElementById('event_pop');
+    const close_btn = document.querySelectorAll('#black button');
 
-    const n_show = () => {
+    const show = (e) => {
         black.style.display = 'block';
-        black.style.zIndex = 1;
+        (e === 'no') ? notice_pop.style.display = 'block' : event_pop.style.display = 'block';
+    };
+
+    const close = () => {
+        black.style.display = 'none';
+        notice_pop.style.display = 'none';
+        event_pop.style.display = 'none';
     };
     notice_list.forEach( (i) => {
-        i.addEventListener('click', );
+        i.addEventListener('click', () => { show('no'); });
+    });
+    event_list.forEach( (i) => {
+        i.addEventListener('click', () => { show('ev'); } );
+    });
+
+    close_btn.forEach( (i) => {
+        i.addEventListener('click', close);
     });
 
 });
