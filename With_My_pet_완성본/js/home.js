@@ -21,4 +21,20 @@ document.addEventListener("DOMContentLoaded",() => {
     // ㅡㅡㅡㅡㅡ 슬라이드 ㅡㅡㅡㅡㅡ
     setInterval(img_slide_to_left,5500);
 
+    // ㅡㅡㅡㅡㅡ 팝업 ㅡㅡㅡㅡㅡ
+    const black = document.getElementById('black');
+    const popup = document.getElementsByClassName('popup');
+    const notice_list = document.querySelectorAll('#notice li a');
+    const event_list = document.querySelectorAll('#event li a');
+    const notice_pop = document.getElementById('notice_pop');
+    const event_pop = document.getElementById('event_pop');
+
+    const n_show = () => {
+        black.style.display = 'block';
+        black.style.zIndex = 1;
+    };
+    notice_list.forEach( (i) => {
+        i.addEventListener('click', );
+    });
+
 });

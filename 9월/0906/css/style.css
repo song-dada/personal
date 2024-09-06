@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    overflow: hidden;
+}
+#layout{
+    position: relative;
+    top: 0;
+    height: 100%;
+    transition: all 500ms;
+}
+#layout section{
+    height: 100%;
+}
+#layout section:nth-of-type(1){
+    background-color: #ff0000;
+}
+#layout section:nth-of-type(2){
+    background-color: #00ff00;
+}
+#layout section:nth-of-type(3){
+    background-color: #0000ff;
+}
+#layout section:nth-of-type(4){
+    background-color: #000000;
+}

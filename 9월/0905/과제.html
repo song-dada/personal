@@ -58,14 +58,15 @@
     </div>
     <script>
         const m_menu = document.getElementsByClassName('mainMenu');
-        // console.log(m_menu);
+
         const here = m_menu[1].parentElement.previousElementSibling
         const red = () => {
             here.style.backgroundColor = '#ff0000';
-            // background-color
         };
 
-        red();
+        // red();
+        window.addEventListener('load', red); 
+
     </script>
 </body>
 </html>
