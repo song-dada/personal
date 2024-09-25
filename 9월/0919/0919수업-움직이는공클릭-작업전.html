@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>움직이는 공 클릭 게임</title>
+    <style>
+        #layout {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width:300px; margin:auto;
+            border:2px solid red;  
+        }
+
+        #moveArea {            
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto;
+            background-color: #ddd;
+        }
+
+        #ball {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            border-radius: 50%;
+            position: absolute;
+            top: 75px;
+            left: 0;
+            animation: moveBall 4s linear infinite;
+        }
+
+        @keyframes moveBall {
+            from { left:0 }
+            to { left: 100% }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const ball = document.getElementById('ball');
+            const count = document.getElementById('count');
+            let i = 0;
+
+            ball.addEventListener('click',()=>{
+                i++;
+                count.textContent = i;
+            });
+
+            const area = document.getElementById('moveArea').clientWidth;
+            const x =()=>{
+
+                // if (ball.offsetLeft > area-ball.clientWidth){
+                    i = 0;
+                    count.textContent = i;
+                // }
+            };
+            setInterval( x, 4000 );
+
+        });
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <h1>움직이는 공 클릭 게임</h1>
+        <p id="score">점수: <span id="count">0</span></p>
+        <div id="moveArea">
+            <div id="ball"></div>
+        </div>
+    </div>    
+</body>
+</html>

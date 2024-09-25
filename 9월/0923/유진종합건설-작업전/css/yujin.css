@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+/*공통*/
+* {margin:0; padding:0; box-sizing:border-box;}
+html,body {font:10pt/180% "맑은 고딕","돋움"; color:#333; background:#f2f2f2;}
+a {color:#333; text-decoration:none; display:block;}
+img {max-width:100%;}
+
+#layout {width:1200px; border:0px solid pink; margin:auto; background:white; position:relative;}
+
+/*상단*/
+header {display:flex; height:100px; padding-top:40px;}
+header h1	{flex:2;}
+header ul	{flex:1.7; list-style:none; display:flex; margin-top:10px;}
+
+/*메인메뉴*/
+header li 		{flex:1; text-align:center; position:relative;}
+header li>a 	{font-weight:bold; font-size:1.2rem; padding:10px; padding-bottom:16px;}
+header li>a:hover {background:#ff5050; color:white;}
+
+/*서브메뉴*/
+header+div	{height:150px; background:#ff5050; position:absolute; width:100%; z-index:1; height:0;}
+nav 		{position:absolute; z-index:2; width:100%; display:none;}
+nav>a 		{padding:9px; padding-bottom:10px; color:white;}
+nav>a:hover {background:#ffc000;}
+a.blank		{outline:none;}
+a.blank:hover {background:transparent;}
+
+/*이미지슬라이드*/
+#slideArea h2	{display:none;}
+#slideArea div	{position:relative; height:300px;}
+#slideArea img	{position:absolute;}
+
+/*메인 (공지사항+갤러리+퀵배너)*/
+main 	{display:flex; height:250px; padding-top:30px;}
+main h2 {border:1px solid #ff5050; display:inline-block; color:#ff5050; font-size:1.15rem; padding:3px 6px 4px 6px; margin-bottom:15px;}
+
+/*공지사항*/
+#notice 		{border:0px solid blue; flex:1.05;}
+#notice a 		{display:inline;}
+#notice a:hover {color:dodgerblue; text-decoration:underline;}
+#notice ul 		{list-style:none; padding-left:5px; line-height:220%;}
+#notice li 		{border-bottom:1px dashed #666;}
+#notice span 	{float:right;}
+
+/*갤러리*/
+#gallery 		{border:0px solid blue; flex:1; margin:0 40px;}
+#gallery div 	{display:flex; border:0px solid red; justify-content:space-between;}
+#gallery img	{display:block;}
+
+/*퀵배너*/
+#quick 			{border:0px solid blue; flex:1;}
+#quick img 		{display:block;}
+
+footer 			{background:#eee; padding:10px; display:flex; align-items:center;}
+footer p 		{flex:1;}
+footer a 		{display:inline-block; margin-right:10px;}
+footer a:hover  {color:black; text-decoration:underline;}
+
+/*팝업*/
+#black{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    
+    display: none;
+}
+#popup{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3%;
+    border-radius: 10px;
+}
+#popup img{
+    display: block;
+}
+#popup p{
+   text-align: right;
+   margin-top: 1.5%;
+}
+

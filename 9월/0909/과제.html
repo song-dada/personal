@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <section id="event" class="area">
+        <h2>event and detail</h2>
+        <div>
+            <div>
+                <img src="" alt="이미지1">
+                <p>
+                    <i class="fas fa-search"></i>
+                    <b>자세히보기</b>
+                </p>
+            </div>
+        </div><div>
+            <div>
+                <img src="" alt="이미지2">
+                <p>
+                    <i class="fas fa-search"></i>
+                    <b>자세히보기</b>
+                </p>
+            </div>
+        </div><div>
+            <div>
+                <img src="" alt="이미지3">
+                <p>
+                    <i class="fas fa-search"></i>
+                    <b>자세히보기</b>
+                </p>
+            </div>
+        </div>
+    </section>
+    <script>
+        const id = document.querySelectorAll('#event p');
+        
+        id.forEach( i => {
+            i.style.display = 'none';
+        }); 
+    </script>
+</body>
+</html>

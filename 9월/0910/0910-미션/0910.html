@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>홍길동의 포트폴리오</title>
+<style>
+    body {height:200vh;}
+   .right {display:none;} 
+</style>
+</head>
+<body>
+	<div id="portfolio" class="area">
+		<h2>Portfolio</h2>
+		<section id="port1">
+			<div class="left">
+				<h3>건설공제조합</h3>
+				<ul>
+					<li>
+						<b>사이트명</b>
+						<span>건설공제조합(반응형)</span>
+					</li>						
+					<li>
+						<b>제작기간</b>
+						<span>2019.06.10 - 2019.07.08</span>
+					</li>
+					<li>
+						<b>제작물</b>
+						<span>메인페이지 / 서브페이지 ( 보증, 공제, 융자, 가입)</span>
+					</li>
+					<li>
+						<b>컨셉</b>
+						<span>안정적인, 든든한</span>
+					</li>
+					<li>
+						<b>컨셉설명</b>
+						<span>기존 웹사이트는 정보의 구분이 불분명하고 사용자의 시선이 분산되는 문제점이 있었습니다. 때문에 텍스트와 이미지간의 적절한 밸런스를 유지하고, 직관적으로 정보를 파악할 수 있도록 하였습니다.</span>					
+					</li>					
+				</ul>
+				<a href="plan/hankook/index.html" target="_blank">리뉴얼 기획서</a>
+				<a href="https://pjh445.github.io/swatch/" target="_blank">웹사이트 바로가기</a>
+				<a href="https://pjh445.github.io/perfume/" onclick="window.open(this.href, 'win1', 'top=10, left=100 , width=414, height=740, toolbar=no, scrollbars=no, resizable=yes'); return false;"   onkeypress="this.onclick()">모바일웹 바로가기</a>
+			</div>
+			<div class="right">
+				<img src="images/portfolio-1.jpg" alt="포트폴리오 리움">
+			</div>	
+		</section>
+	</div>
+	<script>
+		const right = document.getElementsByClassName('right')[0];
+
+		window.addEventListener('wheel',()=>{
+			if (window.scrollY > 100 ) {
+				right.style.display = 'block'
+			}
+		});
+	</script>
+</body>
+</html>
+
+
+
+

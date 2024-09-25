@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 사이트</title>   
+    <style>  
+	 a {display:inline-block; width:100px;}
+	 img {width:100%;}
+	</style>
+</head>
+<body>
+    <div id="layout">
+        <h1>홍길동의 포트폴리오</h1>
+        <nav>
+            <button type="button">짝수 이미지 보이기</button>
+            <button type="button">홀수 이미지 보이기</button>
+        </nav>
+        <div id="gallery">
+			<a href="#" class="event"><img src="images/01-small.jpg" alt="01"></a>
+			<a href="#" class="web"><img src="images/05-small.jpg" alt="05"></a>
+			<a href="#" class="ppt"><img src="images/03-small.jpg" alt="03"></a>
+			<a href="#" class="ppt"><img src="images/09-small.jpg" alt="09"></a>
+			<a href="#" class="ppt"><img src="images/08-small.jpg" alt="08"></a>                
+			<a href="#" class="event"><img src="images/07-small.jpg" alt="07"></a>                
+			<a href="#" class="event"><img src="images/02-small.jpg" alt="02"></a>
+			<a href="#" class="web"><img src="images/12-small.jpg" alt="12"></a>              
+			<a href="#" class="ppt"><img src="images/10-small.jpg" alt="10"></a>
+			<a href="#" class="web"><img src="images/11-small.jpg" alt="11"></a>
+			<a href="#" class="ppt"><img src="images/06-small.jpg" alt="06"></a>
+			<a href="#" class="event"><img src="images/04-small.jpg" alt="04"></a>
+        </div>
+    </div>
+	<script>
+		const btn = [... document.getElementsByTagName('button')];
+		const img = document.querySelectorAll('#gallery a');
+
+		const show = ( num ) => {
+			img.forEach(( i, j )=>{
+				if (j%2 == num) {
+					i.style.display = 'none';
+				}
+				else{
+					i.style.display = 'inline-block';
+				}
+			});
+		}
+		
+		btn.forEach( (element, index) => {
+			element.addEventListener('click', ()=>{
+				(index%2 == 0) ? show(0) : show(1);
+				// show(index);
+			})
+		});
+	</script>
+</body>
+</html>

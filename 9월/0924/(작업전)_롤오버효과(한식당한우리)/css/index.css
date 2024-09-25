@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+* {margin:0; padding:0; box-sizing:border-box;}
+html,body {font:12pt  'Nanum Gothic', sans-serif;}
+h2,h3,h4 {font-family: 'Nanum Myeongjo', serif;}
+img {max-width:100%; display:block;}
+a {text-decoration:none; color:black;}
+
+
+
+
+/*대표 일품 요리*/
+#sec02 	{margin-top:100px;}
+
+/*h2 디자인 통합관리*/
+.h2 	{text-align:center; font-size:27pt; font-weight:400;}
+.h2  rt {
+		text-align:center; color:#cfa972; 
+		font-size:1rem; font-weight:700;
+		transform:translateY(-15px);
+}
+/*h2 아래부분 세로선 디자인 통합관리*/
+.line 	{
+			width:1px; height:100px;
+			margin:auto; margin-top:30px;
+			background: #ccc; border:none;
+}
+
+/*대표 일품 요리: 썸네일 이미지형 목록*/
+#sec02_list {
+			max-width:1250px; margin:auto;
+			display:flex; flex-wrap:wrap;
+			justify-content:space-evenly;			;
+}
+#sec02_list section {
+			margin-bottom:10px; 
+			width:304px; height:304px;
+			position: relative;
+			overflow: hidden;
+			
+}
+/*마우스 오버하면 보이는 글자들(호버하기 전)*/
+#sec02_list section:hover div{			
+			width:100%;
+			text-align:center;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+}
+#sec02_list h3 	{
+			color:white; font-size:1.5rem;
+}
+#sec02_list rt 	{transform:translateY(50px);}
+#sec02_list p 	{margin-top:40px; color:#e0e0e0;}
+
+#sec02_list section:hover img{
+	transition: all 500ms;
+
+	filter: brightness(40%);
+	transform: scale(1.3);
+}
+
+
+
+
+
+
+/*a링크 버튼 디자인 통합관리*/
+.linkBtn 	{
+			display:block; width:170px; padding:15px 0;
+			text-align:center; border:1px solid #aaa;
+			margin:auto; margin-top:50px;   transition:0.5s;
+}
+.linkBtn:hover {background:black; color:white;}
+
+/*런치+디너+연회*/
+#sec03 	{
+			display:flex; justify-content:space-between;
+			margin:100px 0;  
+}
+#sec03 section {
+			width:33%; text-align:center;
+			margin-bottom:50px;
+}
+#sec03 img {width:100%;}
+
+#sec03 section:hover button {
+	overflow: hidden;
+}
+
+#sec03 section:hover img {
+	filter: brightness(40%);
+	transform: scale(1.2);
+	transition: all 500ms;
+}
+
+
+
+
+
+
+/*런치+디너+연회: 이미지아래 글자*/
+#sec03 h2 {font-size:2.2rem; font-weight:400; padding:70px 0 20px 0;}
+#sec03 rt {
+		color:#cfa972; font-size:1rem; 
+		font-weight:800; letter-spacing:0.2pt;
+		transform:translateY(-15px);
+}
+
+
+
+
+
+
+

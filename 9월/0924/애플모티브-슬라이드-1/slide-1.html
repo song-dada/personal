@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애플모티브 슬라이드-1</title>
+    <script>
+        document.addEventListener("DOMContentLoaded" , ()=>{
+            const slide_11 = document.getElementById("slide-11");
+            const radio    = document.querySelectorAll("#radio button");
+            let i = 0;
+            const toLeft_1 = ()=> {
+                slide_11.style.transition = "left 0.5s";
+                slide_11.style.left = "-1875px";                
+
+                
+                setTimeout(left_1, 500);                
+            }
+            const left_1 = ()=> {
+                const act = document.getElementById("slide-1").querySelectorAll(".act");
+                act.forEach(i => {
+                    i.classList.remove("act");
+                });
+                ++i;
+                if(i > 4) i = 0;
+                radio[i].classList.add("act");
+                slide_11.style.transition = "none";
+                slide_11.style.left = "-625px";
+                slide_11.append( slide_11.firstElementChild );
+                slide_11.children[1].classList.add("act");
+            }
+
+            setInterval( toLeft_1 , 2000);
+        });//all end.....
+    </script>
+    <style>
+        * {margin:0; padding:0; box-sizing: border-box;}
+        #layout {max-width:2500px; margin:auto; border-top:20px solid red;}
+        #slide-1 {overflow: hidden;}
+        #slide-11 {display: flex; width:calc(1250px * 5); position: relative; left:-625px;}
+        #slide-11 img {width:1250px; display: block; border:8px solid white; opacity:0.5; transition:opacity 0.3s;}
+        #slide-11 img.act {opacity:1;}
+        #radio {border:3px solid blue; max-width: 300px; margin:auto; text-align: center;}
+        #radio button {width:10px; height:10px; margin:2px; border-radius: 50%; background: #999; border:none; transition:background 0.3s;}
+        #radio button.act {background: black;}
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <section id="slide-1">
+            <h2>슬라이드-1</h2>
+            <div id="slide-11">
+                <img src="images/1.jpg" alt="1">
+                <img src="images/2.jpg" alt="2" class="act">
+                <img src="images/3.jpg" alt="3">
+                <img src="images/4.jpg" alt="4">
+                <img src="images/5.jpg" alt="5">
+            </div>
+            <div id="radio">
+                <button type="button" class="act"></button>
+                <button type="button"></button>
+                <button type="button"></button>
+                <button type="button"></button>
+                <button type="button"></button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

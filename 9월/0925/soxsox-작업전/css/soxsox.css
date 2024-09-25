@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/*공통*/
+* {margin:0; padding:0; box-sizing:border-box;}
+html,body	{font:8pt/180% "맑은 고딕"; color:#666;}
+img			{max-width:100%; display:block;}
+#layout		{width:960px; margin:auto; border:2px solid aqua;}
+a  			{color:#666; text-decoration:none;}
+
+/*상단*/
+header		{display:flex; align-items:center;/*세로정렬*/ padding:5px 0; margin-bottom:20px; border-bottom:2px solid #eee;}
+header>h1	{padding:10px; }
+header>h1>a {display:block; padding:10px;}
+header>nav 	{flex:1; display:flex; justify-content:space-around;}
+header>nav>a {text-align:center; padding:5px 8px;}
+header>div	{display:flex; padding:10px 5px;}
+header>div>a {padding:10px 8px;}
+
+/*상품 미리보기 */
+#pro_tlt	{display:flex; padding:0 10px 0 30px;;}
+#pro_tlt button 	{border:none; display:block;}
+#pro_tlt>div:first-of-type {padding:0 5px 0 10px;}
+#small {flex-basis:180px;display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-around; padding:20px 10px;}
+#small>button 	{flex-basis:73px;}
+#small img 		{width:100%;}
+
+#pro_tlt  form		{margin-left:30px;}
+#pro_tlt  h2		{margin-bottom:15px; color:black;}
+#pro_tlt  p 		{line-height:230%; }
+#pro_tlt  p:nth-of-type(2) 	{margin-bottom:10px;}
+#pro_tlt  p:nth-of-type(3)	{margin-bottom:3px;}
+#pro_tlt  p:nth-of-type(3) input  {border:none; color:#666; width:250px; background:transparent; margin-bottom:5px;}
+#pro_tlt  p:nth-of-type(6)	{text-align:right; margin:10px 0 20px 0;}
+#pro_tlt  p:nth-of-type(6) input 	{border:none; outline:none;}
+#pro_tlt  p:nth-of-type(6) input:first-child	{font-size:1.8rem; font-weight:bold; text-align:right;}
+#pro_tlt  p:nth-of-type(6) input:last-child		{width:50px; text-align:center;}
+#pro_tlt  p:last-child	{text-align:right;}
+#pro_tlt  p:last-child  button	{border:1px solid #ddd; padding:9px 15px; display:inline-block; background:transparent; font-size:0.85rem;}
+#pro_tlt  p:last-child  button:last-child {background:black; color:white; padding:9px 50px;}
+#pro_tlt  label 	{width:80px; display:inline-block;}
+#pro_tlt  .red 		{color:red; border:none; background:transparent;}
+#pro_tlt  .gray 	{width:320px; border:1px solid #ddd; margin-bottom:10px;}
+
+
+/*상품 내용 설명 부분 */
+#detail 		{margin-top:30px;}
+#detail > div:first-child		{display:flex; justify-content:center; border-bottom:1px solid #ececec;}
+#detail > div:first-child  button	{padding:8px 40px 10px 40px; font-size:1rem; color:#8d8d91; font-weight:bold; border:1px solid #ececec; background:#f8f8f8; transform:translateY(1px);}
+#detail > div:first-child  button.active	{background:white; border-bottom:none; border-top:3px solid #414141;}
+
+#detail > div:last-child 	{position:relative;}
+#detail > div:last-child  div 	{padding:10px; position:absolute; background:white; width:100%; display:none;}
+#detail > div:last-child  div.active 	{display:block;}
+
+
+
+
+
+
+
+
+
+

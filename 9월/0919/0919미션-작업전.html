@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>해피빈 사랑의 좀도리 운동</title>	
+	<link rel="stylesheet" type="text/css" href="css/happybean1.css">
+	<script>
+		document.addEventListener("DOMContentLoaded",()=>{
+			document.getElementById('guage').style.backgroundColor = 'skyblue';
+			const bb = document.querySelector('#guage meter ').style;
+			bb.backgroundColor = 'blue';
+			alert(bb);
+		});
+	</script>
+</head>
+<body>
+	<h1>해피빈 사랑의 좀도리 운동</h1>
+	<section id="jom1">
+		<h2>해피빈 사랑의 좀도리 운동</h2>
+		<div id="movie">
+			<input type="image" src="images/btn_ok_1.png" alt="확인했어요! 기부금 적립하기">
+		</div>
+	</section>
+	<!-- 누적 기부금 -->
+	<section id="guage">
+		<h2>나눔 참여수와 누적 기부금 현황</h2>
+		<form action="#">
+			<div>
+				나눔 참여수 
+				<input type="text" value="99,039" id="g1">
+				건
+			</div>
+			<div>
+				누적 기부금
+				<input type="text" value="49,518,000" id="g2">
+				원 / 65,000,000원
+				<meter value="0.76"><i>76%</i></meter>
+				<div id="meterTxt">76%</div>
+			</div>
+		</form>
+	</section>
+</body>
+</html>
+
+
+
+
+

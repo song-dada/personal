@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>SOXSOX</title>
+<!-- <script src="js/soxsox.js"></script> -->
+<script>
+	document.addEventListener("DOMContentLoaded",()=>{
+
+		const big_img = document.querySelector('#pro_tlt> div img');
+		const small_img = document.querySelectorAll('#small button img');
+
+		const img_chenge = ( item ) => {
+			let c = item.getAttribute('src');
+			big_img.setAttribute('src' , c );
+		};
+
+		small_img.forEach(element => {
+			element.addEventListener('click', ()=>{ img_chenge(element) });
+		});	
+
+	});
+</script>
+<link rel="stylesheet" href="css/soxsox.css">
+</head>
+<body>
+	<div id="layout">
+		<header>
+			<h1><a href="#"><img src="images/logo.jpg" alt="로고"></a></h1>
+			<nav>
+				<a href="#">BEST/NEW</a>
+				<a href="#">Outer</a>
+				<a href="#">Top</a>
+				<a href="#">Blouse/Shirts</a>
+				<a href="#">Pants</a>
+				<a href="#">Skirts</a>
+				<a href="#">Acc</a>
+				<a href="#">Bag/Shoes</a>
+				<a href="#">SALE</a>
+				<a href="#">COMMUNITY</a>
+			</nav>
+			<div>
+				<a href="#"><img src="images/icon_my.jpg" alt="마이페이지"></a>
+				<a href="#"><img src="images/icon_cart.jpg" alt="장바구니"></a>
+				<a href="#"><img src="images/icon_search.jpg" alt="검색하기"></a>
+			</div>
+		</header>
+		<div id="pro_tlt">
+			<div>
+				<button type="button"><img src="images/prod_b1.jpg" alt="상품디테일" class="big"></button>
+			</div>
+			<div id="small">
+				<button type="button"><img src="images/prod_b1.jpg" alt="상품디테일1"></button>
+				<button type="button"><img src="images/prod_b2.jpg" alt="상품디테일2"></button>
+				<button type="button"><img src="images/prod_b3.jpg" alt="상품디테일3"></button>
+				<button type="button"><img src="images/prod_b4.jpg" alt="상품디테일4"></button>
+				<button type="button"><img src="images/prod_b5.jpg" alt="상품디테일5"></button>
+				<button type="button"><img src="images/prod_b6.jpg" alt="상품디테일6"></button>
+			</div>
+			<form action="#" method="get">
+				<h2>모던 기모 코튼 팬츠</h2>				
+				<p>
+					<label for="price" class="red">판매가</label>
+					<input type="text" value="29,000원" id="price" class="red" disabled>					
+				</p>
+				<p>
+					<label for="sale" class="red">할인판매가</label>
+					<input type="text" value="27,710원" id="sale" class="red" disabled>					
+				</p>
+				<p>
+					<label for="delivery">배송비</label>
+					<input type="text" value="2,500원 (50,000원 이상 구매시 무료)" id="delivery" disabled>
+				</p>
+				<p>
+					<label for="color">color</label>
+					<select id="color" class="gray">
+						<option>- [필수] 옵션을 선택해 주세요 -</option>
+					</select>					
+				</p>		
+				<p>
+					<label for="size">size</label>
+					<select id="size" class="gray">
+						<option>- [필수] 옵션을 선택해 주세요 -</option>
+					</select>					
+				</p>
+				<p>					
+					<input type="text" value="29,800원" readonly><input type="text" value="0개" readonly>
+				</p>
+				<p>
+					<button type="button">ADD TO CART</button>
+					<button type="button">WISH LIST</button>
+					<button type="button">BUY NOW</button>
+				</p>				
+			</form>
+		</div>
+		<div id="detail">
+			<div>
+				<button type="button" class="active">상품상세정보</button>
+				<button type="button">상품구매안내</button>
+				<button type="button">사용후기</button>
+				<button type="button">상품Q&A</button>
+			</div>
+			<div>
+				<div class="active">
+					<p>피어나듯이 내 이네들은 이름과, 별 나의 버리었습니다. 이 이런 오면 하나에 겨울이 밤이 자랑처럼 차 이웃 있습니다. 쉬이 어머니, 써 오는 있습니다. 헤는 자랑처럼 때 버리었습니다.</p><br>
+					<p>이름과, 하나에 우는 불러 흙으로 파란 딴은 자랑처럼 아름다운 까닭입니다. 어머님, 멀듯이, 다 있습니다.</p>
+					<p>사람들의 계절이 청춘이 지나고 풀이 아름다운 나의 같이 별에도 버리었습니다. 남은 자랑처럼 차 별 지나고 가득 있습니다. 가을 지나고 겨울이 사랑과 패, 밤을 차 버리었습니다. 둘 가득 많은 계십니다.</p>
+				</div>
+				<div>
+					<p>내 까닭이요, 릴케 불러 이름을 나는 버리었습니다. 쓸쓸함과 마리아 하나에 별빛이 된 하나 별 나는 오면 까닭입니다.</p>
+					<p>하나에 릴케 슬퍼하는 있습니다. 위에 이름과, 밤을 노새, 너무나 별 가슴속에 가을로 있습니다. 별들을 계집애들의 했던 아름다운 이웃 청춘이 나의 봅니다.</p>
+					<p>부끄러운 위에도 풀이 소학교 멀리 어머니 계십니다. 언덕 않은 헤는 시와 라이너 둘 듯합니다. 하늘에는 가슴속에 토끼, 아무 아이들의 슬퍼하는 내린 소녀들의 듯합니다. 없이 토끼, 말 봅니다.</p>
+				</div>
+				<div>
+					<p>내 추억과 강아지, 봅니다. 묻힌 하나에 경, 딴은 위에도 이런 파란 보고, 별빛이 까닭입니다. 아이들의 오는 이국 둘 아름다운 파란 내 봅니다. 자랑처럼 별 노새, 까닭입니다.</p>
+					<p>하나에 불러 가을로 무덤 시인의 별 봅니다. 하늘에는 별 불러 밤을 노새, 겨울이 별 듯합니다. 써 별 새겨지는 별 아름다운 언덕 이름과, 아스라히 까닭입니다.</p>
+					<p>내일 써 많은 무성할 어머니 책상을 마리아 까닭입니다. 이름자 하나에 많은 듯합니다. 하나에 하늘에는 쓸쓸함과 새워 피어나듯이 다하지 거외다.</p><br>
+					<p>내 추억과 강아지, 봅니다. 묻힌 하나에 경, 딴은 위에도 이런 파란 보고, 별빛이 까닭입니다. 아이들의 오는 이국 둘 아름다운 파란 내 봅니다. 자랑처럼 별 노새, 까닭입니다.</p><br>
+					<p>하나에 불러 가을로 무덤 시인의 별 봅니다. 하늘에는 별 불러 밤을 노새, 겨울이 별 듯합니다. 써 별 새겨지는 별 아름다운 언덕 이름과, 아스라히 까닭입니다.</p>
+					<p>내일 써 많은 무성할 어머니 책상을 마리아 까닭입니다. 이름자 하나에 많은 듯합니다. 하나에 하늘에는 쓸쓸함과 새워 피어나듯이 다하지 거외다.</p>
+				</div>
+				<div>
+					<p>소녀들의 하나에 것은 있습니다. 추억과 새워 이름과, 새겨지는 시인의 겨울이 패, 이름자를 하나에 계십니다.</p><br>
+					<p>새겨지는 아스라히 잠, 청춘이 별에도 이름을 별 북간도에 벌레는 있습니다. 이름자를 쉬이 다하지 아직 멀듯이, 시와 패, 잠, 까닭입니다.</p><br>
+					<p>덮어 다 하늘에는 풀이 헤일 경, 계절이 버리었습니다. 덮어 무엇인지 계집애들의 이름자를 책상을 마디씩 봅니다.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 사이트</title>  
+
+</head>
+
+<body>
+	<div id="gallery">
+		<a href="#" class="event"><img src="images/01-small.jpg" alt="01"></a>
+		<a href="#" class="web"><img src="images/05-small.jpg" alt="05"></a>
+		<a href="#" class="ppt"><img src="images/03-small.jpg" alt="03"></a>
+		<a href="#" class="ppt"><img src="images/09-small.jpg" alt="09"></a>
+		<a href="#" class="ppt"><img src="images/08-small.jpg" alt="08"></a>
+		<a href="#" class="event"><img src="images/07-small.jpg" alt="07"></a>
+		<a href="#" class="event"><img src="images/02-small.jpg" alt="02"></a>
+		<a href="#" class="web"><img src="images/12-small.jpg" alt="12"></a>
+		<a href="#" class="ppt"><img src="images/10-small.jpg" alt="10"></a>
+		<a href="#" class="web"><img src="images/11-small.jpg" alt="11"></a>
+		<a href="#" class="ppt"><img src="images/06-small.jpg" alt="06"></a>
+		<a href="#" class="event"><img src="images/04-small.jpg" alt="04"></a>
+	</div>
+
+    <script>
+        const img = document.querySelectorAll('#gallery img');
+        img.forEach( e => {
+            e.setAttribute('src', e.getAttribute('src').replace('small.jpg', 'large.jpg'));
+        });
+    </script>
+</body>
+</html>
