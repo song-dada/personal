@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    
+    <style>
+        #num {width: fit-content; margin: auto; border:3px dashed red; padding:10px 20px;}
+        .yellow {background-color:yellow}
+    </style>
+</head>
+<body>
+	
+    <div id="num" v-bind:class="{ 'yellow':yell }">
+        <!-- <div id="num" class="yellow"> -->
+        <button type="button">{{B}}</button>
+    </div>
+
+	<script>
+       const { createApp, ref, onMounted } = Vue;
+       const app = createApp({
+            setup(){
+
+                const B = ref( 0 );
+                const yell = ref('true');
+
+                const startCounting =() => {                   
+                    const interval = setInterval( ()=>{
+                        if(B.value <100) {
+                            B.value++;        
+                        }
+                        else    clearInterval( interval );
+                    } , 50 );
+                };
+                onMounted(startCounting);//컴포넌트(구성요소)가 마운트 되면 카운트가 출발.
+                return{ B , yell };
+            }
+       });
+       app.mount('#num');
+    </script>
+</body>
+</html>  

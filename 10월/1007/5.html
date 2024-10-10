@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 미션 (10/7.월)</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded" , ()=>{
+            const insa = Vue.createApp({
+                methods: {
+                    morning() {
+                        alert('좋은아침입니다^^');
+                    }
+                }
+            });
+            insa.mount('#insa');
+        });//end.....        
+    </script>
+    <style>
+        #layout {max-width:500px; margin:auto; margin-top:100px; border:2px dashed red; padding:10px; text-align:center; padding-top:50px;}
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div id="insa">           
+            <button type="button" @click="morning">아침인사</button>
+        </div>
+    </div>
+</body>
+</html>

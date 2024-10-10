@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 미션 (10/7.월)</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded" , ()=>{
+            const paris = Vue.createApp({
+                data() {
+                    return {
+                        href:'https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_(%ED%94%84%EB%9E%91%EC%8A%A4)',
+                        target:'_blank',
+                        src:'images/paris.jpg',
+                        alt:'파리전경'
+                    }
+                }
+            });
+            paris.mount('#paris');
+        });//end.....        
+    </script>
+    <style>
+        #layout {max-width:500px; margin:auto; margin-top:100px; border:2px dashed red;}
+        #paris_img {display:block; text-align: center;}
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div id="paris">
+            <a id="paris_img" v-bind:href="href" :target="target">
+                <img :src="src" :alt="alt">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

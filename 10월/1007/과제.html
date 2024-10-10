@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+  <main>
+    <a v-bind:href="R" target="_blank">
+      <img :src="U" :alt="A" :title="T">
+    </a>
+  </main>
+
+  <script>
+  
+    const IMG = new Vue({
+    	el:  'main'  ,
+        data : { 
+          R: 'https://vuejs.org/',
+          U: 'https://cafeptthumb-phinf.pstatic.net/MjAyNDEwMDdfMTMw/MDAxNzI4MjYyMTYzOTQz.qH8jI32CnIUpaLncVOZCfguWKUBIB-XdzdT5rmCIuaEg.b6u8kqa3KxU0TWsHBhgZQEbZOqNTf_sfwoOAsMY8NaQg.JPEG/logo.jpg?type=w1600',
+          A: '클릭시 Vue.Js로 이동합니다.',
+          T: 'Vue.JS',
+         }
+    });
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 미션 (10/7.월)</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded" , ()=>{
+            const vue = Vue.createApp({                
+                data() {
+                    return {
+                        href:'https://vuejs.org/',
+                        target:'_blank',
+                        src:'images/logo.jpg',
+                        alt:'Vue.js 로고'
+                    }
+                }
+            });  
+            vue.mount('#layout');
+        });//end.....        
+    </script>
+    <style>
+        #layout {max-width:500px; margin:auto; margin-top:100px; border:2px dashed red;}
+        #logo {display:block; text-align: center;}
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <a id="logo" v-bind:href="href" :target="target">
+            <img :src="src" :alt="alt">
+        </a>
+    </div>
+
+</body>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <style>
+        #x{
+            width: 450px;
+            display: flex;
+            margin: auto;
+            border: 1px dashed red;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="x">
+        <img v-for="img in B" :src="img.C" :alt="img.D">
+    </div>
+    <script>
+        const img = Vue.createApp({
+            data(){
+                return{
+                    B:[
+                        {
+                            C: 'images/sns_1.png',
+                            D: 'twiiter'
+                        },
+                        {
+                            C: 'images/sns_2.png',
+                            D: 'facebook'
+                        },
+                        {
+                            C: 'images/sns_3.png',
+                            D: 'kakaostory'
+                        },
+                        {
+                            C: 'images/sns_4.png',
+                            D: 'kakaotalk'
+                        }
+
+                    ]
+                }
+            }
+
+        });
+        img.mount('#x');
+    </script>
+  
+</body>
+</html>

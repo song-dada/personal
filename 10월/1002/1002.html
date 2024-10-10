@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+  <section>
+    <h1>{{ heading  }}</h1>
+    <button type="button">아침인사</button>
+  </section>
+
+  <script>
+  
+    const insa = new Vue({
+    	el:  'section'  ,
+        data : { heading : "인사" }
+    });
+    
+    const btn = document.getElementsByTagName('button')[0];
+    
+    btn.addEventListener("click" , () => {  insa.heading = "굿모닝^^"; }) ;
+    
+  </script>
+  
+</body>
+</html>
