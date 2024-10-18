@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="Z">
+        <ol>
+            <todo-item v-for="item in items" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+    </div>
+    <script>
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{ todo.name }}</li>'
+        });
+
+        const Z = new Vue({
+            el: '#Z ol',
+            data: {
+                items: [
+                    { id: 0, name: '삼겹살' },
+                    { id: 1, name: '돼지갈비' },
+                    { id: 2, name: '오리호박찜' },
+                    { id: 3, name: '뚝배기소고기' }
+                ]
+            }
+        });
+    </script>
+</body>
+</html>
