@@ -6,13 +6,13 @@
 상단 높이 110픽셀
  - 상단 배경색 black, 글자색 white
  - 메인메뉴 호버 글자색 red
- - 하위메뉴 호버 글자색 gold
+ - 하위메뉴 호버 글자색 gold1
 
 
  메뉴:
 FOODCOURT / DELI / HEALTH		DELI & DESSERT		 CUSTOMER SERVICES
 감촌순두부				비파티세리			식품관 안내데스크
-땀땀							지스텀
+땀땀									지스텀
 만두공방
 
 
