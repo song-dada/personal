@@ -5,7 +5,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+header, footer{
+    display: none;
+}
 #layout * div{
     border-radius: 10px;
 }
